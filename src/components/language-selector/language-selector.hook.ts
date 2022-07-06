@@ -17,7 +17,11 @@ const useLanguageSelector = () => {
       }
    };
 
-   return {isSelectorOpened, setIsSelectorOpened, selectLanguage, selectedLanguage};
+   const toggleIsSelectorOpened = () => {
+      setIsSelectorOpened(prev => !prev);
+   }
+
+   return {isSelectorOpened, setIsSelectorOpened, toggleIsSelectorOpened, selectLanguage, selectedLanguage};
 };
 
 export default useLanguageSelector;

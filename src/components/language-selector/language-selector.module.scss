@@ -1,8 +1,26 @@
 @import "src/styles/variables";
 
 .selectorWrap {
-   width: 70px;
+   width: auto;
    height: auto;
+   position: relative;
 
+   .listOfItems {
+      position: absolute;
+      width: auto;
+      height: auto;
+      left: 0;
+      top: calc(100% + 1px);
+      border: 1px solid black;
+      border-radius: 3px;
+   }
 
+   ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+         list-style-type: none;
+      }
+   }
 }

@@ -3,7 +3,7 @@ import React from "react";
 // styles
 import styles from "./main-page-content.module.scss";
 
-// componenets
+// components
 import MainPageHeader from "./header/main-page-header.component";
 
 const MainPageContent: React.FC = () => {

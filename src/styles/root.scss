@@ -53,6 +53,29 @@ p {
   100% { transform: rotate(360deg); }
 }
 
+// custom scrollbar
+.customScrollBar {
+  // Firefox
+  scrollbar-width: thin;
+  scrollbar-color: $colorLightPurple $colorLightGray;
+
+  // Chromium
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $colorLightGray;
+    border-radius: 100px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $colorLightPurple;
+    border-radius: 100px;
+  }
+}
+
+// code
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

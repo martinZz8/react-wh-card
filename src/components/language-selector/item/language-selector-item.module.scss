@@ -1,0 +1,99 @@
+@import "src/styles/variables";
+
+.item {
+   width: auto;
+   height: 42px;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   align-items: flex-start;
+   cursor: pointer;
+   overflow: hidden;
+   border: 1px solid black;
+   border-radius: 5px;
+
+   &.notSelectedItem {
+      border-radius: 0;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+   }
+
+   &.noBorder {
+      border: none;
+   }
+
+   .countryFlagWrap {
+      width: 50px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $colorDarkGray;
+
+      .svgWrap {
+         width: 20px;
+         height: 20px;
+         border-radius: 50%;
+         overflow: hidden;
+
+         svg {
+            transform: scale(1.6);
+         }
+      }
+   }
+
+   .countryShortcutWrap {
+      width: 35px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $colorDarkerGray;
+
+      &.outerShortcutWrap {
+         width: 65px;
+      }
+
+      p {
+         font-size: 16px;
+         font-weight: 700;
+         font-style: normal;
+         color: $colorWhite;
+      }
+   }
+
+   &:hover {
+      .countryFlagWrap {
+         background-color: $colorDarkerGray;
+      }
+
+      .countryShortcutWrap {
+         background-color: $colorDarkestGray;
+      }
+
+      .arrowWrap {
+         background-color: $colorDarkestGray;
+      }
+   }
+
+   .arrowWrap {
+      width: 30px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $colorDarkerGray;
+
+      i {
+         font-size: 22px;
+         color: white;
+         transform: rotateZ(0);
+         transition: transform ease-in-out 0.2s;
+
+         &.isOpen {
+            transform: rotateZ(-180deg);
+         }
+      }
+   }
+}

@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+
+.appMenu {
+   width: auto;
+   height: auto;
+
+   .includesNormalMenu {
+      width: 100%;
+      height: 60px;
+      padding: 15px 25px 0 25px;
+      background-color: $colorBlue;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+   }
+}

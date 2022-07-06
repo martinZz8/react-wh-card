@@ -7,12 +7,16 @@ import styles from "./main-page-header.module.scss";
 import {CurrentLanguageContext} from "../../../../providers/current-language-provider.component";
 import {WindowContext} from "../../../../providers/window-size-provider.component";
 
+// components
+import LanguageSelector from "../../../../components/language-selector/language-selector.component";
+
 const MainPageHeader: React.FC = () => {
    const {selectedLanguage} = useContext(CurrentLanguageContext);
    const {windowWidth, windowHeight} = useContext(WindowContext);
 
    return (
      <div className={styles.headerWrap}>
+        <div className={styles.bgImage}/>
         <div className={styles.info}>
            <p className={`${styles.big} ${styles.paddingRight}`}>
               {
@@ -20,7 +24,7 @@ const MainPageHeader: React.FC = () => {
                     "Biuro rachunkowe"
                     : selectedLanguage === "GB" ?
                        "Accounting firm"
-                       ://DE
+                    ://DE
                        "Rechnungsstelle"
               }
               {
@@ -64,6 +68,9 @@ const MainPageHeader: React.FC = () => {
            <div className={styles.movingArrow}>
               <i className={"icon-down-open"}/>
            </div>
+        </div>
+        <div className={styles.languageSelectorWrap}>
+           <LanguageSelector/>
         </div>
      </div>
    );

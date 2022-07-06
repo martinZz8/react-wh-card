@@ -7,12 +7,14 @@ import styles from "./view.module.scss";
 
 // components
 import Footer from "../../components/footer/footer.component";
+import AppMenuTemplate from "../app-menu/app-menu.template";
+import UserMenu from "../app-menu/user-menu/user-menu.component";
 
 // interface
 interface ITemplateView extends RouteComponentProps<any> {
    viewTitle?: string;
    appVersion: string;
-   hasMenu?: boolean;
+   hasNormalMenu?: boolean;
    has100vh?: boolean;
    children: ReactNode;
 }
@@ -21,7 +23,7 @@ const TemplateView: React.FC<ITemplateView> = ({
       children,
       viewTitle,
       appVersion,
-      hasMenu,
+      hasNormalMenu,
       has100vh
   }) => {
 
@@ -43,15 +45,10 @@ const TemplateView: React.FC<ITemplateView> = ({
          </Helmet>
          {
             <div className={styles.app}>
-               {/*
-                  {
-                     hasMenu ?
-                        <Menu.../>
-                     :
-                        null
-                  }
-               */}
-               <div className={`${styles.appContent} ${hasMenu && has100vh ? styles.appContentWithMenu100vh : ""}`}>
+               <AppMenuTemplate includesNormalMenu={hasNormalMenu}>
+                  <UserMenu includesNormalMenu={hasNormalMenu}/>
+               </AppMenuTemplate>
+               <div className={`${styles.appContent} ${hasNormalMenu && has100vh ? styles.appContentWithMenu100vh : ""}`}>
                   {children}
                </div>
                <Footer/>

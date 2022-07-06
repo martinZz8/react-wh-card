@@ -1,0 +1,49 @@
+@import "../../../styles/variables";
+
+.userMenuWrap {
+   //can be implemented in future, when it will be normal menu on the top
+
+   .mobileMenuIcon {
+      position: fixed;
+      top: 6px;
+      left: 6px;
+      visibility: visible;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: $colorDarkGray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 101;
+      cursor: pointer;
+
+      &.includesNormalMenu {
+         position: static;
+         top: unset;
+         left: unset;
+         height: 100%;
+      }
+
+      i {
+         font-size: 24px;
+         color: $colorWhite;
+         transition: color ease-in-out 0.5s;
+      }
+
+      &:hover {
+         i {
+            color: $colorBlack;
+         }
+      }
+   }
+}
+
+@media all and (min-width: 1250px) {
+   .userMenuWrap {
+
+      .mobileMenuIcon {
+         visibility: hidden;
+      }
+   }
+}
