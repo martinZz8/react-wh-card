@@ -13,6 +13,7 @@ interface ITemplateView extends RouteComponentProps<any> {
    viewTitle?: string;
    appVersion: string;
    hasMenu?: boolean;
+   has100vh?: boolean;
    children: ReactNode;
 }
 
@@ -20,7 +21,8 @@ const TemplateView: React.FC<ITemplateView> = ({
       children,
       viewTitle,
       appVersion,
-      hasMenu
+      hasMenu,
+      has100vh
   }) => {
 
    return (
@@ -43,13 +45,13 @@ const TemplateView: React.FC<ITemplateView> = ({
             <div className={styles.app}>
                {/*
                   {
-                     !hasNoMenu ?
+                     hasMenu ?
                         <Menu.../>
                      :
                         null
                   }
                */}
-               <div className={`${styles.appContent} ${hasMenu ? styles.appContentWithMenu : ""}`}>
+               <div className={`${styles.appContent} ${hasMenu && has100vh ? styles.appContentWithMenu100vh : ""}`}>
                   {children}
                </div>
                <Footer/>

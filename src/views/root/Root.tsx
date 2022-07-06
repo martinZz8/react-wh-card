@@ -6,14 +6,19 @@ import "../../assets/fontello/css/fontello.css";
 // components
 import StandardApp from "./routes/StandardApp.component";
 
+// hooks
+import useRoot from "./useRoot";
+
 const appVersion = "Biuro rachnukowe Wiesław Harbuz";
 
 function Root() {
-  return (
+   useRoot();
+
+   return (
     <>
       <StandardApp appVersion={appVersion} />
     </>
-  );
+   );
 }
 
 export default Root;

@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
    const {selectedLanguage} = useContext(CurrentLanguageContext);
 
    return (
-     <div className={styles.footerWrap}>
+      <div className={styles.footerWrap}>
         <div className={styles.footerInfo}>
            <div className={styles.item}>
               <p>
@@ -40,9 +40,16 @@ const Footer: React.FC = () => {
            </div>
         </div>
         <div className={styles.footerIcons}>
-            <i className={styles.iconGoogle}/>
+           <a
+              href={"https://www.google.com/search?&q=biuro+wieslaw+harbuz"}
+              target={"_blank"}
+           >
+              <div className={styles.imageWrap}>
+                 <i className={"icon-google"}/>
+              </div>
+           </a>
         </div>
-     </div>
+      </div>
    );
 };
 
