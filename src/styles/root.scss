@@ -1,0 +1,59 @@
+// font
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
+// variables
+@import "src/styles/variables";
+
+// -- Global settings --
+html {
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+//Tags
+a {
+  text-decoration: none;
+  color: $colorBlack;
+}
+
+p {
+  margin: 0;
+}
+
+// -- Classes --
+// noSelect
+.noSelect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+// loader
+.loader {
+  border: 11px solid $colorLightGray; /* Light grey */
+  border-top: 11px solid $colorDarkPurple; /* Purple */
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

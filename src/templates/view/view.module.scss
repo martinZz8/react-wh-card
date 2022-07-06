@@ -1,0 +1,17 @@
+@import "src/styles/variables";
+
+.app {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+
+   .appContent {
+      width: 100%;
+      height: auto;
+
+      &.appContentWithMenu {
+         height: calc(100vh - 60px);
+      }
+   }
+}
