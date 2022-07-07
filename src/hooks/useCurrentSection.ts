@@ -14,14 +14,14 @@ const useCurrentSection = () => {
 
    useEffect(() => {
       let handleScroll = () => {
-         console.log("Handle scroll works!");
-         let reversedSections = getSectionsArray().reverse();
-         let reversedAvailableSections = availableSections.reverse();
+         //console.log("Handle scroll works!");
+         const reversedSections = getSectionsArray().reverse();
+         const reversedAvailableSections = [...availableSections].reverse();
 
          for (let i = 0; i < reversedSections.length; i++) {
             let section = reversedSections[i];
 
-            if (section.getBoundingClientRect().top <= 20) {
+            if (section.getBoundingClientRect().top <= 50) {
                setCurrentSection(reversedAvailableSections[i].sectionId);
                break; //this break is necessary
             }

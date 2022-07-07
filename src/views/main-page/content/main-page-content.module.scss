@@ -11,9 +11,36 @@
       justify-content: flex-start;
       align-items: flex-start;
       max-width: 900px;
-      padding: 20px 30px;
+      padding: 20px 15px;
       margin: 0 auto;
-      background-color: #4D2B6E;
-      min-height: 300px; // TO DELETE
+      background-color: transparent; //violet
+      position: relative;
+
+      .listOfSectionsContainer {
+         width: auto;
+         height: 100%;
+         position: absolute;
+         right: calc(100% + 10px);
+         top: 20px;
+         visibility: hidden;
+      }
+   }
+}
+
+@media all and (min-width: 1230px) {
+   .mainWrap {
+      .middleContentWrap {
+         .listOfSectionsContainer {
+            visibility: visible;
+         }
+      }
+   }
+}
+
+@media all and (min-width: 700px) {
+   .mainWrap {
+      .middleContentWrap {
+         padding: 20px 30px;
+      }
    }
 }

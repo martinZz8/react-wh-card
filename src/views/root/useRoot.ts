@@ -9,10 +9,16 @@ const useRoot = () => {
 
       const handleClick = (anchor: Element, e: Event) => {
          e.preventDefault();
-         // @ts-ignore
-         document.querySelector(anchor.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"
-         });
+
+         const attribute = anchor.getAttribute("href");
+         if (attribute) {
+            let elements = document.querySelectorAll(attribute);
+            elements.forEach(elem => {
+               elem.scrollIntoView({
+                  behavior: "smooth"
+               });
+            })
+         }
       };
 
       getAllAnchors().forEach(anchor => {

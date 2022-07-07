@@ -1,0 +1,63 @@
+@import "src/styles/variables";
+
+.wrapper {
+   width: 100%;
+   height: auto;
+   margin-bottom: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: flex-start;
+   word-wrap: break-word;
+
+   .item {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+
+      &:last-of-type {
+         margin-bottom: 0;
+      }
+
+      p {
+         color: $colorWhite;
+         font-size: 21px;
+         font-weight: 400;
+
+         &.large {
+            font-size: 26px;
+         }
+
+         &.underline {
+            text-decoration: underline;
+         }
+
+         &.italic {
+            font-style: italic;
+         }
+      }
+
+      ul {
+         margin-top: 10px;
+         padding-left: 20px;
+
+         li {
+            color: $colorWhite;
+            text-decoration-color: $colorWhite;
+            list-style-type: disc;
+            font-size: 20px;
+            font-weight: 400;
+            font-style: normal;
+         }
+      }
+
+      .center {
+         width: 100%;
+         height: auto;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+      }
+   }
+}

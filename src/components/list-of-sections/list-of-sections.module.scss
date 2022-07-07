@@ -1,0 +1,61 @@
+@import "src/styles/variables";
+
+@mixin colorTrans {
+   transition: color ease-in-out 0.3s;
+}
+
+.listOfSectionsWrap {
+   width: auto;
+   height: auto;
+   padding: 10px 6px 10px 20px;
+   background-color: $colorDarkestGray;
+   border-radius: 8px;
+
+   &.sticky {
+      position: sticky;
+      top: 20px;
+      left: 0;
+   }
+
+   ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+         width: 100%;
+         list-style-type: disc;
+         color: $colorWhite;
+         padding-bottom: 5px;
+         @include colorTrans;
+
+         &.nowrap {
+            white-space: nowrap;
+         }
+
+         a {
+            color: $colorWhite;
+            font-size: 18px;
+            font-weight: 600;
+            font-style: normal;
+            @include colorTrans;
+         }
+
+         &.activeItem {
+            color: $colorLemonGreen;
+            text-decoration-color: $colorLemonGreen;
+
+            a {
+               color: $colorLemonGreen;
+            }
+         }
+
+         &:hover {
+            text-decoration: underline;
+         }
+
+         &:last-of-type {
+            padding-bottom: 0;
+         }
+      }
+   }
+}

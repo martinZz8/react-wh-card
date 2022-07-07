@@ -22,10 +22,10 @@ const MainPageHeader: React.FC = () => {
               {
                  selectedLanguage === "PL" ?
                     "Biuro rachunkowe"
-                    : selectedLanguage === "GB" ?
-                       "Accounting firm"
-                    ://DE
-                       "Rechnungsstelle"
+                 : selectedLanguage === "GB" ?
+                    "Accounting office"
+                 ://DE
+                    "Rechnungsstelle"
               }
               {
                  windowWidth < 800 ?
@@ -49,25 +49,46 @@ const MainPageHeader: React.FC = () => {
               }
            </p>
            <p className={`${styles.medium} ${styles.spacingTop}`}>
+              Tomaszów Lubelski 22-600
               {
-                 "Tomaszów Lubelski 22-600"
+                  selectedLanguage === "PL" ?
+                     " ul. Rolnicza 10"
+                  : selectedLanguage === "GB" ?
+                     " Rolnicza 10 St."
+                  ://DE
+                     " Rolnicza 10 Str"
               }
            </p>
            <p className={`${styles.medium} ${styles.spacingTop}`}>
               {
                  selectedLanguage === "PL" ?
-                     "ul. Rolnicza 10"
+                  "Email: "
                  : selectedLanguage === "GB" ?
-                    "Rolnicza 10 St."
+                  "Email: "
                  ://DE
-                    "Rolnicza 10 Str"
+                  "E-mail: "
               }
+              biuro.harbuz@wp.pl
+           </p>
+           <p className={`${styles.medium} ${styles.spacingTop}`}>
+              {
+                 selectedLanguage === "PL" ?
+                    "Telefon: "
+                    : selectedLanguage === "GB" ?
+                     "Phone: "
+                    ://DE
+                     "Telefon: "
+              }
+              503 414 100
            </p>
         </div>
         <div className={styles.movingArrowContainer}>
-           <div className={styles.movingArrow}>
+           <a
+              className={styles.movingArrow}
+              href={`#section-about-company`}
+           >
               <i className={"icon-down-open"}/>
-           </div>
+           </a>
         </div>
         <div className={styles.languageSelectorWrap}>
            <LanguageSelector/>

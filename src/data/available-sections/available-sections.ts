@@ -15,10 +15,10 @@ export const availableSections: IAvailableSection[] = [
       DEName: "Informationen"
    },
    {//3
-      sectionId: "section-map",
-      PLName: "Mapa",
-      GBName: "Map",
-      DEName: "Karte"
+      sectionId: "section-location",
+      PLName: "Lokalizacja",
+      GBName: "Location",
+      DEName: "Lage"
    },
    {//4
       sectionId: "section-mail",

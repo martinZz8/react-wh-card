@@ -7,7 +7,7 @@ const useUserMenu = () => {
    const {windowWidth, windowHeight} = useContext(WindowContext);
 
    useEffect(() => {
-      if (windowWidth > 1250) {
+      if (windowWidth > 1230) {
          setIsMobileMenuOpen(false);
       }
    },[windowWidth]);

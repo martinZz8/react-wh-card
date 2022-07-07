@@ -1,0 +1,42 @@
+@import "src/styles/variables";
+
+.wrapper {
+   width: 100%;
+   height: auto;
+   margin-bottom: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   .map {
+      width: auto;
+      height: auto;
+
+      iframe {
+         width: 350px;
+         height: 250px;
+      }
+   }
+}
+
+@media all and (min-width: 540px) {
+   .wrapper {
+      .map {
+         iframe {
+            width: 500px;
+            height: 400px;
+         }
+      }
+   }
+}
+
+@media all and (min-width: 900px) {
+   .wrapper {
+      .map {
+         iframe {
+            width: 800px;
+            height: 600px;
+         }
+      }
+   }
+}
