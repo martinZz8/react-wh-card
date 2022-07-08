@@ -266,34 +266,39 @@ const SectionMail: React.FC = () => {
                   </div>
                </div>
                {/*Return message*/}
-               {
-                  isSuccessSend || isErrorSend ?
-                     <MessageBox
-                        message={
-                           isSuccessSend ?
-                              selectedLanguage === "PL" ?
-                                 "Poprawinie wysłano wiadomość."
-                              : selectedLanguage === "GB" ?
-                                 "The message has been sent correctly."
-                              : selectedLanguage === "DE" ?
-                                 "Nachricht korrekt gesendet."
-                              ://UA
-                                 "Повідомлення надіслано правильно."
-                           :// error while sending
-                              selectedLanguage === "PL" ?
-                                 "Wystąpił błąd podczas wysyłania wiadomośći. Spróbuj ponownie później albo wyślij wiadomość ze swojej poczty internetowej."
-                              : selectedLanguage === "GB" ?
-                                 "An error occurred while sending the message. Try again later or send the message from your webmail."
-                              : selectedLanguage === "DE" ?
-                                 "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal oder senden Sie die Nachricht über Ihr Webmail."
-                              ://UA
-                                 "Під час надсилання повідомлення сталася помилка. Повторіть спробу пізніше або надішліть повідомлення зі своєї інтернет-пошти."
-                        }
-                        isError={isErrorSend}
-                     />
-                  :
-                     null
-               }
+               <div className={styles.row}>
+                  {
+                     isSuccessSend || isErrorSend ?
+                        <div className={styles.messageBoxWrapper}>
+                           <MessageBox
+                              message={
+                                 isSuccessSend ?
+                                    selectedLanguage === "PL" ?
+                                       "Poprawnie wysłano wiadomość."
+                                    : selectedLanguage === "GB" ?
+                                       "The message has been sent correctly."
+                                    : selectedLanguage === "DE" ?
+                                       "Nachricht korrekt gesendet."
+                                    ://UA
+                                       "Повідомлення надіслано правильно."
+                                 :// error while sending
+                                    selectedLanguage === "PL" ?
+                                       "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później albo wyślij wiadomość ze swojej poczty internetowej."
+                                    : selectedLanguage === "GB" ?
+                                       "An error occurred while sending the message. Try again later or send the message from your webmail."
+                                    : selectedLanguage === "DE" ?
+                                       "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal oder senden Sie die Nachricht über Ihr Webmail."
+                                    ://UA
+                                       "Під час надсилання повідомлення сталася помилка. Повторіть спробу пізніше або надішліть повідомлення зі своєї інтернет-пошти."
+                              }
+                              isError={isErrorSend}
+                              wide
+                           />
+                        </div>
+                     :
+                        null
+                  }
+               </div>
                {/*Loading modal*/}
                {
                   isLoadingSend ?

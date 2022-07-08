@@ -1,5 +1,4 @@
 import React, {useState, useEffect, useContext} from "react";
-import {Email as SMTPService} from "../../../../functions/smtp";
 
 // interfaces
 import {ISectionMailForm, IErrorSectionMailForm} from "./section-mail.types";
@@ -17,7 +16,7 @@ const useSectionMail = () => {
    const emailRgx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
    const [isLoadingSend, setIsLoadingSend] = useState<boolean>(false);
-   const [isSuccessSend, setIsSuccessSend] = useState<boolean>(false);
+   const [isSuccessSend, setIsSuccessSend] = useState<boolean>(true);
    const [isErrorSend, setIsErrorSend] = useState<boolean>(false);
 
    const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState<boolean>(false);
@@ -262,35 +261,68 @@ const useSectionMail = () => {
          setIsErrorSend(false);
          setIsLoadingSend(true);
 
-         console.log("to:", process.env.REACT_APP_SMTP_RECEIVER_EMAIL);
-         // usage of smtp.js
-         SMTPService.send({
-            SecureToken: "34fcff7b-0d64-4fcc-ac1a-116b36d80e6d",
-            To: process.env.SMTP_RECEIVER_EMAIL,
-            From: sectionMailForm.emailAddress,
-            Subject: sectionMailForm.subject,
-            Body: `
-               <p>
-                  <b>Od: </b>${sectionMailForm.firstName} ${sectionMailForm.lastName}
-               </p>
-               <p><b>Email: </b>${sectionMailForm.emailAddress}</p>
-               <p><b>Telefon: </b>${sectionMailForm.phoneNumber.length > 0 ? sectionMailForm.phoneNumber : "-"}</p>
-               <p><b>Temat: </b>${sectionMailForm.subject}</p>
-               <br/>
-               <p><b>Wiadomość: </b>${sectionMailForm.message}</p>
-            `
-         }).then(response => {
+         fetch("http://localhost:3001/send-email", {
+            method: "POST",
+            mode: 'cors',
+            headers: {
+               'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+               firstName: sectionMailForm.firstName,
+               lastName: sectionMailForm.lastName,
+               emailAddress: sectionMailForm.emailAddress,
+               phoneNumber: sectionMailForm.phoneNumber,
+               subject: sectionMailForm.subject,
+               message: sectionMailForm.message
+            })
+         }).then(async response => {
             setIsLoadingSend(false);
-            if (response.ok) {
-               console.log('Message sent successfully!');
+            let data = await response.json();
+
+            if(response.ok) {
+               console.log(data);
                setIsSuccessSend(true);
                setIsSubmitButtonDisabled(true);
             }
             else {
-               console.log('Error occurred'); //error.message
+               console.log(data);
                setIsErrorSend(true);
             }
+         }).catch(error => {
+            setIsLoadingSend(false);
+            setIsErrorSend(true);
+            console.log(error);
          });
+
+         //console.log("to:", process.env.REACT_APP_SMTP_RECEIVER_EMAIL);
+         // usage of smtp.js
+         // SMTPService.send({
+         //    SecureToken: "34fcff7b-0d64-4fcc-ac1a-116b36d80e6d",
+         //    To: process.env.SMTP_RECEIVER_EMAIL,
+         //    From: sectionMailForm.emailAddress,
+         //    Subject: sectionMailForm.subject,
+         //    Body: `
+         //       <p>
+         //          <b>Od: </b>${sectionMailForm.firstName} ${sectionMailForm.lastName}
+         //       </p>
+         //       <p><b>Email: </b>${sectionMailForm.emailAddress}</p>
+         //       <p><b>Telefon: </b>${sectionMailForm.phoneNumber.length > 0 ? sectionMailForm.phoneNumber : "-"}</p>
+         //       <p><b>Temat: </b>${sectionMailForm.subject}</p>
+         //       <br/>
+         //       <p><b>Wiadomość: </b>${sectionMailForm.message}</p>
+         //    `
+         // }).then(response => {
+         //    setIsLoadingSend(false);
+         //    if (response.ok) {
+         //       console.log('Message sent successfully!');
+         //       setIsSuccessSend(true);
+         //       setIsSubmitButtonDisabled(true);
+         //    }
+         //    else {
+         //       console.log('Error occurred'); //error.message
+         //       setIsErrorSend(true);
+         //    }
+         // });
          /*
          const nodemailer = require("nodemailer");
 
