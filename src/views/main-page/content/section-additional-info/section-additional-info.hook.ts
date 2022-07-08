@@ -8,11 +8,11 @@ const useAdditionalInfo = () => {
 
    useEffect(() => {
       const d = new Date();
-      setTodayDayNumber(d.getDay());//number from 0 to 6 - corresponding day
+      setTodayDayNumber(d.getDay());//number from 0 to 6 - corresponding day; starts from 0 - Sunday
    },[]);
 
    const checkIfIsOpened = (): boolean => {
-      if (todayDayNumber >= 5 && todayDayNumber <= 6) { //saturdays and sundays are free of work
+      if (todayDayNumber === 6 || todayDayNumber === 0) { //saturdays and sundays are free of work
          return false;
       }
 

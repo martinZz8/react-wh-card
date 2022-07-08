@@ -24,8 +24,10 @@ const SectionLocation: React.FC = () => {
                sectionInfo?.PLName
             : selectedLanguage === "GB" ?
                sectionInfo?.GBName
-            ://DE
+            : selectedLanguage === "DE" ?
                sectionInfo?.DEName
+            ://UA
+               sectionInfo?.UAName
          }
          iconName={"icon-map"}
       >

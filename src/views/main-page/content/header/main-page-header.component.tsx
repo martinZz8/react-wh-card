@@ -24,8 +24,10 @@ const MainPageHeader: React.FC = () => {
                     "Biuro rachunkowe"
                  : selectedLanguage === "GB" ?
                     "Accounting office"
-                 ://DE
+                 : selectedLanguage === "DE" ?
                     "Rechnungsstelle"
+                 ://UA
+                    "бухгалтерія"
               }
               {
                  windowWidth < 800 ?
@@ -44,8 +46,10 @@ const MainPageHeader: React.FC = () => {
                      "Polska"
                   : selectedLanguage === "GB" ?
                      "Poland"
-                  ://DE
+                  : selectedLanguage === "DE" ?
                      "Polen"
+                  ://UA
+                     "Польща"
               }
            </p>
            <p className={`${styles.medium} ${styles.spacingTop}`}>
@@ -55,8 +59,10 @@ const MainPageHeader: React.FC = () => {
                      " ul. Rolnicza 10"
                   : selectedLanguage === "GB" ?
                      " Rolnicza 10 St."
-                  ://DE
+                  : selectedLanguage === "DE" ?
                      " Rolnicza 10 Str"
+                  ://UA
+                     " вул. Rolnicza 10"
               }
            </p>
            <p className={`${styles.medium} ${styles.spacingTop}`}>
@@ -65,19 +71,23 @@ const MainPageHeader: React.FC = () => {
                   "Email: "
                  : selectedLanguage === "GB" ?
                   "Email: "
-                 ://DE
-                  "E-mail: "
+                 : selectedLanguage === "DE" ?
+                    "E-mail: "
+                 ://UA
+                     "Email: "
               }
               biuro.harbuz@wp.pl
            </p>
            <p className={`${styles.medium} ${styles.spacingTop}`}>
               {
                  selectedLanguage === "PL" ?
-                    "Telefon: "
-                    : selectedLanguage === "GB" ?
-                     "Phone: "
-                    ://DE
                      "Telefon: "
+                 : selectedLanguage === "GB" ?
+                     "Phone: "
+                 : selectedLanguage === "DE" ?
+                     "Telefon: "
+                 ://UA
+                     "Телефон: "
               }
               503 414 100
            </p>

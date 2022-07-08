@@ -6,30 +6,35 @@ export const availableSections: IAvailableSection[] = [
       sectionId: "section-about-company",
       PLName: "O firmie",
       GBName: "About the company",
-      DEName: "Über das Unternehmen"
+      DEName: "Über das Unternehmen",
+      UAName: "Про компанію"
    },
    {//2
       sectionId: "section-additional-info",
       PLName: "Informacje",
       GBName: "Informations",
-      DEName: "Informationen"
+      DEName: "Informationen",
+      UAName: "Інформація"
    },
    {//3
       sectionId: "section-location",
       PLName: "Lokalizacja",
       GBName: "Location",
-      DEName: "Lage"
+      DEName: "Lage",
+      UAName: "місце"
    },
    {//4
       sectionId: "section-mail",
       PLName: "Skontaktuj się",
       GBName: "Get in touch",
-      DEName: "Kontakt aufnehmen"
+      DEName: "Kontakt aufnehmen",
+      UAName: "контакт"
    },
    {//5
       sectionId: "section-photo-gallery",
       PLName: "Galeria zdjęć",
       GBName: "Photo gallery",
-      DEName: "Fotogalerie"
+      DEName: "Fotogalerie",
+      UAName: "галерея"
    }
 ];

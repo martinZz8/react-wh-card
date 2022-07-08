@@ -41,8 +41,10 @@ const ListOfSections: React.FC<IListOfSections> = ({sticky, handleOnClick}) => {
                               item.PLName
                            : selectedLanguage === "GB" ?
                               item.GBName
-                           ://DE
+                           :selectedLanguage === "DE" ?
                               item.DEName
+                           ://UA
+                              item.UAName
                         }
                      </a>
                   </li>

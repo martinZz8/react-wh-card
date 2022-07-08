@@ -9,10 +9,8 @@ import StandardApp from "./routes/StandardApp.component";
 // hooks
 import useRoot from "./useRoot";
 
-const appVersion = "Biuro rachnukowe Wiesław Harbuz";
-
 function Root() {
-   useRoot();
+   const {appVersion} = useRoot();
 
    return (
     <>

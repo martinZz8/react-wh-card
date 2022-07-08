@@ -29,8 +29,11 @@ const SectionAdditionalInfo: React.FC = () => {
                sectionInfo?.PLName
             : selectedLanguage === "GB" ?
                sectionInfo?.GBName
-            ://DE
+            : selectedLanguage === "DE" ?
                sectionInfo?.DEName
+            ://UA
+               sectionInfo?.UAName
+
          }
          iconName={"icon-user"}
       >
@@ -43,8 +46,10 @@ const SectionAdditionalInfo: React.FC = () => {
                         "Email: "
                      : selectedLanguage === "GB" ?
                         "Email: "
-                     ://DE
+                     : selectedLanguage === "DE" ?
                         "E-mail: "
+                     ://UA
+                        "Email: "
                   }
                   </p>
                   <p>biuro.harbuz@wp.pl</p>
@@ -56,8 +61,10 @@ const SectionAdditionalInfo: React.FC = () => {
                         "Telefon: "
                      : selectedLanguage === "GB" ?
                         "Phone: "
-                     ://DE
+                     : selectedLanguage === "DE" ?
                         "Telefon: "
+                     ://UA
+                        "Телефон: "
                   }
                   </p>
                   <p>503 414 100</p>
@@ -69,8 +76,10 @@ const SectionAdditionalInfo: React.FC = () => {
                         "Adres: "
                      : selectedLanguage === "GB" ?
                         "Address: "
-                     ://DE
+                     : selectedLanguage === "DE" ?
                         "Adresse: "
+                     :
+                        "Адреса: "
                   }
                   </p>
                   <p>
@@ -87,8 +96,10 @@ const SectionAdditionalInfo: React.FC = () => {
                         "Godziny otwarcia:"
                      : selectedLanguage === "GB" ?
                         "Opening hours:"
-                     ://DE
+                     : selectedLanguage === "DE" ?
                         "Öffnungszeit:"
+                     ://UA
+                        "Години роботи:"
                   }
                </p>
                <ul>
@@ -112,8 +123,10 @@ const SectionAdditionalInfo: React.FC = () => {
                                     item.PLName
                                  : selectedLanguage === "GB" ?
                                     item.GBName
-                                 ://DE
+                                 : selectedLanguage === "DE" ?
                                     item.DEName
+                                 ://UA
+                                    item.UAName
                               }
                            </p>
                            <p>
@@ -124,8 +137,10 @@ const SectionAdditionalInfo: React.FC = () => {
                                     "zamknięte"
                                  : selectedLanguage === "GB" ?
                                     "closed"
-                                 ://DE
+                                 : selectedLanguage === "DE" ?
                                     "getarnt"
+                                 ://UA
+                                    "ЗАЧИНЕНО"
                               }
                            </p>
                         </li>

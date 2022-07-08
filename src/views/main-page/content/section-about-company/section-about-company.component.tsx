@@ -24,8 +24,10 @@ const SectionAboutCompany: React.FC = () => {
                sectionInfo?.PLName
             : selectedLanguage === "GB" ?
                sectionInfo?.GBName
-            ://DE
+            : selectedLanguage === "DE" ?
                sectionInfo?.DEName
+            ://UA
+               sectionInfo?.UAName
          }
          iconName={"icon-doc-inv"}
       >
@@ -48,13 +50,21 @@ const SectionAboutCompany: React.FC = () => {
                         <br/>
                         <p>I have knowledge supported by many years of work experience in the tax office.</p>
                      </>
-                  ://DE
+                  : selectedLanguage === "DE" ?
                      <>
                         <p>Das Buchhaltungsbüro Wiesław Harbuz ist bereits seit mehreren Jahren auf dem Markt.</p>
                         <br/>
                         <p>Dank unserer Erfahrung und der wettbewerbsfähigen Preise unserer Dienstleistungen haben wir viele zufriedene Stammkunden.</p>
                         <br/>
                         <p>Ich verfüge über Kenntnisse, die durch meine langjährige Berufserfahrung in einem Steuerbüro gestützt werden.</p>
+                     </>
+                  ://UA
+                     <>
+                        <p>Бухгалтерська контора Wiesław Harbuz існує на ринку вже кілька років.</p>
+                        <br/>
+                        <p>Наш досвід і конкурентоспроможні ціни на наші послуги дозволяють нам мати багато постійних і задоволених клієнтів.</p>
+                        <br/>
+                        <p>Маю знання, підкріплені багаторічним досвідом роботи в податковій інспекції.</p>
                      </>
                }
             </div>
@@ -84,7 +94,7 @@ const SectionAboutCompany: React.FC = () => {
                            <li>filling out tax returns</li>
                            <li>tax accounting</li>
                            <li>assistance in obtaining tax refunds for work abroad (in the following countries: Germany, Belgium, Austria, USA, Netherlands, UK, Ireland, Australia, Denmark, Norway or Sweden)</li>
-                           <li>proaward of income and expense books (KPIR)</li>
+                           <li>management of income and expense books (KPIR)</li>
                            <li>keeping lump sum records</li>
                            <li>VAT accounting</li>
                            <li>annual PIT</li>
@@ -94,7 +104,7 @@ const SectionAboutCompany: React.FC = () => {
                            <li>other accounting and legal services that can be discussed individually with the client</li>
                         </ul>
                      </>
-                  ://DE
+                  : selectedLanguage === "DE" ?
                      <>
                         <p>Wir bieten die folgenden Dienstleistungen an:</p>
                         <ul>
@@ -109,6 +119,23 @@ const SectionAboutCompany: React.FC = () => {
                            <li>Unterstützung bei administrativen und gerichtlichen Dokumenten</li>
                            <li>Unterstützung bei der Gründung eines eigenen Unternehmens</li>
                            <li>andere Buchhaltungs- und Rechtsdienstleistungen, die individuell mit dem Kunden besprochen werden können</li>
+                        </ul>
+                     </>
+                  ://UA
+                     <>
+                        <p>Ми надаємо наступні послуги:</p>
+                        <ul>
+                           <li>заповнення податкової звітності</li>
+                           <li>податковий облік</li>
+                           <li>допомога в отриманні відшкодування податку за роботу за кордоном (в наступних країнах: Німеччина, Бельгія, Австрія, США, Нідерланди, Великобританія, Ірландія, Австралія, Данія, Норвегія або Швеція)</li>
+                           <li>ведення книг доходів і витрат (КПІР)</li>
+                           <li>ведення обліку одноразових платежів</li>
+                           <li>Облік ПДВ</li>
+                           <li>річний ПДФО</li>
+                           <li>Кадрові та зарплатні послуги, Соціальне забезпечення</li>
+                           <li>допомога з офіційними листами та листами до судів</li>
+                           <li>допомога у створенні власного бізнесу</li>
+                           <li>інші бухгалтерські та юридичні послуги, які обговорюються індивідуально з клієнтом</li>
                         </ul>
                      </>
                }
@@ -126,20 +153,29 @@ const SectionAboutCompany: React.FC = () => {
                      </>
                   : selectedLanguage === "GB" ?
                      <>
-                        <p>On the territory of the city of Tomaszóww Lubelski it is possible to perform services at the customer's home.</p>
+                        <p>On the territory of the city of Tomaszów Lubelski it is possible to perform services at the customer's home.</p>
                         <br/>
                         <div className={styles.center}>
                            <p className={styles.italic}>Use the services of Wiesław Harbuz Accounting Office today!</p>
                            <p className={styles.italic}>We will help reliably, professionally and at an affordable price.</p>
                         </div>
                      </>
-                  ://DE
+                  : selectedLanguage === "DE" ?
                      <>
                         <p>Im Gebiet von Tomaszów Lubelski ist es möglich, die Dienstleistungen in der Wohnung des Kunden zu erbringen.</p>
                         <br/>
                         <div className={styles.center}>
                            <p className={styles.italic}>Nutzen Sie noch heute die Dienstleistungen des Buchhaltungsbüros Wiesław Harbuz!</p>
                            <p className={styles.italic}>Wir helfen Ihnen zuverlässig, professionell und zu einem günstigen Preis.</p>
+                        </div>
+                     </>
+                  ://UA
+                     <>
+                        <p>У місті Tomaszów Lubelski можливе надання послуг вдома у замовника.</p>
+                        <br/>
+                        <div className={styles.center}>
+                           <p className={styles.italic}>Скористайтеся послугами бухгалтерії Wiesław Harbuz вже сьогодні!</p>
+                           <p className={styles.italic}>Ми допоможемо надійно, професійно та за доступною ціною.</p>
                         </div>
                      </>
                }

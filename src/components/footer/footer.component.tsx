@@ -17,10 +17,13 @@ const Footer: React.FC = () => {
                  {
                     selectedLanguage === "PL" ?
                        "Wszelkie prawa zastrzeżone"
-                       :   selectedLanguage === "GB" ?
-                          "All rights reserved"
-                          : //DE
-                          "Alle Rechte vorbehalten"
+                    :   selectedLanguage === "GB" ?
+                       "All rights reserved"
+                    : selectedLanguage === "DE" ?
+                       "Alle Rechte vorbehalten"
+                    ://UA
+                        "Всі права захищені"
+
                  }
                  <span className={styles.copyright}> &copy;</span> {new Date().getFullYear()}
               </p>
@@ -30,10 +33,12 @@ const Footer: React.FC = () => {
                  {
                     selectedLanguage === "PL" ?
                        "Wykonane przez: "
-                       :   selectedLanguage === "GB" ?
-                          "Made by: "
-                          : //DE
-                          "Hergestellt von: "
+                    :   selectedLanguage === "GB" ?
+                       "Made by: "
+                    : selectedLanguage === "DE" ?
+                       "Hergestellt von: "
+                    ://UA
+                        "Зроблено: "
                  }
                  Maciej Harbuz
               </p>

@@ -11,4 +11,5 @@ export interface IAvailableSection {
    PLName: string;
    GBName: string;
    DEName: string;
+   UAName: string;
 }
