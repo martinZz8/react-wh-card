@@ -1,0 +1,83 @@
+@import "src/styles/variables";
+
+.wrapper {
+   width: 100%;
+   height: auto;
+   margin-bottom: 20px;
+
+   .formWrapper {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      position: relative;
+
+      .row {
+         width: 100%;
+         height: auto;
+         margin-bottom: 10px;
+
+         &:last-of-type {
+            margin-bottom: 0;
+         }
+
+         &.center {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+         }
+
+         &.inline {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+         }
+
+         .inputWrapper {
+            width: 100%;
+            height: 90px;
+
+            &.textArea {
+               height: 200px;
+            }
+
+            &.shortVersion {
+               margin-bottom: 10px;
+
+               &:last-of-type {
+                  margin-bottom: 0;
+               }
+            }
+         }
+
+         .buttonWrapper {
+            width: 100%;
+            height: 50px;
+         }
+      }
+   }
+}
+
+@media all and (min-width: 800px) {
+   .wrapper {
+      .formWrapper {
+         .row {
+            &.inline {
+               flex-direction: row;
+               justify-content: space-between;
+               align-items: flex-start;
+            }
+
+            .inputWrapper {
+               &.shortVersion {
+                  width: 45%;
+                  margin-bottom: 0;
+               }
+            }
+         }
+      }
+   }
+}

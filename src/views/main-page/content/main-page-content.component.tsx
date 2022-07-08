@@ -11,6 +11,7 @@ import ListOfSections from "../../../components/list-of-sections/list-of-section
 import SectionAboutCompany from "./section-about-company/section-about-company.component";
 import SectionAdditionalInfo from "./section-additional-info/section-additional-info.component";
 import SectionLocation from "./section-location/section-location.component";
+import SectionMail from "./section-mail/section-mail.component";
 
 const MainPageContent: React.FC = () => {
 
@@ -25,10 +26,7 @@ const MainPageContent: React.FC = () => {
             <SectionAboutCompany/>{/*section-about-company*/}
             <SectionAdditionalInfo/>{/*section-additional-info-info*/}
             <SectionLocation/>{/*section-location*/}
-            {/*section-mail*/}
-            <div id={"section-mail"} style={{backgroundColor: "blue", height: "500px", width: "100%"}}>
-               section-mail
-            </div>
+            <SectionMail/>{/*section-mail*/}
             {/*section-photo-gallery*/}
             <div id={"section-photo-gallery"} style={{backgroundColor: "orange", height: "500px", width: "100%"}}>
                section-photo-gallery
