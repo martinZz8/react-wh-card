@@ -261,7 +261,9 @@ const useSectionMail = () => {
          setIsErrorSend(false);
          setIsLoadingSend(true);
 
-         fetch("http://localhost:3001/send-email", {
+         // to the local: "http://localhost:3001/send-email"
+         // to the deployed api: `${process.env.REACT_APP_SMTP_NODEMAILER_API_URL}/send-mail`
+         fetch(`${process.env.REACT_APP_SMTP_NODEMAILER_API_URL}/send-email`, {
             method: "POST",
             mode: 'cors',
             headers: {
