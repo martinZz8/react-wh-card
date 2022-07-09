@@ -16,7 +16,7 @@ const useSectionMail = () => {
    const emailRgx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
    const [isLoadingSend, setIsLoadingSend] = useState<boolean>(false);
-   const [isSuccessSend, setIsSuccessSend] = useState<boolean>(true);
+   const [isSuccessSend, setIsSuccessSend] = useState<boolean>(false);
    const [isErrorSend, setIsErrorSend] = useState<boolean>(false);
 
    const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState<boolean>(false);
@@ -368,6 +368,11 @@ const useSectionMail = () => {
       }
    };
 
+   const closePrompts = () => {
+      setIsSuccessSend(false);
+      setIsErrorSend(false);
+   };
+
    return {
       sectionMailForm,
       errorSectionMailForm,
@@ -376,7 +381,8 @@ const useSectionMail = () => {
       isLoadingSend,
       isSuccessSend,
       isErrorSend,
-      isSubmitButtonDisabled
+      isSubmitButtonDisabled,
+      closePrompts
    };
 };
 

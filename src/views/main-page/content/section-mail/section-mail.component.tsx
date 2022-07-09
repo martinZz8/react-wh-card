@@ -33,7 +33,8 @@ const SectionMail: React.FC = () => {
       isLoadingSend,
       isSuccessSend,
       isErrorSend,
-      isSubmitButtonDisabled
+      isSubmitButtonDisabled,
+      closePrompts
    } = useSectionMail();
 
    return (
@@ -292,6 +293,7 @@ const SectionMail: React.FC = () => {
                                        "Під час надсилання повідомлення сталася помилка. Повторіть спробу пізніше або надішліть повідомлення зі своєї інтернет-пошти."
                               }
                               isError={isErrorSend}
+                              onCloseClick={closePrompts}
                               wide
                            />
                         </div>

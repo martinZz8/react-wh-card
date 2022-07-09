@@ -9,10 +9,11 @@ interface IMessageBox {
    link?: ReactElement;
    wide?: boolean;
    isError?: boolean;
+   onCloseClick?: () => void;
 }
 
 const MessageBox: React.FC<IMessageBox> = ({
-      message, link, wide, isError
+      message, link, wide, isError, onCloseClick
    }) => {
 
    return (
@@ -22,6 +23,17 @@ const MessageBox: React.FC<IMessageBox> = ({
          ${isError ? styles.colorRed : styles.colorGreen}
       `}>
          <p>{message}{link ? link : ""}</p>
+         {
+            onCloseClick ?
+               <div
+                  className={styles.closeCross}
+                  onClick={() => onCloseClick && onCloseClick()}
+               >
+                  <i className={"icon-cancel"}/>
+               </div>
+            :
+               null
+         }
       </div>
    );
 };
