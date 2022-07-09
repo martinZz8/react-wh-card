@@ -282,18 +282,18 @@ const useSectionMail = () => {
             let data = await response.json();
 
             if(response.ok) {
-               console.log(data);
+               //console.log(data);
                setIsSuccessSend(true);
                setIsSubmitButtonDisabled(true);
             }
             else {
-               console.log(data);
+               //console.log(data);
                setIsErrorSend(true);
             }
          }).catch(error => {
             setIsLoadingSend(false);
             setIsErrorSend(true);
-            console.log(error);
+            //console.log(error);
          });
 
          //console.log("to:", process.env.REACT_APP_SMTP_RECEIVER_EMAIL);
