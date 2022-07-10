@@ -13,18 +13,35 @@ interface ITextArea {
    errorMessage?: string;
    handleOnChange: (name: string, value: string) => void;
    disabled?: boolean;
+   isMandatory?: boolean;
 }
 
 const TextArea: React.FC<ITextArea> = ({
-      name, value, label, placeholder, isError, errorMessage, handleOnChange, disabled
+      name,
+      value,
+      label,
+      placeholder,
+      isError,
+      errorMessage,
+      handleOnChange,
+      disabled,
+      isMandatory
    }) => {
 
    return (
       <div className={styles.textAreaWrap}>
          {
             label ?
-               <div className={styles.label}>
+               <div className={`${styles.label}`}>
                   <p>{label}</p>
+                  {
+                     isMandatory ?
+                        <span className={styles.mandatory}>
+                          *
+                       </span>
+                     :
+                        null
+                  }
                </div>
             :
                null

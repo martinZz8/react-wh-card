@@ -14,18 +14,36 @@ interface IInputField {
    errorMessage?: string;
    handleOnChange: (name: string, value: string) => void;
    disabled?: boolean;
+   isMandatory?: boolean;
 }
 
 const InputField: React.FC<IInputField> = ({
-    type, name, value, label, placeholder, isError, errorMessage, handleOnChange, disabled
+    type,
+    name,
+    value,
+    label,
+    placeholder,
+    isError,
+    errorMessage,
+    handleOnChange,
+    disabled,
+    isMandatory
    }) => {
 
    return (
      <div className={styles.inputField}>
         {
            label ?
-              <div className={styles.label}>
+              <div className={`${styles.label}`}>
                  <p>{label}</p>
+                 {
+                    isMandatory ?
+                       <span className={styles.mandatory}>
+                          *
+                       </span>
+                    :
+                       null
+                 }
               </div>
            :
               null

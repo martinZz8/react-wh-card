@@ -11,12 +11,21 @@
       height: 20px;
       margin-bottom: 3px;
       padding-left: 2px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
 
       p {
          color: $colorWhite;
          font-weight: 700;
          font-style: normal;
-         font-size: 15px;
+         font-size: 16px;
+      }
+
+      span.mandatory {
+         color: $colorWhite;
+         font-size: 20px;
+         padding-left: 4px;
       }
    }
 
@@ -28,14 +37,14 @@
       border-radius: 10px;
       color: $colorBlack;
       font-family: 'Nunito', sans-serif;
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 700;
       font-style: normal;
       padding: 7px 9px;
 
       &::placeholder {
          color: $colorDarkestGray;
-         font-size: 14px;
+         font-size: 15px;
          font-weight: 600;
          font-style: normal;
       }

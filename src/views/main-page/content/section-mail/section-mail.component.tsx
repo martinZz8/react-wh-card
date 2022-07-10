@@ -18,7 +18,7 @@ import useSectionMail from "./section-mail.hook";
 // components
 import Button from "../../../../components/ui/button/button.compont";
 import InputField from "../../../../components/ui/input-field/input-field.component";
-import TextArea from "../../../../components/ui/text-area/text-are.component";
+import TextArea from "../../../../components/ui/text-area/text-area.component";
 import LoadingModal from "../../../../modals/loading-modal/loading-modal.component";
 import MessageBox from "../../../../components/message-box/message-box.component";
 
@@ -86,6 +86,7 @@ const SectionMail: React.FC = () => {
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.firstNameErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.firstNameErrorMessage}
+                        isMandatory
                      />
                   </div>
                   <div className={`${styles.inputWrapper} ${styles.shortVersion}`}>
@@ -180,6 +181,7 @@ const SectionMail: React.FC = () => {
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.emailAddressErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.emailAddressErrorMessage}
+                        isMandatory
                      />
                   </div>
                </div>
@@ -212,6 +214,7 @@ const SectionMail: React.FC = () => {
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.subjectErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.subjectErrorMessage}
+                        isMandatory
                      />
                   </div>
                </div>
@@ -243,9 +246,18 @@ const SectionMail: React.FC = () => {
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.messageErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.messageErrorMessage}
+                        isMandatory
                      />
                   </div>
                </div>
+               {/*File upload*/}
+               {/*<div className={styles.row}>*/}
+               {/*   <InputFile*/}
+               {/*      name={"files"}*/}
+               {/*      handleOnChange={handleOnChangeFiles}*/}
+               {/*      label={"testowo"}*/}
+               {/*   />*/}
+               {/*</div>*/}
                <div className={styles.row}>
                   <div className={styles.buttonWrapper}>
                      <Button

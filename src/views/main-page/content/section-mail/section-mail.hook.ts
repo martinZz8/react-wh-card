@@ -156,19 +156,20 @@ const useSectionMail = () => {
          }));
       }
 
-      if (sectionMailForm.lastName.length === 0) {
-         isError = true;
-         setErrorSectionMailForm(prev => ({
-            ...prev,
-            lastNameErrorMessage: getEmptyFieldMessage()
-         }));
-      }
-      else {
-         setErrorSectionMailForm(prev => ({
-            ...prev,
-            lastNameErrorMessage: ""
-         }));
-      }
+      // The lastName is not required!
+      // if (sectionMailForm.lastName.length === 0) {
+      //    isError = true;
+      //    setErrorSectionMailForm(prev => ({
+      //       ...prev,
+      //       lastNameErrorMessage: getEmptyFieldMessage()
+      //    }));
+      // }
+      // else {
+      //    setErrorSectionMailForm(prev => ({
+      //       ...prev,
+      //       lastNameErrorMessage: ""
+      //    }));
+      // }
 
       if (sectionMailForm.message.length === 0) {
          isError = true;
@@ -262,7 +263,7 @@ const useSectionMail = () => {
          setIsLoadingSend(true);
 
          // to the local: "http://localhost:3001/send-email"
-         // to the deployed api: `${process.env.REACT_APP_SMTP_NODEMAILER_API_URL}/send-mail`
+         // to the deployed api: `${process.env.REACT_APP_SMTP_NODEMAILER_API_URL}/send-email`
          fetch(`${process.env.REACT_APP_SMTP_NODEMAILER_API_URL}/send-email`, {
             method: "POST",
             mode: 'cors',
