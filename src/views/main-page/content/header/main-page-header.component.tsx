@@ -1,4 +1,5 @@
 import React, {useContext} from "react";
+import {Link as ScrollLink} from "react-scroll";
 
 // styles
 import styles from "./main-page-header.module.scss";
@@ -93,12 +94,15 @@ const MainPageHeader: React.FC = () => {
            </p>
         </div>
         <div className={styles.movingArrowContainer}>
-           <a
+           <ScrollLink
               className={styles.movingArrow}
-              href={`#section-about-company`}
+              to={"section-about-company"}
+              smooth
+              duration={500}
+              offset={-10}
            >
               <i className={"icon-down-open"}/>
-           </a>
+           </ScrollLink>
         </div>
         <div className={styles.languageSelectorWrap}>
            <LanguageSelector/>

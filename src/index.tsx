@@ -15,7 +15,6 @@ import {HelmetProvider} from "react-helmet-async";
 // providers
 import WindowSizeProvider from "./providers/window-size-provider.component";
 import CurrentLanguageProvider from "./providers/current-language-provider.component";
-import CurrentSectionProvider from "./providers/current-section-provider.component";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -25,11 +24,9 @@ root.render(
       <HelmetProvider>
          <WindowSizeProvider>
             <CurrentLanguageProvider>
-               <CurrentSectionProvider>
-                  <Router>
-                     <Root />
-                  </Router>
-               </CurrentSectionProvider>
+               <Router>
+                  <Root />
+               </Router>
             </CurrentLanguageProvider>
          </WindowSizeProvider>
       </HelmetProvider>

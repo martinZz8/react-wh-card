@@ -1,4 +1,5 @@
 import React, {useContext} from "react";
+import {Link as ScrollLink} from "react-scroll";
 
 // styles
 import styles from "./list-of-sections.module.scss";
@@ -7,7 +8,6 @@ import styles from "./list-of-sections.module.scss";
 import {availableSections} from "../../data/available-sections/available-sections";
 
 // contexts
-import {CurrentSectionContext} from "../../providers/current-section-provider.component";
 import {CurrentLanguageContext} from "../../providers/current-language-provider.component";
 
 // interfaces
@@ -17,7 +17,6 @@ interface IListOfSections {
 }
 
 const ListOfSections: React.FC<IListOfSections> = ({sticky, handleOnClick}) => {
-   const {currentSection} = useContext(CurrentSectionContext);
    const {selectedLanguage} = useContext(CurrentLanguageContext);
 
    return (
@@ -28,12 +27,17 @@ const ListOfSections: React.FC<IListOfSections> = ({sticky, handleOnClick}) => {
                   <li
                      key={item.sectionId}
                      className={`
-                        ${currentSection === item.sectionId ? styles.activeItem : ""}
                         ${selectedLanguage === "PL" ? styles.nowrap : ""}
                      `}
                   >
-                     <a
-                        href={`#${item.sectionId}`}
+                     <ScrollLink
+                        activeClass={styles.active}
+                        spy
+                        to={item.sectionId}
+                        smooth
+                        duration={500}
+                        offset={-10}
+                        isDynamic={item.sectionId === "section-photo-gallery"}
                         onClick={() => handleOnClick && handleOnClick()}
                      >
                         {
@@ -46,7 +50,7 @@ const ListOfSections: React.FC<IListOfSections> = ({sticky, handleOnClick}) => {
                            ://UA
                               item.UAName
                         }
-                     </a>
+                     </ScrollLink>
                   </li>
                ))
             }

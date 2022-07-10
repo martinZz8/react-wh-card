@@ -1,5 +1,6 @@
 import {useState} from "react";
 
+// This component works good with 'onMouseEnter -> makeVisible()' and 'onMouseLeave -> makeHidden()'
 const useSmoothShow = (initialVisible: boolean, initialAnimation: boolean, decayTimeMs: number) => {
    const [isVisible, setIsVisible] = useState<boolean>(initialVisible);
    const [isAnimation, setIsAnimation] = useState<boolean>(initialAnimation);
