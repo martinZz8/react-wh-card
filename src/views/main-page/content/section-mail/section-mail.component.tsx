@@ -53,7 +53,7 @@ const SectionMail: React.FC = () => {
             ://UA
                sectionInfo?.UAName
          }
-         iconName={"icon-mail"}
+         iconName={"icon-mail-alt"}
       >
          <div className={styles.wrapper}>
             <form

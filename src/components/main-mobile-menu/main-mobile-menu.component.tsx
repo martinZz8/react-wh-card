@@ -12,7 +12,7 @@ import ListOfSections from "../list-of-sections/list-of-sections.component";
 // interfaces
 interface IMainMobileMenu {
    onOutClick: () => void;
-   isOpened?: boolean;
+   isOpened: boolean;
 }
 
 const MainMobileMenu: React.FC<IMainMobileMenu> = ({onOutClick, isOpened}) => {

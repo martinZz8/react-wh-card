@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React, {ReactNode, useEffect} from "react";
 
 // styles
 import styles from "./basic-modal.module.scss";
@@ -7,7 +7,7 @@ import styles from "./basic-modal.module.scss";
 interface ITemplateBasicModal {
    children: ReactNode;
    onOutClick?: () => void;
-   isOpened?: boolean;
+   isOpened: boolean;
 }
 
 const TemplateBasicModal: React.FC<ITemplateBasicModal> = ({
@@ -16,10 +16,26 @@ const TemplateBasicModal: React.FC<ITemplateBasicModal> = ({
       isOpened
   }) => {
 
+   // useEffect that changes the visibility of the side scroll bar
+   useEffect(() => {
+      if (isOpened) {
+         document.body.style.overflowY = "hidden";
+      }
+      else {
+         document.body.style.overflowY = "auto";
+      }
+   },[isOpened]);
+
    return (
-      <div className={`${styles.basicModal} ${isOpened ? styles.visible : ""}`}>
+      <div className={`
+         ${styles.basicModal}
+         ${isOpened ? styles.visible : ""}
+      `}>
          <div
-            className={styles.background}
+            className={`
+               ${styles.background}
+               ${onOutClick ? styles.cursorPointer : ""}
+            `}
             onClick={() => {
                onOutClick && onOutClick();
             }}

@@ -12,6 +12,7 @@ import SectionAboutCompany from "./section-about-company/section-about-company.c
 import SectionAdditionalInfo from "./section-additional-info/section-additional-info.component";
 import SectionLocation from "./section-location/section-location.component";
 import SectionMail from "./section-mail/section-mail.component";
+import SectionPhotoGallery from "./section-photo-gallery/section-photo-gallery.component";
 
 const MainPageContent: React.FC = () => {
 
@@ -23,14 +24,12 @@ const MainPageContent: React.FC = () => {
             <div className={styles.listOfSectionsContainer}>
                <ListOfSections sticky/>
             </div>
+            {/*Particular sections*/}
             <SectionAboutCompany/>{/*section-about-company*/}
             <SectionAdditionalInfo/>{/*section-additional-info-info*/}
             <SectionLocation/>{/*section-location*/}
             <SectionMail/>{/*section-mail*/}
-            {/*section-photo-gallery*/}
-            <div id={"section-photo-gallery"} style={{backgroundColor: "orange", height: "500px", width: "100%"}}>
-               section-photo-gallery
-            </div>
+            <SectionPhotoGallery/>{/*section-photo-gallery*/}
          </div>
      </div>
    );

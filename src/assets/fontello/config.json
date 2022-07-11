@@ -125,6 +125,12 @@
       "css": "cancel-outline",
       "code": 59401,
       "src": "typicons"
+    },
+    {
+      "uid": "b013f6403e5ab0326614e68d1850fd6b",
+      "css": "resize-full-alt",
+      "code": 61618,
+      "src": "fontawesome"
     }
   ]
 }
