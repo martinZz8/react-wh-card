@@ -7,7 +7,8 @@ export const initialSectionMailForm: ISectionMailForm = {
   phoneNumber: "",
   emailAddress: "",
   message: "",
-  subject: ""
+  subject: "",
+  acceptedConditions: false
 };
 
 export const initialErrorSectionMailForm: IErrorSectionMailForm = {
@@ -16,5 +17,6 @@ export const initialErrorSectionMailForm: IErrorSectionMailForm = {
   phoneNumberErrorMessage: "",
   emailAddressErrorMessage: "",
   messageErrorMessage: "",
-  subjectErrorMessage: ""
+  subjectErrorMessage: "",
+  acceptedConditionsError: false
 };

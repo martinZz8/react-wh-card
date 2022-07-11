@@ -21,6 +21,7 @@ import InputField from "../../../../components/ui/input-field/input-field.compon
 import TextArea from "../../../../components/ui/text-area/text-area.component";
 import LoadingModal from "../../../../modals/loading-modal/loading-modal.component";
 import MessageBox from "../../../../components/message-box/message-box.component";
+import Checkbox from "../../../../components/ui/checkbox/checkbox.component";
 
 const SectionMail: React.FC = () => {
    const {selectedLanguage} = useContext(CurrentLanguageContext);
@@ -29,6 +30,7 @@ const SectionMail: React.FC = () => {
       sectionMailForm,
       errorSectionMailForm,
       handleOnChange,
+      handleCheckboxOnChange,
       handleSubmitForm,
       isLoadingSend,
       isSuccessSend,
@@ -87,6 +89,7 @@ const SectionMail: React.FC = () => {
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.firstNameErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.firstNameErrorMessage}
+                        disabled={isSubmitButtonDisabled}
                      />
                   </div>
                   <div className={`${styles.inputWrapper} ${styles.shortVersion}`}>
@@ -117,6 +120,7 @@ const SectionMail: React.FC = () => {
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.lastNameErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.lastNameErrorMessage}
+                        disabled={isSubmitButtonDisabled}
                      />
                   </div>
                </div>
@@ -149,6 +153,7 @@ const SectionMail: React.FC = () => {
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.phoneNumberErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.phoneNumberErrorMessage}
+                        disabled={isSubmitButtonDisabled}
                      />
                   </div>
                </div>
@@ -181,6 +186,7 @@ const SectionMail: React.FC = () => {
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.emailAddressErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.emailAddressErrorMessage}
+                        disabled={isSubmitButtonDisabled}
                      />
                   </div>
                </div>
@@ -213,6 +219,7 @@ const SectionMail: React.FC = () => {
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.subjectErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.subjectErrorMessage}
+                        disabled={isSubmitButtonDisabled}
                         isMandatory
                      />
                   </div>
@@ -245,6 +252,7 @@ const SectionMail: React.FC = () => {
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.messageErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.messageErrorMessage}
+                        disabled={isSubmitButtonDisabled}
                         isMandatory
                      />
                   </div>
@@ -260,19 +268,57 @@ const SectionMail: React.FC = () => {
                   </div>
                </div>
                <div className={styles.row}>
-                  <div className={styles.conditionsInfoWrapper}>
-                     <p>
-                        {
+                  <div className={styles.conditionsInfoCheckboxWrapper}>
+                     <Checkbox
+                        name={"acceptedConditions"}
+                        value={"acceptedConditions"}
+                        checked={sectionMailForm.acceptedConditions}
+                        label={
                            selectedLanguage === "PL" ?
-                              ""
+                              <>
+                                 Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą o ochronie danych osobowych w związku z wysłaniem zapytania przez formularz kontaktowy.
+                                 <br/>
+                                 Podanie danych jest dobrowolne, ale niezbędne do przetworzenia zapytania.
+                                 <br/>
+                                 Zostałem poinformowany, że przysługuje mi prawo dostępu do swoich danych, możliwości ich poprawienia, żądania zaprzestania ich przetwarzania.
+                                 <br/>
+                                 Administratorem danych osobowych jest <b>Biuro rachunkowe Wiesław Harbuz, Polska 22-600 Tomaszów Lubelski ul. Rolicza 10</b>.
+                              </>
                            : selectedLanguage === "GB" ?
-                              ""
+                              <>
+                                 I consent to the processing of personal data in accordance with the Law on Personal Data Protection in connection with sending an inquiry via the contact form.
+                                 <br/>
+                                 Provision of data is voluntary, but necessary to process the request.
+                                 <br/>
+                                 I have been informed that I have the right to access my data, the opportunity to correct them, to request the cessation of their processing.
+                                 <br/>
+                                 The administrator of the personal data is <b>Accounting office Wiesław Harbuz, Poland 22-600 Tomaszów Lubelski Rolicza 10 St</b>.
+                              </>
                            : selectedLanguage === "DE" ?
-                              ""
+                              <>
+                                 Ich stimme der Verarbeitung meiner personenbezogenen Daten im Sinne des Datenschutzgesetzes im Zusammenhang mit dem Absenden einer Anfrage über das Kontaktformular zu.
+                                 <br/>
+                                 Die Angabe der Daten ist freiwillig, aber für die Bearbeitung der Anfrage erforderlich.
+                                 <br/>
+                                 Ich wurde darüber informiert, dass ich das Recht habe, auf meine Daten zuzugreifen, sie zu berichtigen und die Beendigung ihrer Verarbeitung zu verlangen.
+                                 <br/>
+                                 Der für die Verarbeitung der personenbezogenen Daten Verantwortliche ist <b>Rechnungsstelle Wiesław Harbuz, Polen 22-600 Tomaszów Lubelski Rolicza 10 Str</b>.
+                              </>
                            ://UA
-                              ""
+                              <>
+                                 Я даю згоду на обробку персональних даних відповідно до Закону про захист персональних даних у зв'язку з відправленням запиту через контактну форму.
+                                 <br/>
+                                 Надання даних є добровільним, але необхідним для обробки запиту.
+                                 <br/>
+                                 Мене повідомили, що я маю право на доступ до своїх даних, можливість їх виправлення та вимагати припинення їх обробки.
+                                 <br/>
+                                 Розпорядником персональних даних є <b>бухгалтерія Wiesław Harbuz, Польща 22-600 Tomaszów Lubelski вул. Rolicza 10</b>.
+                              </>
                         }
-                     </p>
+                        isError={errorSectionMailForm.acceptedConditionsError}
+                        handleOnChange={handleCheckboxOnChange}
+                        disabled={isSubmitButtonDisabled}
+                     />
                   </div>
                </div>
                <div className={styles.row}>

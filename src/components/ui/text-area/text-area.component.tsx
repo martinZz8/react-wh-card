@@ -47,7 +47,13 @@ const TextArea: React.FC<ITextArea> = ({
                null
          }
          <textarea
-            className={`customScrollBar ${styles.textArea} ${isError && !disabled ? styles.errorTextArea : ""} ${disabled ? styles.disabled : ""}`}
+            className={`
+               customScrollBar
+               ${styles.textArea}
+               ${isError && !disabled ? styles.errorTextArea : ""}
+               ${disabled ? styles.disabled : ""}
+               ${disabled ? "noSelect" : ""}
+            `}
             name={name}
             value={value}
             placeholder={placeholder}

@@ -49,7 +49,12 @@ const InputField: React.FC<IInputField> = ({
               null
         }
         <input
-           className={`${styles.input} ${isError && !disabled ? styles.errorInput : ""} ${disabled ? styles.disabled : ""}`}
+           className={`
+              ${styles.input}
+              ${isError && !disabled ? styles.errorInput : ""}
+              ${disabled ? styles.disabled : ""}
+              ${disabled ? "noSelect" : ""}
+           `}
            type={type}
            name={name}
            value={value}

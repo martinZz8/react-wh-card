@@ -47,6 +47,13 @@ const useSectionMail = () => {
       setIsNotGivenPhoneOrEmail(false);
    };
 
+   const handleCheckboxOnChange = (name: string, value: string, checked: boolean) => {
+      setSectionMailForm(prev => ({
+         ...prev,
+         [name]: checked
+      }));
+   };
+
    const getEmptyFieldMessage = (): string => {
       let messToRet = "";
 
@@ -279,6 +286,21 @@ const useSectionMail = () => {
          setIsNotGivenPhoneOrEmail(true);
       }
 
+      // Check if 'acceptedConditions' checkbox is checked
+      if (!sectionMailForm.acceptedConditions) {
+         isError = true;
+         setErrorSectionMailForm(prev => ({
+            ...prev,
+            acceptedConditionsError: true
+         }));
+      }
+      else {
+         setErrorSectionMailForm(prev => ({
+            ...prev,
+            acceptedConditionsError: false
+         }));
+      }
+
       return !isError;
    };
 
@@ -409,6 +431,7 @@ const useSectionMail = () => {
       sectionMailForm,
       errorSectionMailForm,
       handleOnChange,
+      handleCheckboxOnChange,
       handleSubmitForm,
       isLoadingSend,
       isSuccessSend,

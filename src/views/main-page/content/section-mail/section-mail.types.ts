@@ -5,6 +5,7 @@ export interface ISectionMailForm {
    emailAddress: string;
    message: string;
    subject: string;
+   acceptedConditions: boolean;
 }
 
 export interface IErrorSectionMailForm {
@@ -14,4 +15,5 @@ export interface IErrorSectionMailForm {
    emailAddressErrorMessage: string;
    messageErrorMessage: string;
    subjectErrorMessage: string;
+   acceptedConditionsError: boolean;
 }
