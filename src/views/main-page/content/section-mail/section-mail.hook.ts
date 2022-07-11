@@ -18,11 +18,13 @@ const useSectionMail = () => {
    const [isLoadingSend, setIsLoadingSend] = useState<boolean>(false);
    const [isSuccessSend, setIsSuccessSend] = useState<boolean>(false);
    const [isErrorSend, setIsErrorSend] = useState<boolean>(false);
+   const [isNotGivenPhoneOrEmail, setIsNotGivenPhoneOrEmail] = useState<boolean>(false);
 
    const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState<boolean>(false);
 
    const {selectedLanguage} = useContext(CurrentLanguageContext);
 
+   // Validate data, when the live validation is on (after first attempt to send email)
    useEffect(() => {
       if (isLiveValidation) {
          validateData();
@@ -42,6 +44,7 @@ const useSectionMail = () => {
       }));
       setIsSuccessSend(false);
       setIsErrorSend(false);
+      setIsNotGivenPhoneOrEmail(false);
    };
 
    const getEmptyFieldMessage = (): string => {
@@ -141,20 +144,23 @@ const useSectionMail = () => {
 
    const validateData = ():boolean => {
       let isError = false;
+      let isPhoneNumberWrong = false;
+      let isEmailAddressWrong = false;
 
-      if (sectionMailForm.firstName.length === 0) {
-         isError = true;
-         setErrorSectionMailForm(prev => ({
-            ...prev,
-            firstNameErrorMessage: getEmptyFieldMessage()
-         }));
-      }
-      else {
-         setErrorSectionMailForm(prev => ({
-            ...prev,
-            firstNameErrorMessage: ""
-         }));
-      }
+      // The firstName is not required!
+      // if (sectionMailForm.firstName.length === 0) {
+      //    isError = true;
+      //    setErrorSectionMailForm(prev => ({
+      //       ...prev,
+      //       firstNameErrorMessage: getEmptyFieldMessage()
+      //    }));
+      // }
+      // else {
+      //    setErrorSectionMailForm(prev => ({
+      //       ...prev,
+      //       firstNameErrorMessage: ""
+      //    }));
+      // }
 
       // The lastName is not required!
       // if (sectionMailForm.lastName.length === 0) {
@@ -171,6 +177,7 @@ const useSectionMail = () => {
       //    }));
       // }
 
+      // Check message (min_length=1, max_length=300)
       if (sectionMailForm.message.length === 0) {
          isError = true;
          setErrorSectionMailForm(prev => ({
@@ -192,6 +199,7 @@ const useSectionMail = () => {
          }));
       }
 
+      // Check subject (min_length=1, max_length=100)
       if (sectionMailForm.subject.length === 0) {
          isError = true;
          setErrorSectionMailForm(prev => ({
@@ -213,12 +221,22 @@ const useSectionMail = () => {
          }));
       }
 
-      if (!emailRgx.test(sectionMailForm.emailAddress)) {
-         isError = true;
-         setErrorSectionMailForm(prev => ({
-            ...prev,
-            emailAddressErrorMessage: getWrongEmailAddress()
-         }));
+      // Check emailAddress - it isn't required, but when given it has to be proper
+      if (sectionMailForm.emailAddress.length > 0) {
+         if (!emailRgx.test(sectionMailForm.emailAddress)) {
+            isError = true;
+            isEmailAddressWrong = true;
+            setErrorSectionMailForm(prev => ({
+               ...prev,
+               emailAddressErrorMessage: getWrongEmailAddress()
+            }));
+         }
+         else {
+            setErrorSectionMailForm(prev => ({
+               ...prev,
+               emailAddressErrorMessage: ""
+            }));
+         }
       }
       else {
          setErrorSectionMailForm(prev => ({
@@ -227,10 +245,11 @@ const useSectionMail = () => {
          }));
       }
 
-      // checking phone only if contains letters
+      // Checking phoneNumber - it isn't required, but when given it can't contain letters
       if (sectionMailForm.phoneNumber.length > 0) {
          if (/[a-zA-Z]/.test(sectionMailForm.phoneNumber)) {
             isError = true;
+            isPhoneNumberWrong = true;
             setErrorSectionMailForm(prev => ({
                ...prev,
                phoneNumberErrorMessage: getWrongPhoneNumber()
@@ -248,6 +267,16 @@ const useSectionMail = () => {
             ...prev,
             phoneNumberErrorMessage: ""
          }));
+      }
+
+      // Check if phoneNumber or emailAddress are blank or aren't valid - one of them has to be given properly
+      if (
+         (sectionMailForm.phoneNumber.length === 0 && sectionMailForm.emailAddress.length === 0)
+         || isEmailAddressWrong
+         || isPhoneNumberWrong
+      ) {
+         isError = true;
+         setIsNotGivenPhoneOrEmail(true);
       }
 
       return !isError;
@@ -385,7 +414,8 @@ const useSectionMail = () => {
       isSuccessSend,
       isErrorSend,
       isSubmitButtonDisabled,
-      closePrompts
+      closePrompts,
+      isNotGivenPhoneOrEmail
    };
 };
 

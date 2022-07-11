@@ -34,7 +34,8 @@ const SectionMail: React.FC = () => {
       isSuccessSend,
       isErrorSend,
       isSubmitButtonDisabled,
-      closePrompts
+      closePrompts,
+      isNotGivenPhoneOrEmail
    } = useSectionMail();
 
    return (
@@ -86,7 +87,6 @@ const SectionMail: React.FC = () => {
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.firstNameErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.firstNameErrorMessage}
-                        isMandatory
                      />
                   </div>
                   <div className={`${styles.inputWrapper} ${styles.shortVersion}`}>
@@ -181,7 +181,6 @@ const SectionMail: React.FC = () => {
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.emailAddressErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.emailAddressErrorMessage}
-                        isMandatory
                      />
                   </div>
                </div>
@@ -251,13 +250,31 @@ const SectionMail: React.FC = () => {
                   </div>
                </div>
                {/*File upload*/}
-               {/*<div className={styles.row}>*/}
-               {/*   <InputFile*/}
-               {/*      name={"files"}*/}
-               {/*      handleOnChange={handleOnChangeFiles}*/}
-               {/*      label={"testowo"}*/}
-               {/*   />*/}
-               {/*</div>*/}
+               <div className={styles.row}>
+                  <div className={styles.inputFileWrapper}>
+                     {/*   <InputFile*/}
+                     {/*      name={"files"}*/}
+                     {/*      handleOnChange={handleOnChangeFiles}*/}
+                     {/*      label={"testowo"}*/}
+                     {/*   />*/}
+                  </div>
+               </div>
+               <div className={styles.row}>
+                  <div className={styles.conditionsInfoWrapper}>
+                     <p>
+                        {
+                           selectedLanguage === "PL" ?
+                              ""
+                           : selectedLanguage === "GB" ?
+                              ""
+                           : selectedLanguage === "DE" ?
+                              ""
+                           ://UA
+                              ""
+                        }
+                     </p>
+                  </div>
+               </div>
                <div className={styles.row}>
                   <div className={styles.buttonWrapper}>
                      <Button
@@ -281,7 +298,7 @@ const SectionMail: React.FC = () => {
                {/*Return message*/}
                <div className={styles.row}>
                   {
-                     isSuccessSend || isErrorSend ?
+                     isSuccessSend || isErrorSend || isNotGivenPhoneOrEmail ?
                         <div className={styles.messageBoxWrapper}>
                            <MessageBox
                               message={
@@ -294,7 +311,7 @@ const SectionMail: React.FC = () => {
                                        "Nachricht korrekt gesendet."
                                     ://UA
                                        "Повідомлення надіслано правильно."
-                                 :// error while sending
+                                 : isErrorSend ?
                                     selectedLanguage === "PL" ?
                                        "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później albo wyślij wiadomość ze swojej poczty internetowej."
                                     : selectedLanguage === "GB" ?
@@ -303,8 +320,17 @@ const SectionMail: React.FC = () => {
                                        "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal oder senden Sie die Nachricht über Ihr Webmail."
                                     ://UA
                                        "Під час надсилання повідомлення сталася помилка. Повторіть спробу пізніше або надішліть повідомлення зі своєї інтернет-пошти."
+                                 ://isNotGivenPhoneOrEmail
+                                    selectedLanguage === "PL" ?
+                                       "Należy podać numer telefonu bądź adres email w celu dalszego kontaktu."
+                                    : selectedLanguage === "GB" ?
+                                       "Provide either a phone number or email address for further contact."
+                                    : selectedLanguage === "DE" ?
+                                       "Bitte geben Sie eine Telefonnummer oder eine E-Mail-Adresse für die weitere Kontaktaufnahme an."
+                                    ://UA
+                                       "Будь ласка, вкажіть номер телефону або електронну адресу для подальшого зв’язку."
                               }
-                              isError={isErrorSend}
+                              isError={isErrorSend || isNotGivenPhoneOrEmail}
                               onCloseClick={closePrompts}
                               wide
                            />
