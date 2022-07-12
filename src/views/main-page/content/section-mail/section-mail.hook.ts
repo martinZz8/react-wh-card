@@ -11,6 +11,7 @@ import {CurrentLanguageContext} from "../../../../providers/current-language-pro
 
 const useSectionMail = () => {
    const [sectionMailForm, setSectionMailForm] = useState<ISectionMailForm>(initialSectionMailForm);
+   const [inputFilesKey, setInputFilesKey] = useState<string>(Date.now().toString());
    const [errorSectionMailForm, setErrorSectionMailForm] = useState<IErrorSectionMailForm>(initialErrorSectionMailForm);
    const [isLiveValidation, setIsLiveValidation] = useState<boolean>(false);
    const emailRgx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -37,7 +38,7 @@ const useSectionMail = () => {
       setSectionMailForm(initialSectionMailForm);
    },[selectedLanguage]);
 
-   const handleOnChange = (name: string, value: string) => {
+   const handleOnChange = (name: string, value: string | FileList | null) => {
       setSectionMailForm(prev => ({
          ...prev,
          [name]: value
@@ -308,27 +309,34 @@ const useSectionMail = () => {
       e.preventDefault();
       setIsLiveValidation(true);
 
+      // Valdate data
       if (validateData()) {
          setIsSuccessSend(false);
          setIsErrorSend(false);
          setIsLoadingSend(true);
+
+         // Fill the bodyData object
+         const bodyData = new FormData();
+         bodyData.append("firstName", sectionMailForm.firstName);
+         bodyData.append("lastName", sectionMailForm.lastName);
+         bodyData.append("emailAddress", sectionMailForm.emailAddress);
+         bodyData.append("phoneNumber", sectionMailForm.phoneNumber);
+         bodyData.append("subject", sectionMailForm.subject);
+         bodyData.append("message", sectionMailForm.message);
+
+         // Appending files
+         if (sectionMailForm.files) {// !== null
+            for (let i=0; i < sectionMailForm.files.length; i++) {
+               bodyData.append("files", sectionMailForm.files[i]);
+            }
+         }
 
          // to the local: "http://localhost:3001/send-email"
          // to the deployed api: `${process.env.REACT_APP_SMTP_NODEMAILER_API_URL}/send-email`
          fetch(`${process.env.REACT_APP_SMTP_NODEMAILER_API_URL}/send-email`, {
             method: "POST",
             mode: 'cors',
-            headers: {
-               'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-               firstName: sectionMailForm.firstName,
-               lastName: sectionMailForm.lastName,
-               emailAddress: sectionMailForm.emailAddress,
-               phoneNumber: sectionMailForm.phoneNumber,
-               subject: sectionMailForm.subject,
-               message: sectionMailForm.message
-            })
+            body: bodyData
          }).then(async response => {
             setIsLoadingSend(false);
             let data = await response.json();
@@ -351,7 +359,7 @@ const useSectionMail = () => {
          //console.log("to:", process.env.REACT_APP_SMTP_RECEIVER_EMAIL);
          // usage of smtp.js
          // SMTPService.send({
-         //    SecureToken: "34fcff7b-0d64-4fcc-ac1a-116b36d80e6d",
+         //    SecureToken: "x",
          //    To: process.env.SMTP_RECEIVER_EMAIL,
          //    From: sectionMailForm.emailAddress,
          //    Subject: sectionMailForm.subject,
@@ -377,48 +385,6 @@ const useSectionMail = () => {
          //       setIsErrorSend(true);
          //    }
          // });
-         /*
-         const nodemailer = require("nodemailer");
-
-         let transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST,
-            port: process.env.SMTP_PORT,
-            secure: process.env.SMTP_SECURE, // true for 465, false for other ports
-            auth: {
-               user: process.env.SMTP_USER_EMAIL, // generated ethereal user
-               pass: process.env.SMTP_USER_PASSWORD, // generated ethereal password
-            },
-         });
-
-         transporter.sendMail({
-            from: sectionMailForm.emailAddress, // sender address
-            to: process.env.SMTP_RECEIVER_EMAIL, // list of receivers
-            subject: sectionMailForm.subject, // Subject line
-            //text: ...,
-            html: `
-               <p>
-                  <b>Od: </b>${sectionMailForm.firstName} ${sectionMailForm.lastName}
-               </p>
-               <p><b>Email: </b>${sectionMailForm.emailAddress}</p>
-               <p><b>Telefon: </b>${sectionMailForm.phoneNumber.length > 0 ? sectionMailForm.phoneNumber : "-"}</p>
-               <p><b>Temat: </b>${sectionMailForm.subject}</p>
-               <br/>
-               <p><b>Wiadomość: </b>${sectionMailForm.message}</p>
-            `, // html body
-         }, (error: any, info: any) => {
-            if (error) {
-               console.log('Error occurred'); //error.message
-               setIsErrorSend(true);
-            }
-
-            console.log('Message sent successfully!');
-            setIsSuccessSend(true);
-            setIsSubmitButtonDisabled(true);
-            setIsLoadingSend(false);
-            //console.log(nodemailer.getTestMessageUrl(info));
-
-         });
-          */
       }
    };
 
@@ -438,7 +404,9 @@ const useSectionMail = () => {
       isErrorSend,
       isSubmitButtonDisabled,
       closePrompts,
-      isNotGivenPhoneOrEmail
+      isNotGivenPhoneOrEmail,
+      inputFilesKey,
+      setInputFilesKey
    };
 };
 

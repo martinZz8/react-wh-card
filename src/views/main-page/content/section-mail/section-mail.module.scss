@@ -40,11 +40,7 @@
             }
 
             &.shortVersion {
-               margin-bottom: 10px;
 
-               &:last-of-type {
-                  margin-bottom: 0;
-               }
             }
          }
 
@@ -95,7 +91,6 @@
             .inputWrapper {
                &.shortVersion {
                   width: 45%;
-                  margin-bottom: 0;
                }
             }
          }

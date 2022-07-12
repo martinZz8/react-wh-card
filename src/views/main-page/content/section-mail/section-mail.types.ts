@@ -5,6 +5,7 @@ export interface ISectionMailForm {
    emailAddress: string;
    message: string;
    subject: string;
+   files: FileList | null;
    acceptedConditions: boolean;
 }
 
@@ -15,5 +16,6 @@ export interface IErrorSectionMailForm {
    emailAddressErrorMessage: string;
    messageErrorMessage: string;
    subjectErrorMessage: string;
+   filesErrorMessage: string;
    acceptedConditionsError: boolean;
 }

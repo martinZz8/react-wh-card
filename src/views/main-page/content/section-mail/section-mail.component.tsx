@@ -5,6 +5,7 @@ import styles from "./section-mail.module.scss";
 
 // data
 import {availableSections} from "../../../../data/available-sections/available-sections";
+import {acceptedFileFormats} from "../../../../data/acceptedFileFormats";
 
 // templates
 import SectionTemplate from "../../../../templates/section/section.template";
@@ -22,6 +23,7 @@ import TextArea from "../../../../components/ui/text-area/text-area.component";
 import LoadingModal from "../../../../modals/loading-modal/loading-modal.component";
 import MessageBox from "../../../../components/message-box/message-box.component";
 import Checkbox from "../../../../components/ui/checkbox/checkbox.component";
+import InputFile from "../../../../components/ui/input-file/input-file.component";
 
 const SectionMail: React.FC = () => {
    const {selectedLanguage} = useContext(CurrentLanguageContext);
@@ -37,7 +39,9 @@ const SectionMail: React.FC = () => {
       isErrorSend,
       isSubmitButtonDisabled,
       closePrompts,
-      isNotGivenPhoneOrEmail
+      isNotGivenPhoneOrEmail,
+      inputFilesKey,
+      setInputFilesKey
    } = useSectionMail();
 
    return (
@@ -124,8 +128,8 @@ const SectionMail: React.FC = () => {
                      />
                   </div>
                </div>
-               <div className={styles.row}>
-                  <div className={styles.inputWrapper}>
+               <div className={`${styles.row} ${styles.inline}`}>
+                  <div className={`${styles.inputWrapper} ${styles.shortVersion}`}>
                      <InputField
                         type={"text"}
                         name={"phoneNumber"}
@@ -156,9 +160,7 @@ const SectionMail: React.FC = () => {
                         disabled={isSubmitButtonDisabled}
                      />
                   </div>
-               </div>
-               <div className={styles.row}>
-                  <div className={styles.inputWrapper}>
+                  <div className={`${styles.inputWrapper} ${styles.shortVersion}`}>
                      <InputField
                         type={"text"}
                         name={"emailAddress"}
@@ -260,11 +262,30 @@ const SectionMail: React.FC = () => {
                {/*File upload*/}
                <div className={styles.row}>
                   <div className={styles.inputFileWrapper}>
-                     {/*   <InputFile*/}
-                     {/*      name={"files"}*/}
-                     {/*      handleOnChange={handleOnChangeFiles}*/}
-                     {/*      label={"testowo"}*/}
-                     {/*   />*/}
+                        <InputFile
+                           name={"files"}
+                           keyVal={inputFilesKey}
+                           onDeleteClick={() => {
+                              setInputFilesKey(Date.now().toString());
+                              handleOnChange("files", null);
+                           }}
+                           handleOnChange={handleOnChange}
+                           label={
+                              selectedLanguage === "PL" ?
+                                 "Wybierz pliki"
+                              : selectedLanguage === "GB" ?
+                                 "Select files"
+                              : selectedLanguage === "DE" ?
+                                 "Dateien auswählen"
+                              ://UA
+                                 "Виберіть файли"
+                           }
+                           acceptedFileFormats={acceptedFileFormats}
+                           multiple
+                           isError={errorSectionMailForm.filesErrorMessage.length > 0}
+                           errorMessage={errorSectionMailForm.filesErrorMessage}
+                           disabled={isSubmitButtonDisabled}
+                        />
                   </div>
                </div>
                <div className={styles.row}>
@@ -350,13 +371,13 @@ const SectionMail: React.FC = () => {
                               message={
                                  isSuccessSend ?
                                     selectedLanguage === "PL" ?
-                                       "Poprawnie wysłano wiadomość."
+                                       "Poprawnie wysłano wiadomość. Skontaktujemy się z Tobą w jak najkrótszym czasie."
                                     : selectedLanguage === "GB" ?
-                                       "The message has been sent correctly."
+                                       "The message has been sent correctly. We will contact you as soon as possible."
                                     : selectedLanguage === "DE" ?
-                                       "Nachricht korrekt gesendet."
+                                       "Nachricht korrekt gesendet. Wir werden Sie so bald wie möglich kontaktieren."
                                     ://UA
-                                       "Повідомлення надіслано правильно."
+                                       "Повідомлення надіслано правильно. Ми зв'яжемося з вами якомога швидше."
                                  : isErrorSend ?
                                     selectedLanguage === "PL" ?
                                        "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później albo wyślij wiadomość ze swojej poczty internetowej."

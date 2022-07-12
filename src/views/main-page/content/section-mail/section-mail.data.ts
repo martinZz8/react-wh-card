@@ -8,6 +8,7 @@ export const initialSectionMailForm: ISectionMailForm = {
   emailAddress: "",
   message: "",
   subject: "",
+  files: null,
   acceptedConditions: false
 };
 
@@ -18,5 +19,6 @@ export const initialErrorSectionMailForm: IErrorSectionMailForm = {
   emailAddressErrorMessage: "",
   messageErrorMessage: "",
   subjectErrorMessage: "",
+  filesErrorMessage: "",
   acceptedConditionsError: false
 };
