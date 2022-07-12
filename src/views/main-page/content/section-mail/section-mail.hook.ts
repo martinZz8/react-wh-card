@@ -309,7 +309,7 @@ const useSectionMail = () => {
       e.preventDefault();
       setIsLiveValidation(true);
 
-      // Valdate data
+      // Validate data
       if (validateData()) {
          setIsSuccessSend(false);
          setIsErrorSend(false);
