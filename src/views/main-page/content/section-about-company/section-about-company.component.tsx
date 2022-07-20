@@ -77,7 +77,7 @@ const SectionAboutCompany: React.FC = () => {
                            <li>wypełnianianie deklaracji podatkowych</li>
                            <li>prowadzenie rachunkowości podatkowej</li>
                            <li>pomoc w uzyskaniu zwrotu podatku z tytułu pracy za granicą (w następujących krajach: Niemcy, Belgia, Austria, USA, Holandia, Wielka Brytania, Irlandia, Australia, Dania, Norwegia czy Szwecja)</li>
-                           <li>proawdzenie ksiąg przychodów i rozchodów (KPIR)</li>
+                           <li>prowadzenie ksiąg przychodów i rozchodów (KPIR)</li>
                            <li>prowadzenie ewidencji ryczałtowych</li>
                            <li>rozliczanie VAT</li>
                            <li>PIT roczny</li>
@@ -144,7 +144,7 @@ const SectionAboutCompany: React.FC = () => {
                {
                   selectedLanguage === "PL" ?
                      <>
-                        <p>Na terenie miasta Tomaszów Lubelski istnieje mozliwość wykonania usług w domu klienta.</p>
+                        <p>Na terenie miasta Tomaszów Lubelski istnieje możliwość wykonania usług w domu klienta.</p>
                         <br/>
                         <div className={styles.center}>
                            <p className={styles.italic}>Skorzystaj z usług Biura Rachunkowego Wiesław Harbuz już dziś!</p>
