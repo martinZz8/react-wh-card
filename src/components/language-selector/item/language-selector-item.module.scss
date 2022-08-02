@@ -11,12 +11,14 @@
    overflow: hidden;
    border: 1px solid black;
    border-radius: 5px;
+   box-shadow: 0 0 30px rgba(200, 200, 200, 0.4);
 
    &.notSelectedItem {
       border-radius: 0;
       border-top: none;
       border-left: none;
       border-right: none;
+      box-shadow: none;
    }
 
    &.noBorder {
@@ -29,7 +31,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: $colorDarkGray;
+      background-color: $colorDarkGray2;
 
       .svgWrap {
          width: 20px;
@@ -52,7 +54,7 @@
       background-color: $colorDarkerGray;
 
       &.outerShortcutWrap {
-         width: 65px;
+         width: 70px;
       }
 
       p {
@@ -78,7 +80,7 @@
    }
 
    .arrowWrap {
-      width: 30px;
+      width: 35px;
       height: 100%;
       display: flex;
       justify-content: center;

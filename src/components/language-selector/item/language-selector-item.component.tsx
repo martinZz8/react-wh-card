@@ -49,7 +49,13 @@ const LanguageSelectorItem: React.FC<ILanguageSelectorItem> = ({
                }
             </div>
          </div>
-         <div className={`noSelect ${styles.countryShortcutWrap} ${!isSelectedItem ? styles.outerShortcutWrap : ""}`}>
+         <div
+            className={`
+               noSelect
+               ${styles.countryShortcutWrap}
+               ${!isSelectedItem ? styles.outerShortcutWrap : ""}
+            `}
+         >
             <p>
                {countryId}
             </p>

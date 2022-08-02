@@ -12,7 +12,8 @@
       left: 0;
       top: calc(100% + 1px);
       border: 1px solid black;
-      border-radius: 3px;
+      border-radius: 5px;
+      overflow: hidden;
    }
 
    ul {
