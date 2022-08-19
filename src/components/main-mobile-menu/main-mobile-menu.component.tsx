@@ -25,6 +25,7 @@ const MainMobileMenu: React.FC<IMainMobileMenu> = ({onOutClick, isOpened}) => {
          <div className={`customScrollBar ${styles.mainMobileMenu} ${isOpened ? styles.opened : ""}`}>
             <ListOfSections
                handleOnClick={() => onOutClick()}
+               hasBiggerSpacing
             />
          </div>
       </TemplateBasicModal>

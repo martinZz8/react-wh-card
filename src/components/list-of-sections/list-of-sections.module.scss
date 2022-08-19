@@ -24,6 +24,10 @@
          list-style-type: none;
          color: $colorWhite;
 
+         &.biggerSpacing {
+            padding-bottom: 10px;
+         }
+
          &.nowrap {
             white-space: nowrap;
          }

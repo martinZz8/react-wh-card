@@ -13,10 +13,15 @@ import {CurrentLanguageContext} from "../../providers/current-language-provider.
 // interfaces
 interface IListOfSections {
    sticky?: boolean;
+   hasBiggerSpacing?: boolean;
    handleOnClick?: () => void;
 }
 
-const ListOfSections: React.FC<IListOfSections> = ({sticky, handleOnClick}) => {
+const ListOfSections: React.FC<IListOfSections> = ({
+      sticky,
+      hasBiggerSpacing,
+      handleOnClick
+   }) => {
    const {selectedLanguage} = useContext(CurrentLanguageContext);
 
    return (
@@ -28,6 +33,7 @@ const ListOfSections: React.FC<IListOfSections> = ({sticky, handleOnClick}) => {
                      key={item.sectionId}
                      className={`
                         ${selectedLanguage === "PL" ? styles.nowrap : ""}
+                        ${hasBiggerSpacing ? styles.biggerSpacing : ""}
                      `}
                   >
                      <ScrollLink
