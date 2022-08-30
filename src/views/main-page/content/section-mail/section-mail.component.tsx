@@ -398,7 +398,9 @@ const SectionMail: React.FC = () => {
                                        "Будь ласка, вкажіть номер телефону або електронну адресу для подальшого зв’язку."
                               }
                               isError={isErrorSend || isNotGivenPhoneOrEmail}
-                              onCloseClick={closePrompts}
+                              onCloseClick={
+                                 (isSuccessSend || isErrorSend) ? closePrompts : undefined
+                              }
                               wide
                            />
                         </div>
