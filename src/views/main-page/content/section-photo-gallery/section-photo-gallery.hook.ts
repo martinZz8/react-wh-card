@@ -3,9 +3,11 @@ import {useState} from "react";
 // data
 import {availablePhotos} from "../../../../data/available-photos/available-photos.data";
 
+// functions
+import {setInitialActualMaxPhotoNum} from "./setInitialActualMaxPhotoNum";
+
 const useSectionPhotoGallery = () => {
-   const min_items = 4;
-   const [actualMaxPhotoNum, setActualMaxPhotoNum] = useState<number>(min_items);
+   const [actualMaxPhotoNum, setActualMaxPhotoNum] = useState<number>(setInitialActualMaxPhotoNum());
    const [currentPhotoIdx, setCurrentPhotoIdx] = useState<number>(0);
    const [isFullScreen, setIsFullScreen] = useState<boolean>(false);
    const [isKeyBlocked, setIsKeyBlocked] = useState<boolean>(false);
