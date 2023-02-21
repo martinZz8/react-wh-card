@@ -23,9 +23,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding-bottom: 5px;
 
       .item {
-         color: white;
+         color: $colorWhite;
          font-weight: 700;
          font-size: 15px;
          font-style: normal;
@@ -40,13 +41,23 @@
                }
             }
          }
+
+         a {
+            color: $colorLightGray;
+            font-weight: 700;
+            font-size: 15px;
+            font-style: normal;
+
+            &:hover {
+               text-decoration: underline;
+            }
+         }
       }
    }
 
    .footerIcons {
       width: 100%;
       height: auto;
-      padding-top: 5px;
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;

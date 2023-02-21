@@ -10,6 +10,7 @@ import {WindowContext} from "../../../../providers/window-size-provider.componen
 
 // components
 import LanguageSelector from "../../../../components/language-selector/language-selector.component";
+import UaHelpInfo from "../../../../components/ua-help-info/ua-help-info.component";
 
 const MainPageHeader: React.FC = () => {
    const {selectedLanguage} = useContext(CurrentLanguageContext);
@@ -18,6 +19,10 @@ const MainPageHeader: React.FC = () => {
    return (
      <div className={styles.headerWrap}>
         <div className={styles.bgImage}/>
+        {/*UA help bar*/}
+        <div className={styles.uaHelpBar}>
+          <UaHelpInfo/>
+        </div>
         <div className={styles.info}>
            <p className={`${styles.big} ${styles.paddingRight}`}>
               {

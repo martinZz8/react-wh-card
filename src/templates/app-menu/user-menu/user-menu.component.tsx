@@ -23,16 +23,14 @@ const UserMenu: React.FC<IUserMenu> = ({includesNormalMenu}) => {
            className={`${styles.mobileMenuIcon} ${includesNormalMenu ? styles.includesNormalMenu : ""}`}
            onClick={toggleIsMobileMenuOpen}
         >
-           <i className={isMobileMenuOpen ? "icon-cancel" : "icon-menu"}/>
+          <i className={isMobileMenuOpen ? "icon-cancel" : "icon-menu"}/>
         </div>
         {/*here can be some normal menu in the future - for pc*/}
         {/*Mobile menu*/}
-        {
-           <MainMobileMenu
-              onOutClick={() => setIsMobileMenuOpen(false)}
-              isOpened={isMobileMenuOpen}
-           />
-        }
+         <MainMobileMenu
+            onOutClick={() => setIsMobileMenuOpen(false)}
+            isOpened={isMobileMenuOpen}
+         />
      </div>
    );
 };

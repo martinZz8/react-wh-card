@@ -6,11 +6,17 @@ import styles from "./footer.module.scss";
 // context
 import {CurrentLanguageContext} from "../../providers/current-language-provider.component";
 
+// components
+import UaHelpInfo from "../ua-help-info/ua-help-info.component";
+
 const Footer: React.FC = () => {
    const {selectedLanguage} = useContext(CurrentLanguageContext);
 
    return (
       <div className={styles.footerWrap}>
+        <div className={styles.footerInfo}>
+          <UaHelpInfo smallFont/>
+        </div>
         <div className={styles.footerInfo}>
            <div className={styles.item}>
               <p>
@@ -40,7 +46,7 @@ const Footer: React.FC = () => {
                     ://UA
                         "Зроблено: "
                  }
-                 Maciej Harbuz
+                 <a href="mailto: martinzz.info@gmail.com">Maciej Harbuz</a>
               </p>
            </div>
         </div>

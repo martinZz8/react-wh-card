@@ -1,7 +1,4 @@
-import {useState, useEffect, useContext} from "react";
-
-// data
-import {availableLanguages} from "../../data/available-languages.data";
+import {useState, useContext} from "react";
 
 // context
 import {CurrentLanguageContext} from "../../providers/current-language-provider.component";
@@ -11,8 +8,7 @@ const useLanguageSelector = () => {
    const {selectedLanguage, setLanguage} = useContext(CurrentLanguageContext);
 
    const selectLanguage = (newLang: string) => {
-      if (availableLanguages.includes(newLang)) {
-         setLanguage(newLang);
+      if (setLanguage(newLang)) {
          setIsSelectorOpened(false);
       }
    };

@@ -9,9 +9,9 @@
    border-radius: 8px;
 
    &.sticky {
+      position: -webkit-sticky;
       position: sticky;
       top: 20px;
-      left: 0;
    }
 
    ul {

@@ -5,12 +5,12 @@ import useCurrentLanguage from "../hooks/useCurrentLanguage.hook";
 
 export interface ICurrentLanguageContext {
    selectedLanguage: string;
-   setLanguage: (val: string) => void;
+   setLanguage: (val: string) => boolean;
 }
 
 const innerCurrentLanguageContext: ICurrentLanguageContext = {
    selectedLanguage: "PL",
-   setLanguage: (val) => {}
+   setLanguage: (val) => false
 };
 
 // provider interface
