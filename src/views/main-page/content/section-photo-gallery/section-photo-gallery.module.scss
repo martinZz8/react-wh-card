@@ -12,10 +12,8 @@
       grid-template-columns: repeat(auto-fit, 190px);
       grid-column-gap: 16px;
       grid-row-gap: 25px;
-      justify-content: start;
+      justify-content: center;
       align-content: start;
-      justify-items: center;
-      align-items: center;
 
       .thumbnail {
          width: 100%;

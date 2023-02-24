@@ -46,6 +46,7 @@ const Footer: React.FC = () => {
                     ://UA
                         "Зроблено: "
                  }
+                 <br/>
                  <a href="mailto: martinzz.info@gmail.com">Maciej Harbuz</a>
               </p>
            </div>

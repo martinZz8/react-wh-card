@@ -22,8 +22,8 @@
       height: auto;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding-bottom: 5px;
+      align-items: flex-start;
+      padding-bottom: 6px;
 
       .item {
          color: $colorWhite;
@@ -85,6 +85,18 @@
          &:hover {
             i {
                color: $colorBlack;
+            }
+         }
+      }
+   }
+}
+
+@media all and (min-width: 670px) {
+   .footerWrap {
+      .footerInfo {
+         .item {
+            br {
+               display: none;
             }
          }
       }
