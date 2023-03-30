@@ -2,7 +2,6 @@
 
 .inputFile {
    width: 100%;
-   height: 100%;
    display: flex;
    flex-direction: column;
    justify-content: flex-start;
@@ -13,7 +12,6 @@
 
    .label {
       width: 100%;
-      height: 20px;
       margin-bottom: 3px;
       padding-left: 2px;
       display: flex;
@@ -36,7 +34,6 @@
 
    .inputWrap {
       width: 100%;
-      height: auto;
       display: flex;
       justify-content: flex-start;
       align-items: center;
@@ -51,6 +48,16 @@
          font-weight: 700;
          font-style: normal;
          cursor: pointer;
+
+         &::file-selector-button {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            background-color: $colorWhite;
+            color: $colorBlack;
+            border-radius: 5px;
+            border-color: $colorBlack;
+            padding: 2px 5px;
+         }
 
          &.errorInput {
             background-color: $colorLightRed;
@@ -78,7 +85,7 @@
          }
 
          i {
-            font-size: 17px;
+            font-size: 16px;
             color: $colorWhite;
             transition: color ease-in-out 0.2s;
          }

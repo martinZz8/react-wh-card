@@ -262,30 +262,30 @@ const SectionMail: React.FC = () => {
                {/*File upload*/}
                <div className={styles.row}>
                   <div className={styles.inputFileWrapper}>
-                        <InputFile
-                           name={"files"}
-                           keyVal={inputFilesKey}
-                           onDeleteClick={() => {
-                              setInputFilesKey(Date.now().toString());
-                              handleOnChange("files", null);
-                           }}
-                           handleOnChange={handleOnChange}
-                           label={
-                              selectedLanguage === "PL" ?
-                                 "Wybierz pliki"
-                              : selectedLanguage === "GB" ?
-                                 "Select files"
-                              : selectedLanguage === "DE" ?
-                                 "Dateien auswählen"
-                              ://UA
-                                 "Виберіть файли"
-                           }
-                           acceptedFileFormats={acceptedFileFormats}
-                           multiple
-                           isError={errorSectionMailForm.filesErrorMessage.length > 0}
-                           errorMessage={errorSectionMailForm.filesErrorMessage}
-                           disabled={isSubmitButtonDisabled}
-                        />
+                     <InputFile
+                        name={"files"}
+                        keyVal={inputFilesKey}
+                        onDeleteClick={() => {
+                           setInputFilesKey(Date.now().toString());
+                           handleOnChange("files", null);
+                        }}
+                        handleOnChange={handleOnChange}
+                        label={
+                           selectedLanguage === "PL" ?
+                              "Wybierz pliki"
+                           : selectedLanguage === "GB" ?
+                              "Select files"
+                           : selectedLanguage === "DE" ?
+                              "Dateien auswählen"
+                           ://UA
+                              "Виберіть файли"
+                        }
+                        acceptedFileFormats={acceptedFileFormats}
+                        multiple
+                        isError={errorSectionMailForm.filesErrorMessage.length > 0}
+                        errorMessage={errorSectionMailForm.filesErrorMessage}
+                        disabled={isSubmitButtonDisabled}
+                     />
                   </div>
                </div>
                <div className={styles.row}>
