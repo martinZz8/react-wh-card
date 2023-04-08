@@ -46,7 +46,7 @@
             font-weight: 600;
             font-style: normal;
             cursor: pointer;
-            transition: color ease-in-out 0.3s;
+            transition: color 0.3s ease-in-out;
 
             &::before {
                content: '';
@@ -57,7 +57,7 @@
                -webkit-border-radius: 10px;
                border-radius: 50%;
                background-color: $colorWhite;
-               transition: background-color ease-in-out 0.3s;
+               transition: background-color 0.3s ease-in-out;
                margin-right: 5px;
             }
 

@@ -11,9 +11,11 @@
    height: 100vh;
    z-index: 100;
    visibility: hidden;
+   transition: visibility 0s linear 0.25s; // hiding transition
 
    &.visible {
       visibility: visible;
+      transition-delay: 0s; // showing transition delay (changed to show immediately)
 
       .background {
          opacity: 100;
@@ -25,7 +27,7 @@
       height: 100%;
       background-color: rgba(0,0,0,0.65);
       opacity: 0;
-      transition: opacity ease-in-out 0.2s;
+      transition: opacity 0.25s ease-in-out;
 
       &.cursorPointer {
          cursor: pointer;

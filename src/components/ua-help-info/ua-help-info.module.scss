@@ -2,6 +2,8 @@
 
 .uaHelpInfo {
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
 
   .svgWrap {
     width: 26px;

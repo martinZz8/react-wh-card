@@ -87,7 +87,7 @@
          i {
             font-size: 16px;
             color: $colorWhite;
-            transition: color ease-in-out 0.2s;
+            transition: color 0.2s ease-in-out;
          }
 
          &:hover {

@@ -4,7 +4,7 @@ import {WindowContext} from "../../../providers/window-size-provider.component";
 
 const useUserMenu = () => {
    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-   const {windowWidth, windowHeight} = useContext(WindowContext);
+   const {windowWidth} = useContext(WindowContext);
 
    useEffect(() => {
       if (windowWidth > 1230) {

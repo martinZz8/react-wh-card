@@ -53,7 +53,7 @@
       i {
          font-size: 12px;
          color: $colorWhite;
-         transition: color ease-in-out 0.3s;
+         transition: color 0.3s ease-in-out;
       }
 
       &:hover {
