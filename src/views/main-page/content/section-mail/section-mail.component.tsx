@@ -11,7 +11,7 @@ import {acceptedFileFormats} from "../../../../data/acceptedFileFormats";
 import SectionTemplate from "../../../../templates/section/section.template";
 
 // contexts
-import {CurrentLanguageContext} from "../../../../providers/current-language-provider.component";
+import {CurrentLanguageContext} from "../../../../providers/current-language/current-language-provider.component";
 
 // hooks
 import useSectionMail from "./section-mail.hook";

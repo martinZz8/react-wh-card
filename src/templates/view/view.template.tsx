@@ -30,7 +30,7 @@ const TemplateView: React.FC<ITemplateView> = ({
 
    return (
       <>
-         <Helmet>
+          <Helmet>
             <title>
                {
                   typeof(viewTitle) !== "undefined" ?
@@ -43,23 +43,21 @@ const TemplateView: React.FC<ITemplateView> = ({
                }
                {appVersion}
             </title>
-         </Helmet>
-         {
-            <div className={styles.app}>
-               {/*App Menu*/}
-               <AppMenuTemplate includesNormalMenu={hasNormalMenu}>
-                  <UserMenu includesNormalMenu={hasNormalMenu}/>
-               </AppMenuTemplate>
-               {/*App Content*/}
-               <div className={`${styles.appContent} ${hasNormalMenu && has100vh ? styles.appContentWithMenu100vh : ""}`}>
-                  {children}
-               </div>
-               {/*App Footer*/}
-               <Footer/>
-               {/*App */}
-               <BackToTopButton/>
+          </Helmet>
+          <div className={styles.app}>
+            {/*App Menu*/}
+            <AppMenuTemplate includesNormalMenu={hasNormalMenu}>
+              <UserMenu includesNormalMenu={hasNormalMenu}/>
+            </AppMenuTemplate>
+            {/*App Content*/}
+            <div className={`${styles.appContent} ${hasNormalMenu && has100vh ? styles.appContentWithMenu100vh : ""}`}>
+              {children}
             </div>
-         }
+            {/*App Footer*/}
+            <Footer/>
+            {/*App */}
+            <BackToTopButton/>
+          </div>
       </>
    );
 };

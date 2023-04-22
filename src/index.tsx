@@ -4,7 +4,11 @@ import Root from './views/root/Root';
 import reportWebVitals from './reportWebVitals';
 
 // styles
-import './styles/root.scss';
+import "./styles/root.scss";
+import "./styles/theme-colors.scss";
+
+// importing fontello
+import "./assets/fontello/css/fontello.css";
 
 // router
 import {BrowserRouter as Router} from "react-router-dom";
@@ -13,8 +17,9 @@ import {BrowserRouter as Router} from "react-router-dom";
 import {HelmetProvider} from "react-helmet-async";
 
 // providers
-import WindowSizeProvider from "./providers/window-size-provider.component";
-import CurrentLanguageProvider from "./providers/current-language-provider.component";
+import WindowSizeProvider from "./providers/window-size/window-size-provider.component";
+import CurrentLanguageProvider from "./providers/current-language/current-language-provider.component";
+import LayoutColorProvider from "./providers/layout-color/layout-color-provider.component";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -24,9 +29,11 @@ root.render(
       <HelmetProvider>
          <WindowSizeProvider>
             <CurrentLanguageProvider>
-               <Router>
+              <LayoutColorProvider>
+                <Router>
                   <Root />
-               </Router>
+                </Router>
+              </LayoutColorProvider>
             </CurrentLanguageProvider>
          </WindowSizeProvider>
       </HelmetProvider>

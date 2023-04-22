@@ -8,7 +8,7 @@ import styles from "./list-of-sections.module.scss";
 import {availableSections} from "../../data/available-sections/available-sections";
 
 // contexts
-import {CurrentLanguageContext} from "../../providers/current-language-provider.component";
+import {CurrentLanguageContext} from "../../providers/current-language/current-language-provider.component";
 
 // interfaces
 interface IListOfSections {

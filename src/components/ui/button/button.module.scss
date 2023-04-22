@@ -1,5 +1,3 @@
-@import "src/styles/variables";
-
 .buttonWrap {
    width: 100%;
    height: 100%;
@@ -21,49 +19,49 @@
       }
 
       &.backgroundColorLemonGreen {
-         background-color: $colorLemonGreen;
+         background-color: var(--color-lemon-green);
       }
 
       &.backgroundColorRed {
-         background-color: $colorRed;
+         background-color: var(--color-red);
       }
 
       &.backgroundColorBlack {
-         background-color: $colorBlack;
+         background-color: var(--color-black);
       }
 
       &.fontColorWhite {
-         color: $colorWhite;
+         color: var(--color-white);
       }
 
       &.fontColorBlack {
-         color: $colorBlack;
+         color: var(--color-black);
       }
 
       &.hoverColorsLemonGreen {
          &:hover {
-            color: $colorBlack;
-            background-color: $colorWhite;
+            color: var(--color-black);
+            background-color: var(--color-white);
          }
       }
 
       &.hoverColorsRed {
          &:hover {
-            color: $colorBlack;
-            background-color: $colorLightRed;
+            color: var(--color-black);
+            background-color: var(--color-light-red);
          }
       }
 
       &.hoverColorsBlack {
          &:hover {
-            color: $colorBlack;
-            background-color: $colorWhite;
+            color: var(--color-black);
+            background-color: var(--color-white);
          }
       }
 
       &.disabledColors {
-         color: $colorDarkGray;
-         background-color: $colorDarkestGray;
+         color: var(--color-dark-gray);
+         background-color: var(--color-darkest-gray);
       }
 
       &.noBorderRadius {

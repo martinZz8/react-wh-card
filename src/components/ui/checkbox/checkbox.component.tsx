@@ -1,7 +1,10 @@
-import React, {ChangeEvent, ReactNode} from "react";
+import React, {ChangeEvent, ReactNode, useContext} from "react";
 
 // styles
 import styles from "./checkbox.module.scss";
+
+// context
+import {LayoutColorContext} from "../../../providers/layout-color/layout-color-provider.component";
 
 // interfaces
 interface ICheckbox {
@@ -23,6 +26,7 @@ const Checkbox: React.FC<ICheckbox> = ({
       handleOnChange,
       disabled
    }) => {
+  const {layoutColor} = useContext(LayoutColorContext);
 
    return (
       <label
@@ -43,7 +47,12 @@ const Checkbox: React.FC<ICheckbox> = ({
             onChange={(e: ChangeEvent<HTMLInputElement>) => handleOnChange(e.target.name, e.target.value, e.target.checked)}
             disabled={disabled}
          />
-         <span className={`${styles.checkmark} ${disabled ? styles.disabledColors : ""}`}/>
+         <span
+            className={`
+              ${styles.checkmark}
+              ${!(layoutColor === "dark") ? styles.light : ""}
+              ${disabled ? styles.disabledColors : ""}
+            `}/>
       </label>
    );
 };

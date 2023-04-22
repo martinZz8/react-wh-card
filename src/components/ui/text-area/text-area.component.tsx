@@ -1,7 +1,10 @@
-import React, {ChangeEvent} from "react";
+import React, {ChangeEvent, useContext} from "react";
 
 // styles
 import styles from "./text-area.module.scss";
+
+// context
+import {LayoutColorContext} from "../../../providers/layout-color/layout-color-provider.component";
 
 // interfaces
 interface ITextArea {
@@ -27,6 +30,7 @@ const TextArea: React.FC<ITextArea> = ({
       disabled,
       isMandatory
    }) => {
+  const {layoutColor} = useContext(LayoutColorContext);
 
    return (
       <div className={styles.textAreaWrap}>
@@ -50,6 +54,7 @@ const TextArea: React.FC<ITextArea> = ({
             className={`
                customScrollBar
                ${styles.textArea}
+               ${!(layoutColor === "dark") ? styles.light : ""}
                ${isError && !disabled ? styles.errorTextArea : ""}
                ${disabled ? styles.disabled : ""}
                ${disabled ? "noSelect" : ""}

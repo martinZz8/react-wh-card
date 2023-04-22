@@ -1,0 +1,62 @@
+// Old variables
+/*
+$colorBlack: #000000;
+$colorWhite: #FFFFFF;
+$colorDarkWhite: #F7F3FF;
+
+$colorLightPurple: #B266FF;
+$colorDarkPurple: #7844AD;
+$colorDarkerPurple: #4D2B6E;
+
+$colorLightGray: #F7F3FF;
+$colorGray: #8f8d8d;
+$colorDarkGray: #525252;
+$colorDarkGray2: #484848;
+$colorDarkerGray: #303030;
+$colorDarkestGray: #292626;
+
+$colorRed: #FF1A1A;
+$colorLightRed: #FFCCCC;
+$colorLemonGreen: #8FEB34;
+$colorGreen: #108700;
+$colorBlue: #1A53FF;
+$colorLightBlue: #569bee;
+*/
+
+.basicColors {
+  --color-light-purple: #B266FF;
+  --color-dark-purple: #7844AD;
+  --color-darker-purple: #4D2B6E;
+  --color-red: #FF1A1A;
+  --color-light-red: #FFCCCC;
+  --color-green: #108700;
+  --color-blue: #1A53FF;
+}
+
+.darkTheme {
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-dark-white: #F7F3FF;
+  --color-light-gray: #F7F3FF;
+  --color-gray: #8f8d8d;
+  --color-dark-gray: #525252;
+  --color-dark-gray2: #484848;
+  --color-darker-gray: #303030;
+  --color-darkest-gray: #292626;
+  --color-lemon-green: #8FEB34;
+  --color-light-blue: #569bee;
+}
+
+.lightTheme {
+  --color-black: #FFFFFF;
+  --color-white: #000000;
+  --color-dark-white: #525252;
+  --color-light-gray: #676666;
+  --color-gray: #adadb2;
+  --color-dark-gray: #858484;
+  --color-dark-gray2: #bdbdbd;
+  --color-darker-gray: #d0d0d0;
+  --color-darkest-gray: #efefef;
+  --color-lemon-green: #477019;
+  --color-light-blue: #183146;
+}

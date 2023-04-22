@@ -1,7 +1,10 @@
-import React, {ChangeEvent} from "react";
+import React, {ChangeEvent, useContext} from "react";
 
 // styles
 import styles from "./input-field.module.scss";
+
+// context
+import {LayoutColorContext} from "../../../providers/layout-color/layout-color-provider.component";
 
 // interfaces
 interface IInputField {
@@ -29,6 +32,7 @@ const InputField: React.FC<IInputField> = ({
     disabled,
     isMandatory
    }) => {
+  const {layoutColor} = useContext(LayoutColorContext);
 
    return (
      <div className={styles.inputField}>
@@ -51,6 +55,7 @@ const InputField: React.FC<IInputField> = ({
         <input
            className={`
               ${styles.input}
+              ${!(layoutColor === "dark") ? styles.light : ""}
               ${isError && !disabled ? styles.errorInput : ""}
               ${disabled ? styles.disabled : ""}
               ${disabled ? "noSelect" : ""}

@@ -8,7 +8,7 @@ import styles from "./back-to-top-button.module.scss";
 import useBackToTopButton from "./back-to-top-button.hook";
 
 // contexts
-import {CurrentLanguageContext} from "../../providers/current-language-provider.component";
+import {CurrentLanguageContext} from "../../providers/current-language/current-language-provider.component";
 
 const BackToTopButton: React.FC = () => {
    const {isShowed} = useBackToTopButton();

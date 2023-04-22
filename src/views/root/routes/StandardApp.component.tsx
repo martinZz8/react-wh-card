@@ -12,25 +12,25 @@ interface IStandardApp {
 const StandardApp: React.FC<IStandardApp> = ({appVersion}) => {
 
    return (
-         <Switch>
-         {/*Main page*/}
-         <Route
-            exact
-            path="/"
-            component={() => (
-                  <ViewMainPage appVersion={appVersion} />
-               )
-            }
-         />
-         {/*Other routes*/}
-         <Route
-            exact
-            path="*"
-            component={() =>
-               <Redirect to={"/"}/>
-            }
-         />
-      </Switch>
+     <Switch>
+       {/*Main page*/}
+       <Route
+          exact
+          path="/"
+          component={() => (
+                <ViewMainPage appVersion={appVersion} />
+             )
+          }
+       />
+       {/*Other routes*/}
+       <Route
+          exact
+          path="*"
+          component={() =>
+             <Redirect to={"/"}/>
+          }
+       />
+    </Switch>
    );
 };
 

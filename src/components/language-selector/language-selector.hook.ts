@@ -1,7 +1,7 @@
 import {useState, useContext} from "react";
 
 // context
-import {CurrentLanguageContext} from "../../providers/current-language-provider.component";
+import {CurrentLanguageContext} from "../../providers/current-language/current-language-provider.component";
 
 const useLanguageSelector = () => {
    const [isSelectorOpened, setIsSelectorOpened] = useState<boolean>(false);

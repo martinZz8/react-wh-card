@@ -11,7 +11,7 @@ import {dayOfWeeks} from "./section-additional-info.data";
 import SectionTemplate from "../../../../templates/section/section.template";
 
 // contexts
-import {CurrentLanguageContext} from "../../../../providers/current-language-provider.component";
+import {CurrentLanguageContext} from "../../../../providers/current-language/current-language-provider.component";
 
 // hooks
 import useAdditionalInfo from "./section-additional-info.hook";

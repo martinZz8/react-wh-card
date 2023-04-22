@@ -4,7 +4,8 @@ import React, {ChangeEvent, useContext} from "react";
 import styles from "./input-file.module.scss";
 
 // context
-import {CurrentLanguageContext} from "../../../providers/current-language-provider.component";
+import {CurrentLanguageContext} from "../../../providers/current-language/current-language-provider.component";
+import {LayoutColorContext} from "../../../providers/layout-color/layout-color-provider.component";
 
 // interfaces
 interface IInputFile {
@@ -35,6 +36,7 @@ const InputFile: React.FC<IInputFile> = ({
       errorMessage
    }) => {
    const {selectedLanguage} = useContext(CurrentLanguageContext);
+  const {layoutColor} = useContext(LayoutColorContext);
 
    return (
       <div className={styles.inputFile}>
@@ -58,6 +60,7 @@ const InputFile: React.FC<IInputFile> = ({
             <input
                className={`
                ${styles.input}
+               ${!(layoutColor === "dark") ? styles.light : ""}
                ${isError && !disabled ? styles.errorInput : ""}
                ${disabled ? styles.disabled : ""}
                ${disabled ? "noSelect" : ""}

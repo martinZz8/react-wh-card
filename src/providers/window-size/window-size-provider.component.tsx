@@ -1,7 +1,7 @@
 import React, {createContext, ReactNode} from "react";
 
 // hooks
-import useWindowSizeHook from "../hooks/useWindowSize.hook";
+import useWindowSize from "./useWindowSize.hook";
 
 export interface IWindowContext {
    windowWidth: number;
@@ -21,7 +21,7 @@ interface IWindowSizeProvider {
 export const WindowContext = createContext(innerWindowContext);
 
 const WindowSizeProvider: React.FC<IWindowSizeProvider> = ({children}) => {
-   const {windowWidth, windowHeight} = useWindowSizeHook();
+   const {windowWidth, windowHeight} = useWindowSize();
 
    return (
       <WindowContext.Provider

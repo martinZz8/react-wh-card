@@ -1,5 +1,3 @@
-@import "src/styles/variables";
-
 .wrapper {
    width: 100%;
    height: auto;
@@ -20,7 +18,7 @@
          height: 190px;
          border-radius: 4px;
          cursor: pointer;
-         color: $colorWhite;
+         color: var(--color-white);
          font-size: 15px;
          font-weight: 600;
          position: relative;
@@ -32,23 +30,23 @@
          }
 
          &.showMoreThumbnailsItem {
-            background-color: $colorWhite;
+            background-color: var(--color-white);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: $colorBlack;
+            color: var(--color-black);
             text-align: center;
             font-size: 20px;
             font-weight: 700;
             padding: 10px;
 
             &:hover {
-               background-color: $colorGray;
+               background-color: var(--color-gray);
             }
 
             i {
-               color: $colorBlack;
+               color: var(--color-black);
                font-size: 20px;
                margin-top: 5px;
             }
@@ -68,7 +66,7 @@
 
             i {
                font-size: 32px;
-               color: $colorWhite;
+               color: var(--color-white);
             }
          }
 
@@ -93,7 +91,7 @@
    .arrowWrap {
       width: 80px;
       height: 100%;
-      background-color: $colorDarkerGray;
+      background-color: var(--color-darker-gray);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -101,12 +99,12 @@
       cursor: pointer;
 
       &:hover {
-         background-color: $colorDarkestGray;
+         background-color: var(--color-darkest-gray);
       }
 
       i {
          font-size: 30px;
-         color: $colorWhite;
+         color: var(--color-white);
       }
    }
 
@@ -136,15 +134,15 @@
       align-items: center;
       cursor: pointer;
       border-radius: 50%;
-      background-color: $colorDarkGray;
+      background-color: var(--color-dark-gray);
 
       &:hover {
-         background-color: $colorDarkerGray;
+         background-color: var(--color-darker-gray);
       }
 
       i {
          font-size: 25px;
-         color: $colorWhite;
+         color: var(--color-white);
       }
    }
 }

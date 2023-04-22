@@ -7,7 +7,7 @@ import {ISectionMailForm, IErrorSectionMailForm} from "./section-mail.types";
 import {initialSectionMailForm, initialErrorSectionMailForm} from "./section-mail.data";
 
 // contexts
-import {CurrentLanguageContext} from "../../../../providers/current-language-provider.component";
+import {CurrentLanguageContext} from "../../../../providers/current-language/current-language-provider.component";
 
 const useSectionMail = () => {
    const [sectionMailForm, setSectionMailForm] = useState<ISectionMailForm>(initialSectionMailForm);

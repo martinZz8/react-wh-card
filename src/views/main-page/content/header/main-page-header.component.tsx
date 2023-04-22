@@ -5,22 +5,31 @@ import {Link as ScrollLink} from "react-scroll";
 import styles from "./main-page-header.module.scss";
 
 // context
-import {CurrentLanguageContext} from "../../../../providers/current-language-provider.component";
-import {WindowContext} from "../../../../providers/window-size-provider.component";
+import {CurrentLanguageContext} from "../../../../providers/current-language/current-language-provider.component";
+import {WindowContext} from "../../../../providers/window-size/window-size-provider.component";
+import {LayoutColorContext} from "../../../../providers/layout-color/layout-color-provider.component";
 
 // components
 import LanguageSelector from "../../../../components/language-selector/language-selector.component";
+import ThemeColorPicker from "../../../../components/theme-color-picker.component.tsx/theme-color-picker.component";
 import UaHelpInfo from "../../../../components/ua-help-info/ua-help-info.component";
 
 const MainPageHeader: React.FC = () => {
    const {selectedLanguage} = useContext(CurrentLanguageContext);
-   const {windowWidth, windowHeight} = useContext(WindowContext);
+   const {windowWidth} = useContext(WindowContext);
+   const {layoutColor} = useContext(LayoutColorContext);
 
    return (
      <div className={styles.headerWrap}>
-        <div className={styles.bgImage}/>
+        <div className={`
+          ${styles.bgImage}
+          ${!(layoutColor === "dark") ? styles.light : ""}
+        `}/>
         {/*UA help bar*/}
-        <div className={styles.uaHelpBar}>
+        <div className={`
+          ${styles.uaHelpBar}
+          ${!(layoutColor === "dark") ? styles.light : ""}
+        `}>
           <UaHelpInfo/>
         </div>
         <div className={styles.info}>
@@ -112,6 +121,9 @@ const MainPageHeader: React.FC = () => {
         <div className={styles.languageSelectorWrap}>
            <LanguageSelector/>
         </div>
+       <div className={styles.themeColorPickerWrap}>
+         <ThemeColorPicker/>
+       </div>
      </div>
    );
 };

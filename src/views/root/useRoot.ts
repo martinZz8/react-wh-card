@@ -1,7 +1,7 @@
 import {useState, useEffect, useContext} from "react";
 
 // contexts
-import {CurrentLanguageContext} from "../../providers/current-language-provider.component";
+import {CurrentLanguageContext} from "../../providers/current-language/current-language-provider.component";
 
 const useRoot = () => {
    const [appVersion, setAppVersion] = useState<string>("");

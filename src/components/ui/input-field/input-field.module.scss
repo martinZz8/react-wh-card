@@ -1,5 +1,3 @@
-@import "src/styles/variables";
-
 .inputField {
    width: 100%;
    height: 100%;
@@ -16,14 +14,14 @@
       align-items: flex-start;
 
       p {
-         color: $colorWhite;
+         color: var(--color-white);
          font-weight: 700;
          font-style: normal;
          font-size: 16px;
       }
 
       span.mandatory {
-         color: $colorWhite;
+         color: var(--color-white);
          font-size: 20px;
          padding-left: 4px;
       }
@@ -32,10 +30,10 @@
    .input {
       width: 100%;
       height: 38px;
-      background-color: $colorWhite;
-      border: 2px solid $colorDarkGray;
+      background-color: var(--color-white);
+      border: 2px solid var(--color-dark-gray);
       border-radius: 10px;
-      color: $colorBlack;
+      color: var(--color-black);
       font-family: 'Nunito', sans-serif;
       font-size: 16px;
       font-weight: 700;
@@ -43,7 +41,7 @@
       padding: 7px 9px;
 
       &::placeholder {
-         color: $colorDarkestGray;
+         color: var(--color-darkest-gray);
          font-size: 15px;
          font-weight: 600;
          font-style: normal;
@@ -51,7 +49,7 @@
 
       &:focus {
          outline: none;
-         border-color: $colorLemonGreen;
+         border-color: var(--color-lemon-green);
       }
 
       &:focus-visible {
@@ -59,13 +57,23 @@
       }
 
       &.errorInput {
-         background-color: $colorLightRed;
-         border-color: $colorRed;
+         background-color: var(--color-light-red);
+         border-color: var(--color-red);
       }
 
       &.disabled {
          cursor: not-allowed;
-         background-color: $colorGray;
+         background-color: var(--color-gray);
+      }
+
+      &.light {
+         background-color: var(--color-black);
+         border: 2px solid var(--color-white);
+         color: var(--color-white);
+
+         &::placeholder {
+            color: var(--color-light-gray);
+         }
       }
    }
 
@@ -74,7 +82,7 @@
       padding-left: 2px;
 
       p {
-         color: $colorRed;
+         color: var(--color-red);
          font-size: 13px;
          font-weight: 600;
          font-style: normal;

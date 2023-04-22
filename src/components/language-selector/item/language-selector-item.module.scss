@@ -1,5 +1,3 @@
-@import "src/styles/variables";
-
 .item {
    width: auto;
    height: 42px;
@@ -31,7 +29,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: $colorDarkGray2;
+      background-color: var(--color-dark-gray2);
 
       .svgWrap {
          width: 20px;
@@ -51,7 +49,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: $colorDarkerGray;
+      background-color: var(--color-darker-gray);
 
       &.outerShortcutWrap {
          width: 70px;
@@ -61,21 +59,21 @@
          font-size: 16px;
          font-weight: 700;
          font-style: normal;
-         color: $colorWhite;
+         color: var(--color-white);
       }
    }
 
    &:hover {
       .countryFlagWrap {
-         background-color: $colorDarkerGray;
+         background-color: var(--color-darker-gray);
       }
 
       .countryShortcutWrap {
-         background-color: $colorDarkestGray;
+         background-color: var(--color-darkest-gray);
       }
 
       .arrowWrap {
-         background-color: $colorDarkestGray;
+         background-color: var(--color-darkest-gray);
       }
    }
 
@@ -85,7 +83,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: $colorDarkerGray;
+      background-color: var(--color-darker-gray);
 
       i {
          font-size: 22px;

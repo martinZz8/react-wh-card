@@ -1,7 +1,7 @@
 import React, {createContext, ReactNode} from "react";
 
 // hooks
-import useCurrentLanguage from "../hooks/useCurrentLanguage.hook";
+import useCurrentLanguage from "./useCurrentLanguage.hook";
 
 export interface ICurrentLanguageContext {
    selectedLanguage: string;

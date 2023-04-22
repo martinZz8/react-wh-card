@@ -1,9 +1,7 @@
-@import "src/styles/variables";
-
 .mainWrap {
    width: 100%;
    height: auto;
-   background-color: $colorDarkerGray;
+   background-color: var(--color-darker-gray);
 
    .middleContentWrap {
       display: flex;

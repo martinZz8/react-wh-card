@@ -1,5 +1,3 @@
-@import "src/styles/variables";
-
 .inputFile {
    width: 100%;
    display: flex;
@@ -7,7 +5,7 @@
    justify-content: flex-start;
    align-items: flex-start;
    border-radius: 5px;
-   border: 1px dashed $colorWhite;
+   border: 1px dashed var(--color-white);
    padding: 7px 9px;
 
    .label {
@@ -19,14 +17,14 @@
       align-items: flex-start;
 
       p {
-         color: $colorWhite;
+         color: var(--color-white);
          font-weight: 700;
          font-style: normal;
          font-size: 16px;
       }
 
       span.mandatory {
-         color: $colorWhite;
+         color: var(--color-white);
          font-size: 20px;
          padding-left: 4px;
       }
@@ -42,7 +40,7 @@
          width: auto;
          height: auto;
          background-color: transparent;
-         color: $colorWhite;
+         color: var(--color-white);
          font-family: 'Nunito', sans-serif;
          font-size: 16px;
          font-weight: 700;
@@ -52,20 +50,27 @@
          &::file-selector-button {
             font-family: 'Nunito', sans-serif;
             font-weight: 700;
-            background-color: $colorWhite;
-            color: $colorBlack;
+            background-color: var(--color-white);
+            color: var(--color-black);
             border-radius: 5px;
-            border-color: $colorBlack;
+            border-color: var(--color-black);
             padding: 2px 5px;
          }
 
          &.errorInput {
-            background-color: $colorLightRed;
-            border-color: $colorRed;
+            background-color: var(--color-light-red);
+            border-color: var(--color-red);
          }
 
          &.disabled {
             cursor: not-allowed;
+         }
+
+         &.light {
+            &::file-selector-button {
+               background-color: var(--color-black);
+               color: var(--color-white);
+            }
          }
       }
 
@@ -73,7 +78,7 @@
          margin-left: 10px;
          width: 30px;
          height: 30px;
-         background-color: $colorDarkGray;
+         background-color: var(--color-dark-gray);
          border-radius: 50%;
          display: flex;
          justify-content: center;
@@ -86,13 +91,13 @@
 
          i {
             font-size: 16px;
-            color: $colorWhite;
+            color: var(--color-white);
             transition: color 0.2s ease-in-out;
          }
 
          &:hover {
             i {
-               color: $colorBlack;
+               color: var(--color-black);
             }
          }
       }
@@ -103,7 +108,7 @@
       padding-left: 2px;
 
       p {
-         color: $colorRed;
+         color: var(--color-red);
          font-size: 13px;
          font-weight: 600;
          font-style: normal;

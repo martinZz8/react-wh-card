@@ -7,7 +7,7 @@ import styles from "./ua-help-info.module.scss";
 import {ReactComponent as SVGUaHeartFlag} from "../../assets/other/heart-shaped-ukrainian-flag.svg";
 
 // context
-import {CurrentLanguageContext} from "../../providers/current-language-provider.component";
+import {CurrentLanguageContext} from "../../providers/current-language/current-language-provider.component";
 
 // interfaces
 interface IUaHelpInfo {

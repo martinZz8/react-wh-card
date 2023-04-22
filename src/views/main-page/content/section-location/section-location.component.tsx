@@ -10,7 +10,7 @@ import {availableSections} from "../../../../data/available-sections/available-s
 import SectionTemplate from "../../../../templates/section/section.template";
 
 // contexts
-import {CurrentLanguageContext} from "../../../../providers/current-language-provider.component";
+import {CurrentLanguageContext} from "../../../../providers/current-language/current-language-provider.component";
 
 const SectionLocation: React.FC = () => {
    const {selectedLanguage} = useContext(CurrentLanguageContext);

@@ -4,7 +4,7 @@ import React, {useContext} from "react";
 import styles from "./footer.module.scss";
 
 // context
-import {CurrentLanguageContext} from "../../providers/current-language-provider.component";
+import {CurrentLanguageContext} from "../../providers/current-language/current-language-provider.component";
 
 // components
 import UaHelpInfo from "../ua-help-info/ua-help-info.component";

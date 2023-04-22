@@ -1,5 +1,3 @@
-@import "src/styles/variables";
-
 /* Customize the label (the container) */
 .container {
    width: 100%;
@@ -8,7 +6,7 @@
    position: relative;
    padding-left: 37px;
    cursor: pointer;
-   color: $colorWhite;
+   color: var(--color-white);
    font-weight: 400;
    font-style: normal;
    font-size: 18px;
@@ -19,10 +17,10 @@
    }
 
    &.isError {
-      color: $colorRed;
+      color: var(--color-red);
 
       .checkmark {
-         border-color: $colorRed;
+         border-color: var(--color-red);
       }
    }
 }
@@ -47,29 +45,34 @@
    left: 0;
    height: 23px;
    width: 23px;
-   background-color: $colorWhite;
-   border: 2px solid $colorBlack;
+   background-color: var(--color-white);
+   border: 2px solid var(--color-black);
+
+   &.light {
+      background-color: var(--color-black);
+      border: 2px solid var(--color-white);
+   }
 
    &.disabledColors {
-      border-color: $colorDarkGray;
+      border-color: var(--color-dark-gray);
    }
 }
 
 /* On mouse-over, add a dark purple border color */
 .container:hover input ~ .checkmark {
-   border-color: $colorDarkPurple;
+   border-color: var(--color-dark-purple);
 
    &.disabledColors {
-      border-color: $colorDarkGray;
+      border-color: var(--color-dark-gray);
    }
 }
 
 /* When the checkbox is checked, add a dark purple background */
 .container input:checked ~ .checkmark {
-   background-color: $colorDarkPurple;
+   background-color: var(--color-dark-purple);
 
    &.disabledColors {
-      background-color: $colorDarkGray;
+      background-color: var(--color-dark-gray);
    }
 }
 
@@ -91,7 +94,7 @@
    top: 4px;
    width: 5px;
    height: 10px;
-   border: solid $colorWhite;
+   border: solid var(--color-white);
    border-width: 0 3px 3px 0;
    -webkit-transform: rotate(45deg);
    -ms-transform: rotate(45deg);
