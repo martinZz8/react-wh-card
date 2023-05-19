@@ -8,6 +8,7 @@ import {ReactComponent as SVGUaHeartFlag} from "../../assets/other/heart-shaped-
 
 // context
 import {CurrentLanguageContext} from "../../providers/current-language/current-language-provider.component";
+import {WindowContext} from "../../providers/window-size/window-size-provider.component";
 
 // interfaces
 interface IUaHelpInfo {
@@ -16,6 +17,11 @@ interface IUaHelpInfo {
 
 const UaHelpInfo: React.FC<IUaHelpInfo> = ({smallFont}) => {
   const {selectedLanguage} = useContext(CurrentLanguageContext);
+  const {windowWidth} = useContext(WindowContext);
+
+  const isShortText = () => {
+    return windowWidth > 420;
+  };
 
   return (
     <div className={`${styles.uaHelpInfo} ${smallFont ? styles.smallFont : ""}`}>
@@ -25,7 +31,10 @@ const UaHelpInfo: React.FC<IUaHelpInfo> = ({smallFont}) => {
       <p>
         {
           selectedLanguage === "PL" ?
-            "Zbiórka pieniędzy dla Ukrainy: "
+            isShortText() ?
+              "Zbiórka pieniędzy dla Ukrainy: "
+            :
+              "Zbiórka dla Ukrainy: "
           : selectedLanguage === "GB" ?
             "Fundraising for Ukraine: "
           : selectedLanguage === "DE" ?

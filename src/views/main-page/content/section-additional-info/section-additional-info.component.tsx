@@ -38,7 +38,10 @@ const SectionAdditionalInfo: React.FC = () => {
          iconName={"icon-user"}
       >
          <div className={styles.wrapper}>
-            <div className={styles.item}>
+            <div className={`
+               ${styles.item}
+               ${styles.spacing}
+            `}>
                <div className={styles.innerItem}>
                   <p className={`${styles.bold} ${styles.large} ${styles.underline}`}>
                   {
@@ -89,7 +92,10 @@ const SectionAdditionalInfo: React.FC = () => {
                   </p>
                </div>
             </div>
-            <div className={`${styles.item} ${styles.adjustedWidth}`}>
+            <div className={`
+               ${styles.item}
+               ${styles.adjustedWidth}
+            `}>
                <p className={styles.underline}>
                   {
                      selectedLanguage === "PL" ?

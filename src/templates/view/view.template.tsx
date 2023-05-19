@@ -21,12 +21,12 @@ interface ITemplateView extends RouteComponentProps<any> {
 }
 
 const TemplateView: React.FC<ITemplateView> = ({
-      children,
       viewTitle,
       appVersion,
       hasNormalMenu,
-      has100vh
-  }) => {
+      has100vh,
+      children
+   }) => {
 
    return (
       <>
@@ -55,7 +55,7 @@ const TemplateView: React.FC<ITemplateView> = ({
             </div>
             {/*App Footer*/}
             <Footer/>
-            {/*App */}
+            {/* Back to top button*/}
             <BackToTopButton/>
           </div>
       </>

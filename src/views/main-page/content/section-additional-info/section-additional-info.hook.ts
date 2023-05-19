@@ -12,7 +12,7 @@ const useAdditionalInfo = () => {
    },[]);
 
    const checkIfIsOpened = (): boolean => {
-      if (todayDayNumber === 6 || todayDayNumber === 0) { //saturdays and sundays are free of work
+      if (todayDayNumber === 6 || todayDayNumber === 0) { //Saturdays (6) and Sundays (0) are free of work
          return false;
       }
 

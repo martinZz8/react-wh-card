@@ -119,7 +119,7 @@ const MainPageHeader: React.FC = () => {
            </ScrollLink>
         </div>
         <div className={styles.languageSelectorWrap}>
-           <LanguageSelector/>
+          <LanguageSelector/>
         </div>
        <div className={styles.themeColorPickerWrap}>
          <ThemeColorPicker/>

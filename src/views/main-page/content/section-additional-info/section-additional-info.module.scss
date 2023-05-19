@@ -3,8 +3,9 @@
    height: auto;
    margin-bottom: 20px;
    display: flex;
-   justify-content: space-between;
-   align-items: flex-start;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
    word-wrap: break-word;
 
    .item {
@@ -12,7 +13,11 @@
       height: 100%;
 
       &.adjustedWidth {
-         min-width: 170px;
+         min-width: 260px;
+      }
+
+      &.spacing {
+         margin-bottom: 20px;
       }
 
       .innerItem {
@@ -76,11 +81,30 @@
    }
 }
 
+@media all and (min-width: 410px) {
+   .wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .item {
+         &.adjustedWidth {
+            min-width: 180px;
+         }
+
+         &.spacing {
+            padding-right: 10px;
+            margin-bottom: 0;
+         }
+      }
+   }
+}
+
 @media all and (min-width: 600px) {
    .wrapper {
       .item {
          &.adjustedWidth {
-            min-width: 250px;
+            min-width: 240px;
          }
       }
    }

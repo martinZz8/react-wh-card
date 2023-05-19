@@ -3,7 +3,7 @@
 
    .mobileMenuIcon {
       position: fixed;
-      top: 6px;
+      top: 36px;
       left: 6px;
       visibility: visible;
       width: 40px;
@@ -37,9 +37,16 @@
    }
 }
 
+@media all and (min-width: 480px) {
+   .userMenuWrap {
+      .mobileMenuIcon {
+         top: 6px;
+      }
+   }
+}
+
 @media all and (min-width: 1230px) {
    .userMenuWrap {
-
       .mobileMenuIcon {
          visibility: hidden;
       }

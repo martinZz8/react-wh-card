@@ -20,7 +20,10 @@ const UserMenu: React.FC<IUserMenu> = ({includesNormalMenu}) => {
    return (
       <div className={styles.userMenuWrap}>
          <div
-            className={`${styles.mobileMenuIcon} ${includesNormalMenu ? styles.includesNormalMenu : ""}`}
+            className={`
+              ${styles.mobileMenuIcon}
+              ${includesNormalMenu ? styles.includesNormalMenu : ""}
+            `}
             onClick={toggleIsMobileMenuOpen}
          >
             <i className={isMobileMenuOpen ? "icon-cancel" : "icon-menu"}/>

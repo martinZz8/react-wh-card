@@ -1,5 +1,8 @@
 import {useState, useEffect} from "react";
 
+// functions
+import {getCurrentPageScrollTopPosition} from "../../functions/get-current-page-scroll-top-position";
+
 const useBackToTopButton = () => {
    const [isShowed, setIsShowed] = useState<boolean>(false);
 
@@ -7,7 +10,7 @@ const useBackToTopButton = () => {
       const handleScroll = () => {
          let valToSet: boolean = false;
 
-         if (document.documentElement.scrollTop > 600) {
+         if (getCurrentPageScrollTopPosition() > 600) {
             valToSet = true;
          }
 
