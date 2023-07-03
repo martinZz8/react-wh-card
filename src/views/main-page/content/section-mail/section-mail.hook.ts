@@ -309,37 +309,41 @@ const useSectionMail = () => {
       e.preventDefault();
       setIsLiveValidation(true);
 
-      // Validate data
-      if (validateData()) {
+      // Validate data and previous send status
+      if (validateData() && !isSubmitButtonDisabled) {
          setIsSuccessSend(false);
          setIsErrorSend(false);
          setIsLoadingSend(true);
 
-         // Fill the bodyData object
-         const bodyData = new FormData();
-         bodyData.append("firstName", sectionMailForm.firstName);
-         bodyData.append("lastName", sectionMailForm.lastName);
-         bodyData.append("emailAddress", sectionMailForm.emailAddress);
-         bodyData.append("phoneNumber", sectionMailForm.phoneNumber);
-         bodyData.append("subject", sectionMailForm.subject);
-         bodyData.append("message", sectionMailForm.message);
+         // Fill the "FormData" class object
+         const fd = new FormData();
+         fd.append("firstName", sectionMailForm.firstName);
+         fd.append("lastName", sectionMailForm.lastName);
+         fd.append("emailAddress", sectionMailForm.emailAddress);
+         fd.append("phoneNumber", sectionMailForm.phoneNumber);
+         fd.append("subject", sectionMailForm.subject);
+         fd.append("message", sectionMailForm.message);
 
          // Appending files
          if (sectionMailForm.files) {// !== null
             for (let i=0; i < sectionMailForm.files.length; i++) {
-               bodyData.append("files", sectionMailForm.files[i]);
+               fd.append("files", sectionMailForm.files[i]);
             }
          }
 
+         // Send email via dedicated API
          // to the local: "http://localhost:3001/send-email"
          // to the deployed api: `${process.env.REACT_APP_SMTP_NODEMAILER_API_URL}/send-email`
+         // from: https://stackoverflow.com/questions/47630163/axios-post-request-to-send-form-data
+         // Note: Let the browser set "Content-Type" header for itself, since request uses "FormData" class object in body.
+         //       Here is sets the "multipart/form-data" with it's boundary, but can be also "application/x-www-form-urlencoded".
+         //       If the form has files, better use "multipart/form-data" for better transmission performance.
          fetch(`${process.env.REACT_APP_SMTP_NODEMAILER_API_URL}/send-email`, {
             method: "POST",
             mode: 'cors',
-            body: bodyData
+            body: fd
          }).then(async response => {
-            setIsLoadingSend(false);
-            let data = await response.json();
+            //const data = await response.json();
 
             if(response.ok) {
                //console.log(data);
@@ -347,13 +351,12 @@ const useSectionMail = () => {
                setIsSubmitButtonDisabled(true);
             }
             else {
-               //console.log(data);
-               setIsErrorSend(true);
+               throw new Error();
             }
          }).catch(error => {
-            setIsLoadingSend(false);
             setIsErrorSend(true);
-            //console.log(error);
+         }).finally(() => {
+              setIsLoadingSend(false);
          });
 
          //console.log("to:", process.env.REACT_APP_SMTP_RECEIVER_EMAIL);
