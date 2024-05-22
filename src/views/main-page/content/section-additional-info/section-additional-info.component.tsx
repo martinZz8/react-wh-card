@@ -27,7 +27,7 @@ const SectionAdditionalInfo: React.FC = () => {
          headerMess={
             selectedLanguage === "PL" ?
                sectionInfo?.PLName
-            : selectedLanguage === "GB" ?
+            : selectedLanguage === "EN" ?
                sectionInfo?.GBName
             : selectedLanguage === "DE" ?
                sectionInfo?.DEName
@@ -47,7 +47,7 @@ const SectionAdditionalInfo: React.FC = () => {
                   {
                      selectedLanguage === "PL" ?
                         "Email: "
-                     : selectedLanguage === "GB" ?
+                     : selectedLanguage === "EN" ?
                         "Email: "
                      : selectedLanguage === "DE" ?
                         "E-mail: "
@@ -62,7 +62,7 @@ const SectionAdditionalInfo: React.FC = () => {
                   {
                      selectedLanguage === "PL" ?
                         "Telefon: "
-                     : selectedLanguage === "GB" ?
+                     : selectedLanguage === "EN" ?
                         "Phone: "
                      : selectedLanguage === "DE" ?
                         "Telefon: "
@@ -77,7 +77,7 @@ const SectionAdditionalInfo: React.FC = () => {
                   {
                      selectedLanguage === "PL" ?
                         "Adres: "
-                     : selectedLanguage === "GB" ?
+                     : selectedLanguage === "EN" ?
                         "Address: "
                      : selectedLanguage === "DE" ?
                         "Adresse: "
@@ -100,7 +100,7 @@ const SectionAdditionalInfo: React.FC = () => {
                   {
                      selectedLanguage === "PL" ?
                         "Godziny otwarcia:"
-                     : selectedLanguage === "GB" ?
+                     : selectedLanguage === "EN" ?
                         "Opening hours:"
                      : selectedLanguage === "DE" ?
                         "Öffnungszeit:"
@@ -127,7 +127,7 @@ const SectionAdditionalInfo: React.FC = () => {
                               {
                                  selectedLanguage === "PL" ?
                                     item.PLName
-                                 : selectedLanguage === "GB" ?
+                                 : selectedLanguage === "EN" ?
                                     item.GBName
                                  : selectedLanguage === "DE" ?
                                     item.DEName
@@ -141,7 +141,7 @@ const SectionAdditionalInfo: React.FC = () => {
                                     item.hourFrom+"-"+item.hourTo
                                  : selectedLanguage === "PL" ?
                                     "zamknięte"
-                                 : selectedLanguage === "GB" ?
+                                 : selectedLanguage === "EN" ?
                                     "closed"
                                  : selectedLanguage === "DE" ?
                                     "getarnt"

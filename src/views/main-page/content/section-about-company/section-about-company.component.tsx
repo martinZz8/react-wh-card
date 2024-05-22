@@ -22,7 +22,7 @@ const SectionAboutCompany: React.FC = () => {
          headerMess={
             selectedLanguage === "PL" ?
                sectionInfo?.PLName
-            : selectedLanguage === "GB" ?
+            : selectedLanguage === "EN" ?
                sectionInfo?.GBName
             : selectedLanguage === "DE" ?
                sectionInfo?.DEName
@@ -42,7 +42,7 @@ const SectionAboutCompany: React.FC = () => {
                         <br/>
                         <p>Posiadam wiedzę popartą wieloletnim doświadczeniem zawodowym w pracy w urzędzie skarbowym.</p>
                      </>
-                  : selectedLanguage === "GB" ?
+                  : selectedLanguage === "EN" ?
                      <>
                         <p>Accounting Office Wiesław Harbuz has been on the market for several years.</p>
                         <br/>
@@ -87,7 +87,7 @@ const SectionAboutCompany: React.FC = () => {
                            <li>inne usługi z zakresu rachunkowości i prawa, które można omówić indywidualnie z klientem</li>
                         </ul>
                      </>
-                  : selectedLanguage === "GB" ?
+                  : selectedLanguage === "EN" ?
                      <>
                         <p>We provide the following services:</p>
                         <ul>
@@ -151,7 +151,7 @@ const SectionAboutCompany: React.FC = () => {
                            <p className={styles.italic}>Pomożemy rzetelnie, fachowo i w przystępnej cenie.</p>
                         </div>
                      </>
-                  : selectedLanguage === "GB" ?
+                  : selectedLanguage === "EN" ?
                      <>
                         <p>On the territory of the city of Tomaszów Lubelski it is possible to perform services at the customer's home.</p>
                         <br/>

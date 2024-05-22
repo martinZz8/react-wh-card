@@ -26,7 +26,7 @@ const BackToTopButton: React.FC = () => {
          title={
             selectedLanguage === "PL" ?
                "Idź do góry"
-            : selectedLanguage === "GB" ?
+            : selectedLanguage === "EN" ?
                "Go up"
             : selectedLanguage === "DE" ?
                "Geh hinauf"

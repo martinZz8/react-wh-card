@@ -84,7 +84,7 @@ const InputFile: React.FC<IInputFile> = ({
                      title={
                         selectedLanguage === "PL" ?
                            "Usuń pliki"
-                        : selectedLanguage === "GB" ?
+                        : selectedLanguage === "EN" ?
                            "Delete files"
                         : selectedLanguage === "DE" ?
                            "Dateien löschen"

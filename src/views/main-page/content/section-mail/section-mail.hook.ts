@@ -61,7 +61,7 @@ const useSectionMail = () => {
       if (selectedLanguage === "PL") {
          messToRet = "Pole jest puste";
       }
-      else if (selectedLanguage === "GB") {
+      else if (selectedLanguage === "EN") {
          messToRet = "Field is empty";
       }
       else if (selectedLanguage === "DE") {
@@ -80,7 +80,7 @@ const useSectionMail = () => {
       if (selectedLanguage === "PL") {
          messToRet = "Wiadomość jest za długa";
       }
-      else if (selectedLanguage === "GB") {
+      else if (selectedLanguage === "EN") {
          messToRet = "The message is too long";
       }
       else if (selectedLanguage === "DE") {
@@ -99,7 +99,7 @@ const useSectionMail = () => {
       if (selectedLanguage === "PL") {
          messToRet = "Temat jest za długi";
       }
-      else if (selectedLanguage === "GB") {
+      else if (selectedLanguage === "EN") {
          messToRet = "The topic is too long";
       }
       else if (selectedLanguage === "DE") {
@@ -118,7 +118,7 @@ const useSectionMail = () => {
       if (selectedLanguage === "PL") {
          messToRet = "Zły format adresu email";
       }
-      else if (selectedLanguage === "GB") {
+      else if (selectedLanguage === "EN") {
          messToRet = "Wrong email address format";
       }
       else if (selectedLanguage === "DE") {
@@ -137,7 +137,7 @@ const useSectionMail = () => {
       if (selectedLanguage === "PL") {
          messToRet = "Numer telefonu zawiera litery";
       }
-      else if (selectedLanguage === "GB") {
+      else if (selectedLanguage === "EN") {
          messToRet = "The phone number contains the letters";
       }
       else if (selectedLanguage === "DE") {

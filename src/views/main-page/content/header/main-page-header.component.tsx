@@ -37,7 +37,7 @@ const MainPageHeader: React.FC = () => {
               {
                  selectedLanguage === "PL" ?
                     "Biuro rachunkowe"
-                 : selectedLanguage === "GB" ?
+                 : selectedLanguage === "EN" ?
                     "Accounting office"
                  : selectedLanguage === "DE" ?
                     "Rechnungsstelle"
@@ -59,7 +59,7 @@ const MainPageHeader: React.FC = () => {
               {
                   selectedLanguage === "PL" ?
                      "Polska"
-                  : selectedLanguage === "GB" ?
+                  : selectedLanguage === "EN" ?
                      "Poland"
                   : selectedLanguage === "DE" ?
                      "Polen"
@@ -72,7 +72,7 @@ const MainPageHeader: React.FC = () => {
               {
                   selectedLanguage === "PL" ?
                      " ul. Rolnicza 10"
-                  : selectedLanguage === "GB" ?
+                  : selectedLanguage === "EN" ?
                      " Rolnicza 10 St."
                   : selectedLanguage === "DE" ?
                      " Rolnicza 10 Str"
@@ -84,7 +84,7 @@ const MainPageHeader: React.FC = () => {
               {
                  selectedLanguage === "PL" ?
                   "Email: "
-                 : selectedLanguage === "GB" ?
+                 : selectedLanguage === "EN" ?
                   "Email: "
                  : selectedLanguage === "DE" ?
                     "E-mail: "
@@ -97,7 +97,7 @@ const MainPageHeader: React.FC = () => {
               {
                  selectedLanguage === "PL" ?
                      "Telefon: "
-                 : selectedLanguage === "GB" ?
+                 : selectedLanguage === "EN" ?
                      "Phone: "
                  : selectedLanguage === "DE" ?
                      "Telefon: "

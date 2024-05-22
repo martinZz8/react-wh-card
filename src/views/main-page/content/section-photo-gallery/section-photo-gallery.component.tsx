@@ -41,7 +41,7 @@ const SectionPhotoGallery: React.FC = () => {
          headerMess={
             selectedLanguage === "PL" ?
                sectionInfo?.PLName
-            : selectedLanguage === "GB" ?
+            : selectedLanguage === "EN" ?
                sectionInfo?.GBName
             : selectedLanguage === "DE" ?
                sectionInfo?.DEName
@@ -63,7 +63,7 @@ const SectionPhotoGallery: React.FC = () => {
                            alt={
                               selectedLanguage === "PL" ?
                                  item.altPL
-                              : selectedLanguage === "GB" ?
+                              : selectedLanguage === "EN" ?
                                  item.altGB
                               : selectedLanguage === "DE" ?
                                  item.altDE
@@ -88,7 +88,7 @@ const SectionPhotoGallery: React.FC = () => {
                            {
                               selectedLanguage === "PL" ?
                                  "Załaduj więcej zdjęć"
-                              : selectedLanguage === "GB" ?
+                              : selectedLanguage === "EN" ?
                                  "Load more images"
                               : selectedLanguage === "DE" ?
                                  "Weitere Bilder laden"
@@ -146,7 +146,7 @@ const SectionPhotoGallery: React.FC = () => {
                      alt={
                         selectedLanguage === "PL" ?
                            availablePhotos[currentPhotoIdx].altPL
-                        : selectedLanguage === "GB" ?
+                        : selectedLanguage === "EN" ?
                            availablePhotos[currentPhotoIdx].altGB
                         : selectedLanguage === "DE" ?
                            availablePhotos[currentPhotoIdx].altDE

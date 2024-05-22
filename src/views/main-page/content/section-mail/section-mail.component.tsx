@@ -50,7 +50,7 @@ const SectionMail: React.FC = () => {
          headerMess={
             selectedLanguage === "PL" ?
                sectionInfo?.PLName
-            : selectedLanguage === "GB" ?
+            : selectedLanguage === "EN" ?
                sectionInfo?.GBName
             : selectedLanguage === "DE" ?
                sectionInfo?.DEName
@@ -73,7 +73,7 @@ const SectionMail: React.FC = () => {
                         label={
                            selectedLanguage === "PL" ?
                               "Imię"
-                           : selectedLanguage === "GB" ?
+                           : selectedLanguage === "EN" ?
                               "First name"
                            : selectedLanguage === "DE" ?
                               "Name"
@@ -83,7 +83,7 @@ const SectionMail: React.FC = () => {
                         placeholder={
                            selectedLanguage === "PL" ?
                               "Imię"
-                           : selectedLanguage === "GB" ?
+                           : selectedLanguage === "EN" ?
                               "First name"
                            : selectedLanguage === "DE" ?
                               "Vorname"
@@ -104,7 +104,7 @@ const SectionMail: React.FC = () => {
                         label={
                            selectedLanguage === "PL" ?
                               "Nazwisko"
-                           : selectedLanguage === "GB" ?
+                           : selectedLanguage === "EN" ?
                               "Last name"
                            : selectedLanguage === "DE" ?
                               "Zuname"
@@ -114,7 +114,7 @@ const SectionMail: React.FC = () => {
                         placeholder={
                            selectedLanguage === "PL" ?
                               "Nazwisko"
-                           : selectedLanguage === "GB" ?
+                           : selectedLanguage === "EN" ?
                               "Last name"
                            : selectedLanguage === "DE" ?
                               "Zuname"
@@ -137,7 +137,7 @@ const SectionMail: React.FC = () => {
                         label={
                            selectedLanguage === "PL" ?
                               "Numer telefonu"
-                           : selectedLanguage === "GB" ?
+                           : selectedLanguage === "EN" ?
                               "Phone number"
                            : selectedLanguage === "DE" ?
                               "Rufnummer"
@@ -147,7 +147,7 @@ const SectionMail: React.FC = () => {
                         placeholder={
                            selectedLanguage === "PL" ?
                               "Numer telefonu"
-                           : selectedLanguage === "GB" ?
+                           : selectedLanguage === "EN" ?
                               "Phone number"
                            : selectedLanguage === "DE" ?
                               "Rufnummer"
@@ -168,7 +168,7 @@ const SectionMail: React.FC = () => {
                         label={
                            selectedLanguage === "PL" ?
                               "Adres email"
-                           : selectedLanguage === "GB" ?
+                           : selectedLanguage === "EN" ?
                               "Email address"
                            : selectedLanguage === "DE" ?
                               "E-Mail Adresse"
@@ -178,7 +178,7 @@ const SectionMail: React.FC = () => {
                         placeholder={
                            selectedLanguage === "PL" ?
                               "Adres email"
-                           : selectedLanguage === "GB" ?
+                           : selectedLanguage === "EN" ?
                               "Email address"
                            : selectedLanguage === "DE" ?
                               "E-Mail Adresse"
@@ -201,7 +201,7 @@ const SectionMail: React.FC = () => {
                         label={
                            selectedLanguage === "PL" ?
                               "Temat"
-                           : selectedLanguage === "GB" ?
+                           : selectedLanguage === "EN" ?
                               "Topic"
                            : selectedLanguage === "DE" ?
                               "Thema"
@@ -211,7 +211,7 @@ const SectionMail: React.FC = () => {
                         placeholder={
                            selectedLanguage === "PL" ?
                               "Temat"
-                           : selectedLanguage === "GB" ?
+                           : selectedLanguage === "EN" ?
                               "Topic"
                            : selectedLanguage === "DE" ?
                               "Thema"
@@ -234,7 +234,7 @@ const SectionMail: React.FC = () => {
                         label={
                            selectedLanguage === "PL" ?
                               "Wiadomość"
-                           : selectedLanguage === "GB" ?
+                           : selectedLanguage === "EN" ?
                               "Message"
                            : selectedLanguage === "DE" ?
                               "Nachricht"
@@ -244,7 +244,7 @@ const SectionMail: React.FC = () => {
                         placeholder={
                            selectedLanguage === "PL" ?
                               "Wiadomość"
-                           : selectedLanguage === "GB" ?
+                           : selectedLanguage === "EN" ?
                               "Message"
                            : selectedLanguage === "DE" ?
                               "Nachricht"
@@ -273,7 +273,7 @@ const SectionMail: React.FC = () => {
                         label={
                            selectedLanguage === "PL" ?
                               "Wybierz pliki"
-                           : selectedLanguage === "GB" ?
+                           : selectedLanguage === "EN" ?
                               "Select files"
                            : selectedLanguage === "DE" ?
                               "Dateien auswählen"
@@ -305,7 +305,7 @@ const SectionMail: React.FC = () => {
                                  <br/>
                                  Administratorem danych osobowych jest <b>Biuro rachunkowe Wiesław Harbuz, Polska 22-600 Tomaszów Lubelski ul. Rolicza 10</b>.
                               </>
-                           : selectedLanguage === "GB" ?
+                           : selectedLanguage === "EN" ?
                               <>
                                  I consent to the processing of personal data in accordance with the Law on Personal Data Protection in connection with sending an inquiry via the contact form.
                                  <br/>
@@ -349,7 +349,7 @@ const SectionMail: React.FC = () => {
                         title={
                            selectedLanguage === "PL" ?
                               "Wyślij"
-                           : selectedLanguage === "GB" ?
+                           : selectedLanguage === "EN" ?
                               "Send"
                            : selectedLanguage === "DE" ?
                               "Senden"
@@ -372,7 +372,7 @@ const SectionMail: React.FC = () => {
                                  isSuccessSend ?
                                     selectedLanguage === "PL" ?
                                        "Poprawnie wysłano wiadomość. Skontaktujemy się z Tobą w jak najkrótszym czasie."
-                                    : selectedLanguage === "GB" ?
+                                    : selectedLanguage === "EN" ?
                                        "The message has been sent correctly. We will contact you as soon as possible."
                                     : selectedLanguage === "DE" ?
                                        "Nachricht korrekt gesendet. Wir werden Sie so bald wie möglich kontaktieren."
@@ -381,7 +381,7 @@ const SectionMail: React.FC = () => {
                                  : isErrorSend ?
                                     selectedLanguage === "PL" ?
                                        "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później albo wyślij wiadomość ze swojej poczty internetowej."
-                                    : selectedLanguage === "GB" ?
+                                    : selectedLanguage === "EN" ?
                                        "An error occurred while sending the message. Try again later or send the message from your webmail."
                                     : selectedLanguage === "DE" ?
                                        "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal oder senden Sie die Nachricht über Ihr Webmail."
@@ -390,7 +390,7 @@ const SectionMail: React.FC = () => {
                                  ://isNotGivenPhoneOrEmail
                                     selectedLanguage === "PL" ?
                                        "Należy podać numer telefonu bądź adres email w celu dalszego kontaktu."
-                                    : selectedLanguage === "GB" ?
+                                    : selectedLanguage === "EN" ?
                                        "Provide either a phone number or email address for further contact."
                                     : selectedLanguage === "DE" ?
                                        "Bitte geben Sie eine Telefonnummer oder eine E-Mail-Adresse für die weitere Kontaktaufnahme an."
@@ -415,7 +415,7 @@ const SectionMail: React.FC = () => {
                         message={
                            selectedLanguage === "PL" ?
                               "Wysyłanie"
-                           : selectedLanguage === "GB" ?
+                           : selectedLanguage === "EN" ?
                               "Sending"
                            : selectedLanguage === "DE" ?
                               "Senden"

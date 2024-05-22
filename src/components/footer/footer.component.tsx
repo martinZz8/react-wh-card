@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
                  {
                     selectedLanguage === "PL" ?
                        "Wszelkie prawa zastrzeżone"
-                    :   selectedLanguage === "GB" ?
+                    :   selectedLanguage === "EN" ?
                        "All rights reserved"
                     : selectedLanguage === "DE" ?
                        "Alle Rechte vorbehalten"
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                  {
                     selectedLanguage === "PL" ?
                        "Wykonane przez: "
-                    :   selectedLanguage === "GB" ?
+                    :   selectedLanguage === "EN" ?
                        "Made by: "
                     : selectedLanguage === "DE" ?
                        "Hergestellt von: "

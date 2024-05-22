@@ -14,7 +14,7 @@ const useRoot = () => {
       if (selectedLanguage === "PL") {
          valToSet = "Biuro rachunkowe Wiesław Harbuz";
       }
-      else if (selectedLanguage === "GB") {
+      else if (selectedLanguage === "EN") {
          valToSet = "Accounting Office Wiesław Harbuz";
       }
       else if (selectedLanguage === "DE") {

@@ -5,7 +5,7 @@ import styles from "./language-selector-item.module.scss";
 
 // svgs
 import {ReactComponent as SVGFlagPL} from "../../../assets/flags/PL-Flag.svg";
-import {ReactComponent as SVGFlagGB} from "../../../assets/flags/GB-Flag.svg";
+import {ReactComponent as SVGFlagGB} from "../../../assets/flags/EN-Flag.svg";
 import {ReactComponent as SVGFlagDE} from "../../../assets/flags/DE-Flag.svg";
 import {ReactComponent as SVGFlagUA} from "../../../assets/flags/UA-Flag.svg";
 
@@ -40,7 +40,7 @@ const LanguageSelectorItem: React.FC<ILanguageSelectorItem> = ({
                {
                   countryId === "PL" ?
                      <SVGFlagPL/>
-                  : countryId === "GB" ?
+                  : countryId === "EN" ?
                      <SVGFlagGB/>
                   : countryId === "DE" ?
                      <SVGFlagDE/>

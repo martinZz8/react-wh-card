@@ -35,7 +35,7 @@ const UaHelpInfo: React.FC<IUaHelpInfo> = ({smallFont}) => {
               "Zbiórka pieniędzy dla Ukrainy: "
             :
               "Zbiórka dla Ukrainy: "
-          : selectedLanguage === "GB" ?
+          : selectedLanguage === "EN" ?
             "Fundraising for Ukraine: "
           : selectedLanguage === "DE" ?
             "Fundraising für die Ukraine"

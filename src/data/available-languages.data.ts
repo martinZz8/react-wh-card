@@ -1,1 +1,1 @@
-export const availableLanguages: string[] = ["PL", "GB", "DE", "UA"];
+export const availableLanguages: string[] = ["PL", "EN", "DE", "UA"];
