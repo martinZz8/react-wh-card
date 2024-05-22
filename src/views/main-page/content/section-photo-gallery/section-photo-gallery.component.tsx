@@ -42,7 +42,7 @@ const SectionPhotoGallery: React.FC = () => {
             selectedLanguage === "PL" ?
                sectionInfo?.PLName
             : selectedLanguage === "EN" ?
-               sectionInfo?.GBName
+               sectionInfo?.ENName
             : selectedLanguage === "DE" ?
                sectionInfo?.DEName
             ://UA
@@ -64,7 +64,7 @@ const SectionPhotoGallery: React.FC = () => {
                               selectedLanguage === "PL" ?
                                  item.altPL
                               : selectedLanguage === "EN" ?
-                                 item.altGB
+                                 item.altEN
                               : selectedLanguage === "DE" ?
                                  item.altDE
                               ://UA
@@ -147,7 +147,7 @@ const SectionPhotoGallery: React.FC = () => {
                         selectedLanguage === "PL" ?
                            availablePhotos[currentPhotoIdx].altPL
                         : selectedLanguage === "EN" ?
-                           availablePhotos[currentPhotoIdx].altGB
+                           availablePhotos[currentPhotoIdx].altEN
                         : selectedLanguage === "DE" ?
                            availablePhotos[currentPhotoIdx].altDE
                         ://UA

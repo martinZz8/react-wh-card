@@ -28,7 +28,7 @@ const SectionAdditionalInfo: React.FC = () => {
             selectedLanguage === "PL" ?
                sectionInfo?.PLName
             : selectedLanguage === "EN" ?
-               sectionInfo?.GBName
+               sectionInfo?.ENName
             : selectedLanguage === "DE" ?
                sectionInfo?.DEName
             ://UA

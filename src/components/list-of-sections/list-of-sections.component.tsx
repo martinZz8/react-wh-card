@@ -50,7 +50,7 @@ const ListOfSections: React.FC<IListOfSections> = ({
                            selectedLanguage === "PL" ?
                               item.PLName
                            : selectedLanguage === "EN" ?
-                              item.GBName
+                              item.ENName
                            :selectedLanguage === "DE" ?
                               item.DEName
                            ://UA

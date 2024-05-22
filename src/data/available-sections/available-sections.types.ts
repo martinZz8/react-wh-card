@@ -9,7 +9,7 @@ export type IAvailableSectionsId =
 export interface IAvailableSection {
    sectionId: IAvailableSectionsId;
    PLName: string;
-   GBName: string;
+   ENName: string;
    DEName: string;
    UAName: string;
 }
