@@ -4,70 +4,49 @@ import {IDayOfWeek} from "./section-additional-info.types";
 export const dayOfWeeks: IDayOfWeek[] = [
    {
       id: 1,
-      PLName: "pon.",
-      GBName: "Mo.",
-      DEName: "Mo.",
-      UAName: "Пн.",
+      file_day_name: "monday",
       hourFrom: "08:00",
       hourTo: "16:00",
       isAWorkDay: true
    },
    {
       id: 2,
-      PLName: "wt.",
-      GBName: "Tu.",
-      DEName: "Di.",
-      UAName: "Вт.",
+      file_day_name: "tuesday",
       hourFrom: "08:00",
       hourTo: "16:00",
       isAWorkDay: true
    },
    {
       id: 3,
-      PLName: "śr.",
-      GBName: "We.",
-      DEName: "Mi.",
-      UAName: "Ср.",
+      file_day_name: "wednesday",
       hourFrom: "08:00",
       hourTo: "16:00",
       isAWorkDay: true
    },
    {
       id: 4,
-      PLName: "czw.",
-      GBName: "Th.",
-      DEName: "Do.",
-      UAName: "Чт.",
+      file_day_name: "thursday",
       hourFrom: "08:00",
       hourTo: "16:00",
       isAWorkDay: true
    },
    {
       id: 5,
-      PLName: "pt.",
-      GBName: "Fr.",
-      DEName: "Fr.",
-      UAName: "Пт.",
+      file_day_name: "friday",
       hourFrom: "08:00",
       hourTo: "16:00",
       isAWorkDay: true
    },
    {
       id: 6,
-      PLName: "sob.",
-      GBName: "Sa.",
-      DEName: "Sa.",
-      UAName: "Сб.",
+      file_day_name: "saturday",
       hourFrom: null,
       hourTo: null,
       isAWorkDay: false
    },
    {
       id: 0,
-      PLName: "niedz.",
-      GBName: "Su.",
-      DEName: "So.",
-      UAName: "Нд.",
+      file_day_name: "sunday",
       hourFrom: null,
       hourTo: null,
       isAWorkDay: false

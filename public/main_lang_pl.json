@@ -1,0 +1,104 @@
+{
+    "app_version": {
+        "title": "Biuro rachunkowe Wiesław Harbuz"
+    },
+    "section_available_sections": {
+        "about_company": "O firmie",
+        "additional_info": "Informacje",
+        "location": "Lokalizacja",
+        "mail": "Skontaktuj się",
+        "photo_gallery": "Galeria zdjęć"
+    },    
+    "section_ua_help": {
+        "ua_help_info_long": "Zbiórka pieniędzy dla Ukrainy: ",
+        "ua_help_info_short": "Zbiórka dla Ukrainy: "
+    },
+    "section_main_page_header": {
+        "title": "Biuro rachunkowe",
+        "country": "Polska",
+        "street": " ul. Rolnicza 10",
+        "email": "Email: ",
+        "telephone": "Telefon: "
+    },
+    "section_about_company": {
+        "main": {
+            "desc1": "Biuro rachunkowe Wiesław Harbuz już od kilku lat istnieje na rynku.",
+            "desc2": "Nasze doświadczenie oraz konkurencyjne ceny świadczonych usług sprawiają, że mamy wielu stałych oraz zadowolonych klientów.",
+            "desc3": "Posiadam wiedzę popartą wieloletnim doświadczeniem zawodowym w pracy w urzędzie skarbowym."
+        },
+        "services": {
+            "title": "Świadczymy następujące usługi:",
+            "desc1": "wypełnianie deklaracji podatkowych",
+            "desc2": "prowadzenie rachunkowości podatkowej",
+            "desc3": "pomoc w uzyskaniu zwrotu podatku z tytułu pracy za granicą (w następujących krajach: Niemcy, Belgia, Austria, USA, Holandia, Wielka Brytania, Irlandia, Australia, Dania, Norwegia czy Szwecja)",
+            "desc4": "prowadzenie ksiąg przychodów i rozchodów (KPIR)",
+            "desc5": "prowadzenie ewidencji ryczałtowych",
+            "desc6": "rozliczanie VAT",
+            "desc7": "PIT roczny",
+            "desc8": "usługi kadrowo-płacowe, ZUS",
+            "desc9": "pomoc przy pismach urzędowych i pismach do sądów",
+            "desc10":"pomoc przy zakładaniu własnej firmy",
+            "desc11":"inne usługi z zakresu rachunkowości i prawa, które można omówić indywidualnie z klientem"
+        },
+        "ending": {
+            "title": "Na terenie miasta Tomaszów Lubelski istnieje możliwość wykonania usług w domu klienta.",
+            "desc1": "Skorzystaj z usług Biura Rachunkowego Wiesław Harbuz już dziś!",
+            "desc2": "Pomożemy rzetelnie, fachowo i w przystępnej cenie."
+        }
+    },
+    "section_additional_info": {
+        "email": "Email: ",
+        "telephone": "Telefon: ",
+        "address": "Adres: ",
+        "open_hours": "Godziny otwarcia:",
+        "day_of_week": {
+            "monday": "pon.",
+            "tuesday": "wt.",
+            "wednesday": "śr.",
+            "thursday": "czw.",
+            "friday": "pt.",
+            "saturday": "sob.",
+            "sunday": "niedz."           
+        },
+        "closed": "zamknięte"
+    },
+    "section_mail": {
+        "first_name": "Imię",
+        "last_name": "Nazwisko",
+        "phone_number": "Numer telefonu",
+        "email": "Adres email",
+        "topic": "Temat",
+        "message": "Wiadomość",
+        "select_files": "Wybierz pliki",
+        "consent_to_data_processing": {
+            "desc1": "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą o ochronie danych osobowych w związku z wysłaniem zapytania przez formularz kontaktowy.",
+            "desc2": "Podanie danych jest dobrowolne, ale niezbędne do przetworzenia zapytania.",
+            "desc3": "Zostałem poinformowany, że przysługuje mi prawo dostępu do swoich danych, możliwości ich poprawienia, żądania zaprzestania ich przetwarzania.",
+            "desc4_1": "Administratorem danych osobowych jest ",
+            "desc4_2": "Biuro rachunkowe Wiesław Harbuz, Polska 22-600 Tomaszów Lubelski ul. Rolicza 10",
+            "desc4_3": "."
+        },
+        "send": "Wyślij",
+        "sending_message": "Wysyłanie",
+        "successfull_send_message": "Poprawnie wysłano wiadomość. Skontaktujemy się z Tobą w jak najkrótszym czasie.",
+        "error_send_message": "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później albo wyślij wiadomość ze swojej poczty internetowej.",
+        "needed_phone_number_or_email_message": "Należy podać numer telefonu bądź adres email w celu dalszego kontaktu."
+    },
+    "section_photo_gallery": {
+        "gallery1": "biuro1",
+        "gallery2": "biuro2",
+        "gallery3": "biuro3",
+        "gallery4": "Wiesław Harbuz",
+        "gallery5": "wjazd na plac przed biurem1",
+        "gallery6": "wjazd na plac przed biurem2",
+        "gallery7": "wejście do budynku biura",
+        "load_more_images": "Załaduj więcej zdjęć"
+    },
+    "section_back_to_top_button": {
+        "title": "Idź do góry"
+    },
+    "section_footer": {        
+        "all_rights_reserved": "Wszelkie prawa zastrzeżone",
+        "made_by": "Wykonane przez: "
+    }
+}

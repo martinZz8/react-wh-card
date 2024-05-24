@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React from "react";
 
 // styles
 import styles from "./section-photo-gallery.module.scss";
@@ -10,17 +10,20 @@ import {availableSections} from "../../../../data/available-sections/available-s
 // templates
 import SectionTemplate from "../../../../templates/section/section.template";
 
-// contexts
-import {CurrentLanguageContext} from "../../../../providers/current-language/current-language-provider.component";
-
 // modal
 import TemplateBasicModal from "../../../../modals/basic-modal/basic-modal.component";
 
 // hooks
 import useSectionPhotoGallery from "./section-photo-gallery.hook"
 
-const SectionPhotoGallery: React.FC = () => {
-   const {selectedLanguage} = useContext(CurrentLanguageContext);
+// interfaces
+import { IMainPageContent } from "../../../../types/main-page-content.types";
+
+interface ISectionPhotoGallery {
+   pageContent: IMainPageContent;
+};
+
+const SectionPhotoGallery: React.FC<ISectionPhotoGallery> = ({pageContent}) => {
    const sectionInfo = availableSections.find(item => item.sectionId === "section-photo-gallery");
    const {
       actualMaxPhotoNum,
@@ -38,16 +41,7 @@ const SectionPhotoGallery: React.FC = () => {
    return (
       <SectionTemplate
          id={sectionInfo?.sectionId}
-         headerMess={
-            selectedLanguage === "PL" ?
-               sectionInfo?.PLName
-            : selectedLanguage === "EN" ?
-               sectionInfo?.ENName
-            : selectedLanguage === "DE" ?
-               sectionInfo?.DEName
-            ://UA
-               sectionInfo?.UAName
-         }
+         headerMess={pageContent.section_available_sections[sectionInfo?.file_field_name as keyof typeof pageContent.section_available_sections]}
          iconName={"icon-picture"}
       >
          <div className={styles.wrapper}>
@@ -60,16 +54,7 @@ const SectionPhotoGallery: React.FC = () => {
                         onClick={() => onThumbnailClick(item.id-1)}
                      >
                         <img
-                           alt={
-                              selectedLanguage === "PL" ?
-                                 item.altPL
-                              : selectedLanguage === "EN" ?
-                                 item.altEN
-                              : selectedLanguage === "DE" ?
-                                 item.altDE
-                              ://UA
-                                 item.altUA
-                           }
+                           alt={pageContent.section_photo_gallery[item.file_photo_name as keyof typeof pageContent.section_photo_gallery]}
                            src={`${process.env.PUBLIC_URL}/images/gallery${item.id}.jpg`}
                         />
                         <div className={styles.hoverFilter}>
@@ -86,14 +71,7 @@ const SectionPhotoGallery: React.FC = () => {
                      >
                         <p>
                            {
-                              selectedLanguage === "PL" ?
-                                 "Załaduj więcej zdjęć"
-                              : selectedLanguage === "EN" ?
-                                 "Load more images"
-                              : selectedLanguage === "DE" ?
-                                 "Weitere Bilder laden"
-                              ://UA
-                                 "Завантажити більше зображень"
+                              pageContent.section_photo_gallery.load_more_images
                            }
                         </p>
                         <i className={"icon-picture"}/>
@@ -143,16 +121,7 @@ const SectionPhotoGallery: React.FC = () => {
                </div>
                <div className={styles.imageContent}>
                   <img
-                     alt={
-                        selectedLanguage === "PL" ?
-                           availablePhotos[currentPhotoIdx].altPL
-                        : selectedLanguage === "EN" ?
-                           availablePhotos[currentPhotoIdx].altEN
-                        : selectedLanguage === "DE" ?
-                           availablePhotos[currentPhotoIdx].altDE
-                        ://UA
-                           availablePhotos[currentPhotoIdx].altUA
-                     }
+                     alt={pageContent.section_photo_gallery[availablePhotos[currentPhotoIdx].file_photo_name as keyof typeof pageContent.section_photo_gallery]}
                      src={`${process.env.PUBLIC_URL}/images/gallery${availablePhotos[currentPhotoIdx].id}.jpg`}
                   />
                </div>

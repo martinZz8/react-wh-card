@@ -10,7 +10,7 @@ import StandardApp from "./routes/StandardApp.component";
 import useRoot from "./useRoot";
 
 function Root() {
-   const {appVersion} = useRoot();
+   const {selectedLanguage} = useRoot();
    const {layoutColor} = useContext(LayoutColorContext);
 
    return (
@@ -23,7 +23,7 @@ function Root() {
          ${layoutColor === "dark" ? "darkTheme" : "lightTheme"}
       `}
     >
-      <StandardApp appVersion={appVersion} />
+      <StandardApp />
     </div>
    );
 }

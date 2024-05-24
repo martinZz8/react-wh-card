@@ -4,37 +4,22 @@ import {IAvailableSection} from "./available-sections.types";
 export const availableSections: IAvailableSection[] = [
    {//1
       sectionId: "section-about-company",
-      PLName: "O firmie",
-      ENName: "About the company",
-      DEName: "Über das Unternehmen",
-      UAName: "Про компанію"
+      file_field_name: "about_company"
    },
    {//2
       sectionId: "section-additional-info",
-      PLName: "Informacje",
-      ENName: "Informations",
-      DEName: "Informationen",
-      UAName: "Інформація"
+      file_field_name: "additional_info"
    },
    {//3
       sectionId: "section-location",
-      PLName: "Lokalizacja",
-      ENName: "Location",
-      DEName: "Lage",
-      UAName: "місце"
+      file_field_name: "location"
    },
    {//4
       sectionId: "section-mail",
-      PLName: "Skontaktuj się",
-      ENName: "Get in touch",
-      DEName: "Kontakt aufnehmen",
-      UAName: "контакт"
+      file_field_name: "mail"
    },
    {//5
       sectionId: "section-photo-gallery",
-      PLName: "Galeria zdjęć",
-      ENName: "Photo gallery",
-      DEName: "Fotogalerie",
-      UAName: "галерея"
+      file_field_name: "photo_gallery"
    }
 ];

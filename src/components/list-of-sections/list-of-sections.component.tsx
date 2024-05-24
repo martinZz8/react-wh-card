@@ -11,16 +11,20 @@ import {availableSections} from "../../data/available-sections/available-section
 import {CurrentLanguageContext} from "../../providers/current-language/current-language-provider.component";
 
 // interfaces
+import { IMainPageContent } from "../../types/main-page-content.types";
+
 interface IListOfSections {
    sticky?: boolean;
    hasBiggerSpacing?: boolean;
    handleOnClick?: () => void;
+   pageContent: IMainPageContent;
 }
 
 const ListOfSections: React.FC<IListOfSections> = ({
       sticky,
       hasBiggerSpacing,
-      handleOnClick
+      handleOnClick,
+      pageContent
    }) => {
    const {selectedLanguage} = useContext(CurrentLanguageContext);
 
@@ -47,14 +51,8 @@ const ListOfSections: React.FC<IListOfSections> = ({
                         onClick={() => handleOnClick && handleOnClick()}
                      >
                         {
-                           selectedLanguage === "PL" ?
-                              item.PLName
-                           : selectedLanguage === "EN" ?
-                              item.ENName
-                           :selectedLanguage === "DE" ?
-                              item.DEName
-                           ://UA
-                              item.UAName
+                           // Solution for TS index error: https://stackoverflow.com/questions/57086672/element-implicitly-has-an-any-type-because-expression-of-type-string-cant-b
+                           pageContent.section_available_sections[item.file_field_name as keyof typeof pageContent.section_available_sections]
                         }
                      </ScrollLink>
                   </li>

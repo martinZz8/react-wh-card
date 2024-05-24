@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React from "react";
 
 // styles
 import styles from "./section-location.module.scss";
@@ -9,26 +9,20 @@ import {availableSections} from "../../../../data/available-sections/available-s
 // templates
 import SectionTemplate from "../../../../templates/section/section.template";
 
-// contexts
-import {CurrentLanguageContext} from "../../../../providers/current-language/current-language-provider.component";
+// interfaces
+import { IMainPageContent } from "../../../../types/main-page-content.types";
 
-const SectionLocation: React.FC = () => {
-   const {selectedLanguage} = useContext(CurrentLanguageContext);
+interface ISectionLocation {
+   pageContent: IMainPageContent;
+};
+
+const SectionLocation: React.FC<ISectionLocation> = ({pageContent}) => {
    const sectionInfo = availableSections.find(item => item.sectionId === "section-location");
 
    return (
       <SectionTemplate
          id={sectionInfo?.sectionId}
-         headerMess={
-            selectedLanguage === "PL" ?
-               sectionInfo?.PLName
-            : selectedLanguage === "EN" ?
-               sectionInfo?.ENName
-            : selectedLanguage === "DE" ?
-               sectionInfo?.DEName
-            ://UA
-               sectionInfo?.UAName
-         }
+         headerMess={pageContent.section_available_sections[sectionInfo?.file_field_name as keyof typeof pageContent.section_available_sections]}
          iconName={"icon-map"}
       >
          <div className={styles.wrapper}>

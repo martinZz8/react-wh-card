@@ -1,0 +1,104 @@
+{
+    "app_version": {
+        "title": "Accounting Office Wiesław Harbuz"
+    },
+    "section_available_sections": {
+        "about_company": "About the company",
+        "additional_info": "Informations",
+        "location": "Location",
+        "mail": "Get in touch",
+        "photo_gallery": "Photo gallery"
+    },    
+    "section_ua_help": {
+        "ua_help_info_long": "Fundraising for Ukraine: ",
+        "ua_help_info_short": "Fundraising for Ukraine: "
+    },
+    "section_main_page_header": {
+        "title": "Accounting office",
+        "country": "Poland",
+        "street": " Rolnicza 10 St.",
+        "email": "Email: ",
+        "telephone": "Phone: "
+    },
+    "section_about_company": {
+        "main": {
+            "desc1": "Accounting Office Wiesław Harbuz has been on the market for several years.",
+            "desc2": "Our experience and competitive prices of our services make us have many regular and satisfied customers.",
+            "desc3": "I have knowledge supported by many years of work experience in the tax office."
+        },
+        "services": {
+            "title": "We provide the following services:",
+            "desc1": "filling out tax returns",
+            "desc2": "tax accounting",
+            "desc3": "assistance in obtaining tax refunds for work abroad (in the following countries: Germany, Belgium, Austria, USA, Netherlands, UK, Ireland, Australia, Denmark, Norway or Sweden)",
+            "desc4": "management of income and expense books (KPIR)",
+            "desc5": "keeping lump sum records",
+            "desc6": "VAT accounting",
+            "desc7": "annual PIT",
+            "desc8": "HR and payroll services, Social Security",
+            "desc9": "assistance with official letters and letters to the courts",
+            "desc10":"assistance in setting up your own business",
+            "desc11":"other accounting and legal services that can be discussed individually with the client"
+        },
+        "ending": {
+            "title": "On the territory of the city of Tomaszów Lubelski it is possible to perform services at the customer's home.",
+            "desc1": "Use the services of Wiesław Harbuz Accounting Office today!",
+            "desc2": "We will help reliably, professionally and at an affordable price."
+        }
+    },
+    "section_additional_info": {
+        "email": "Email: ",
+        "telephone": "Phone: ",
+        "address": "Address: ",
+        "open_hours": "Opening hours:",
+        "day_of_week": {
+            "monday": "Mo.",
+            "tuesday": "Tu.",
+            "wednesday": "We.",
+            "thursday": "Th.",
+            "friday": "Fr.",
+            "saturday": "Sa.",
+            "sunday": "Su."           
+        },
+        "closed": "closed"
+    },
+    "section_mail": {
+        "first_name": "First name",
+        "last_name": "Last name",
+        "phone_number": "Phone number",
+        "email": "Email address",
+        "topic": "Topic",
+        "message": "Message",
+        "select_files": "Select files",
+        "consent_to_data_processing": {
+            "desc1": "I consent to the processing of personal data in accordance with the Law on Personal Data Protection in connection with sending an inquiry via the contact form.",
+            "desc2": "Provision of data is voluntary, but necessary to process the request.",
+            "desc3": "I have been informed that I have the right to access my data, the opportunity to correct them, to request the cessation of their processing.",
+            "desc4_1": "The administrator of the personal data is ",
+            "desc4_2": "Accounting office Wiesław Harbuz, Poland 22-600 Tomaszów Lubelski Rolicza 10 St",
+            "desc4_3": "."
+        },
+        "send": "Wyślij",
+        "sending_message": "Sending",
+        "successfull_send_message": "The message has been sent correctly. We will contact you as soon as possible.",
+        "error_send_message": "An error occurred while sending the message. Try again later or send the message from your webmail.",
+        "needed_phone_number_or_email_message": "Provide either a phone number or email address for further contact."
+    },
+    "section_photo_gallery": {
+        "gallery1": "office1",
+        "gallery2": "office2",
+        "gallery3": "office3",
+        "gallery4": "Wiesław Harbuz",
+        "gallery5": "entrance to the square in front of the office1",
+        "gallery6": "entrance to the square in front of the office2",
+        "gallery7": "entrance to the office building",
+        "load_more_images": "Load more images"
+    },
+    "section_back_to_top_button": {
+        "title": "Go up"
+    },
+    "section_footer": {        
+        "all_rights_reserved": "All rights reserved",
+        "made_by": "Made by: "
+    }
+}

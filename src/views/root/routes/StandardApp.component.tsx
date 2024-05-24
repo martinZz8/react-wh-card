@@ -4,12 +4,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 // views
 import ViewMainPage from "../../main-page/main-page.component";
 
-// interfaces
-interface IStandardApp {
-   appVersion: string;
-}
-
-const StandardApp: React.FC<IStandardApp> = ({appVersion}) => {
+const StandardApp: React.FC = () => {
 
    return (
      <Switch>
@@ -18,7 +13,7 @@ const StandardApp: React.FC<IStandardApp> = ({appVersion}) => {
           exact
           path="/"
           component={() => (
-                <ViewMainPage appVersion={appVersion} />
+                <ViewMainPage />
              )
           }
        />

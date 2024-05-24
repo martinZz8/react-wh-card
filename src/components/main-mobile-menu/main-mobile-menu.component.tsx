@@ -8,6 +8,9 @@ import TemplateBasicModal from "../../modals/basic-modal/basic-modal.component";
 
 // components
 import ListOfSections from "../list-of-sections/list-of-sections.component";
+import usePageContent from "../../hooks/usePageContent.hook";
+import { IMainPageContent } from "../../types/main-page-content.types";
+import { AvailablePagesEnum } from "../../enums/available-pages.enums";
 
 // interfaces
 interface IMainMobileMenu {
@@ -16,6 +19,7 @@ interface IMainMobileMenu {
 }
 
 const MainMobileMenu: React.FC<IMainMobileMenu> = ({onOutClick, isOpened}) => {
+   const {pageContent} = usePageContent<IMainPageContent>(AvailablePagesEnum.Main);
 
    return (
       <TemplateBasicModal
@@ -23,10 +27,16 @@ const MainMobileMenu: React.FC<IMainMobileMenu> = ({onOutClick, isOpened}) => {
          isOpened={isOpened}
       >
          <div className={`customScrollBar ${styles.mainMobileMenu} ${isOpened ? styles.opened : ""}`}>
-            <ListOfSections
-               handleOnClick={() => onOutClick()}
-               hasBiggerSpacing
-            />
+            {
+               pageContent != null ?
+                  <ListOfSections
+                     handleOnClick={() => onOutClick()}
+                     hasBiggerSpacing
+                     pageContent={pageContent}
+                  />
+               :
+                  null
+            }            
          </div>
       </TemplateBasicModal>
    );

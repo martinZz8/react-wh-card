@@ -1,8 +1,4 @@
 export interface IAvailablePhotos {
    id: number;
-   name: string;
-   altPL: string;
-   altEN: string;
-   altDE: string;
-   altUA: string;
+   file_photo_name: string;
 }

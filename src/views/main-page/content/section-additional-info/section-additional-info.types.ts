@@ -1,9 +1,6 @@
 export interface IDayOfWeek {
    id: number;
-   PLName: string;
-   GBName: string;
-   DEName: string;
-   UAName: string;
+   file_day_name: string;
    hourFrom: string | null;
    hourTo: string | null;
    isAWorkDay: boolean;

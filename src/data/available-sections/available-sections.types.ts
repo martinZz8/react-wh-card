@@ -8,8 +8,5 @@ export type IAvailableSectionsId =
 
 export interface IAvailableSection {
    sectionId: IAvailableSectionsId;
-   PLName: string;
-   ENName: string;
-   DEName: string;
-   UAName: string;
+   file_field_name: string;
 }

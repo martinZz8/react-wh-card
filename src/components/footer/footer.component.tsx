@@ -1,67 +1,65 @@
-import React, {useContext} from "react";
+import React from "react";
 
 // styles
 import styles from "./footer.module.scss";
 
-// context
-import {CurrentLanguageContext} from "../../providers/current-language/current-language-provider.component";
-
 // components
 import UaHelpInfo from "../ua-help-info/ua-help-info.component";
 
+// hooks
+import usePageContent from "../../hooks/usePageContent.hook";
+
+// enums
+import { AvailablePagesEnum } from "../../enums/available-pages.enums";
+
+// interfaces
+import { IMainPageContent } from "../../types/main-page-content.types";
+
 const Footer: React.FC = () => {
-   const {selectedLanguage} = useContext(CurrentLanguageContext);
+   const {pageContent} = usePageContent<IMainPageContent>(AvailablePagesEnum.Main);
 
    return (
-      <div className={styles.footerWrap}>
-        <div className={styles.footerInfo}>
-          <UaHelpInfo smallFont/>
-        </div>
-        <div className={styles.footerInfo}>
-           <div className={styles.item}>
-              <p>
-                 {
-                    selectedLanguage === "PL" ?
-                       "Wszelkie prawa zastrzeżone"
-                    :   selectedLanguage === "EN" ?
-                       "All rights reserved"
-                    : selectedLanguage === "DE" ?
-                       "Alle Rechte vorbehalten"
-                    ://UA
-                        "Всі права захищені"
-
-                 }
-                 <span className={styles.copyright}> &copy;</span> {new Date().getFullYear()}
-              </p>
-           </div>
-           <div className={styles.item}>
-              <p>
-                 {
-                    selectedLanguage === "PL" ?
-                       "Wykonane przez: "
-                    :   selectedLanguage === "EN" ?
-                       "Made by: "
-                    : selectedLanguage === "DE" ?
-                       "Hergestellt von: "
-                    ://UA
-                        "Зроблено: "
-                 }
-                 <br/>
-                 <a href="mailto: martinzz.info@gmail.com">Maciej Harbuz</a>
-              </p>
-           </div>
-        </div>
-        <div className={styles.footerIcons}>
-           <a
-              href={"https://www.google.com/search?&q=biuro+wieslaw+harbuz"}
-              target={"_blank"}
-           >
-              <div className={styles.imageWrap}>
-                 <i className={"icon-google"}/>
-              </div>
-           </a>
-        </div>
-      </div>
+      pageContent != null ?
+         <div className={styles.footerWrap}>
+            <div className={styles.footerInfo}>
+               <UaHelpInfo
+                  smallFont
+                  pageContent={pageContent}
+               />
+            </div>
+            <div className={styles.footerInfo}>
+               <div className={styles.item}>
+                  <p>
+                     {
+                        pageContent.section_footer.all_rights_reserved
+                     }
+                     <span className={styles.copyright}> &copy;</span> {new Date().getFullYear()}
+                  </p>
+               </div>
+               <div className={styles.item}>
+                  <p>
+                     {
+                        pageContent.section_footer.made_by
+                     }
+                     <br/>
+                     <a href="mailto: martinzz.info@gmail.com">Maciej Harbuz</a>
+                  </p>
+               </div>
+            </div>
+            <div className={styles.footerIcons}>
+               <a
+                  href={"https://www.google.com/search?&q=biuro+wieslaw+harbuz"}
+                  target={"_blank"}
+                  rel="noopener noreferrer"
+               >
+                  <div className={styles.imageWrap}>
+                     <i className={"icon-google"}/>
+                  </div>
+               </a>
+            </div>
+         </div>
+      :
+         null
    );
 };
 

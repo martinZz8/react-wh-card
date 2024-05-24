@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React from "react";
 
 // styles
 import styles from "./section-mail.module.scss";
@@ -9,9 +9,6 @@ import {acceptedFileFormats} from "../../../../data/acceptedFileFormats";
 
 // templates
 import SectionTemplate from "../../../../templates/section/section.template";
-
-// contexts
-import {CurrentLanguageContext} from "../../../../providers/current-language/current-language-provider.component";
 
 // hooks
 import useSectionMail from "./section-mail.hook";
@@ -25,8 +22,14 @@ import MessageBox from "../../../../components/message-box/message-box.component
 import Checkbox from "../../../../components/ui/checkbox/checkbox.component";
 import InputFile from "../../../../components/ui/input-file/input-file.component";
 
-const SectionMail: React.FC = () => {
-   const {selectedLanguage} = useContext(CurrentLanguageContext);
+// interfaces
+import { IMainPageContent } from "../../../../types/main-page-content.types";
+
+interface ISectionMail {
+   pageContent: IMainPageContent;
+};
+
+const SectionMail: React.FC<ISectionMail> = ({pageContent}) => {
    const sectionInfo = availableSections.find(item => item.sectionId === "section-mail");
    const {
       sectionMailForm,
@@ -47,16 +50,7 @@ const SectionMail: React.FC = () => {
    return (
       <SectionTemplate
          id={sectionInfo?.sectionId}
-         headerMess={
-            selectedLanguage === "PL" ?
-               sectionInfo?.PLName
-            : selectedLanguage === "EN" ?
-               sectionInfo?.ENName
-            : selectedLanguage === "DE" ?
-               sectionInfo?.DEName
-            ://UA
-               sectionInfo?.UAName
-         }
+         headerMess={pageContent.section_available_sections[sectionInfo?.file_field_name as keyof typeof pageContent.section_available_sections]}
          iconName={"icon-mail-alt"}
       >
          <div className={styles.wrapper}>
@@ -70,26 +64,8 @@ const SectionMail: React.FC = () => {
                         type={"text"}
                         name={"firstName"}
                         value={sectionMailForm.firstName}
-                        label={
-                           selectedLanguage === "PL" ?
-                              "Imię"
-                           : selectedLanguage === "EN" ?
-                              "First name"
-                           : selectedLanguage === "DE" ?
-                              "Name"
-                           ://UA
-                              "назва"
-                        }
-                        placeholder={
-                           selectedLanguage === "PL" ?
-                              "Imię"
-                           : selectedLanguage === "EN" ?
-                              "First name"
-                           : selectedLanguage === "DE" ?
-                              "Vorname"
-                           ://UA
-                              "назва"
-                        }
+                        label={pageContent.section_mail.first_name}
+                        placeholder={pageContent.section_mail.first_name}
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.firstNameErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.firstNameErrorMessage}
@@ -101,26 +77,8 @@ const SectionMail: React.FC = () => {
                         type={"text"}
                         name={"lastName"}
                         value={sectionMailForm.lastName}
-                        label={
-                           selectedLanguage === "PL" ?
-                              "Nazwisko"
-                           : selectedLanguage === "EN" ?
-                              "Last name"
-                           : selectedLanguage === "DE" ?
-                              "Zuname"
-                           ://UA
-                              "прізвище"
-                        }
-                        placeholder={
-                           selectedLanguage === "PL" ?
-                              "Nazwisko"
-                           : selectedLanguage === "EN" ?
-                              "Last name"
-                           : selectedLanguage === "DE" ?
-                              "Zuname"
-                           ://UA
-                              "прізвище"
-                        }
+                        label={pageContent.section_mail.last_name}
+                        placeholder={pageContent.section_mail.last_name}
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.lastNameErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.lastNameErrorMessage}
@@ -134,26 +92,8 @@ const SectionMail: React.FC = () => {
                         type={"text"}
                         name={"phoneNumber"}
                         value={sectionMailForm.phoneNumber}
-                        label={
-                           selectedLanguage === "PL" ?
-                              "Numer telefonu"
-                           : selectedLanguage === "EN" ?
-                              "Phone number"
-                           : selectedLanguage === "DE" ?
-                              "Rufnummer"
-                           ://UA
-                              "Телефонний номер"
-                        }
-                        placeholder={
-                           selectedLanguage === "PL" ?
-                              "Numer telefonu"
-                           : selectedLanguage === "EN" ?
-                              "Phone number"
-                           : selectedLanguage === "DE" ?
-                              "Rufnummer"
-                           ://UA
-                              "Телефонний номер"
-                        }
+                        label={pageContent.section_mail.phone_number}
+                        placeholder={pageContent.section_mail.phone_number}
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.phoneNumberErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.phoneNumberErrorMessage}
@@ -165,26 +105,8 @@ const SectionMail: React.FC = () => {
                         type={"text"}
                         name={"emailAddress"}
                         value={sectionMailForm.emailAddress}
-                        label={
-                           selectedLanguage === "PL" ?
-                              "Adres email"
-                           : selectedLanguage === "EN" ?
-                              "Email address"
-                           : selectedLanguage === "DE" ?
-                              "E-Mail Adresse"
-                           ://UA
-                              "електронна пошта"
-                        }
-                        placeholder={
-                           selectedLanguage === "PL" ?
-                              "Adres email"
-                           : selectedLanguage === "EN" ?
-                              "Email address"
-                           : selectedLanguage === "DE" ?
-                              "E-Mail Adresse"
-                           ://UA
-                              "електронна пошта"
-                        }
+                        label={pageContent.section_mail.email}
+                        placeholder={pageContent.section_mail.email}
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.emailAddressErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.emailAddressErrorMessage}
@@ -198,26 +120,8 @@ const SectionMail: React.FC = () => {
                         type={"text"}
                         name={"subject"}
                         value={sectionMailForm.subject}
-                        label={
-                           selectedLanguage === "PL" ?
-                              "Temat"
-                           : selectedLanguage === "EN" ?
-                              "Topic"
-                           : selectedLanguage === "DE" ?
-                              "Thema"
-                           ://UA
-                              "тема"
-                        }
-                        placeholder={
-                           selectedLanguage === "PL" ?
-                              "Temat"
-                           : selectedLanguage === "EN" ?
-                              "Topic"
-                           : selectedLanguage === "DE" ?
-                              "Thema"
-                           ://UA
-                              "тема"
-                        }
+                        label={pageContent.section_mail.topic}
+                        placeholder={pageContent.section_mail.topic}
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.subjectErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.subjectErrorMessage}
@@ -231,26 +135,8 @@ const SectionMail: React.FC = () => {
                      <TextArea
                         name={"message"}
                         value={sectionMailForm.message}
-                        label={
-                           selectedLanguage === "PL" ?
-                              "Wiadomość"
-                           : selectedLanguage === "EN" ?
-                              "Message"
-                           : selectedLanguage === "DE" ?
-                              "Nachricht"
-                           ://UA
-                              "повідомлення"
-                        }
-                        placeholder={
-                           selectedLanguage === "PL" ?
-                              "Wiadomość"
-                           : selectedLanguage === "EN" ?
-                              "Message"
-                           : selectedLanguage === "DE" ?
-                              "Nachricht"
-                           ://UA
-                              "повідомлення"
-                        }
+                        label={pageContent.section_mail.message}
+                        placeholder={pageContent.section_mail.message}
                         handleOnChange={handleOnChange}
                         isError={errorSectionMailForm.messageErrorMessage.length > 0}
                         errorMessage={errorSectionMailForm.messageErrorMessage}
@@ -270,16 +156,7 @@ const SectionMail: React.FC = () => {
                            handleOnChange("files", null);
                         }}
                         handleOnChange={handleOnChange}
-                        label={
-                           selectedLanguage === "PL" ?
-                              "Wybierz pliki"
-                           : selectedLanguage === "EN" ?
-                              "Select files"
-                           : selectedLanguage === "DE" ?
-                              "Dateien auswählen"
-                           ://UA
-                              "Виберіть файли"
-                        }
+                        label={pageContent.section_mail.select_files}
                         acceptedFileFormats={acceptedFileFormats}
                         multiple
                         isError={errorSectionMailForm.filesErrorMessage.length > 0}
@@ -295,46 +172,15 @@ const SectionMail: React.FC = () => {
                         value={"acceptedConditions"}
                         checked={sectionMailForm.acceptedConditions}
                         label={
-                           selectedLanguage === "PL" ?
-                              <>
-                                 Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą o ochronie danych osobowych w związku z wysłaniem zapytania przez formularz kontaktowy.
-                                 <br/>
-                                 Podanie danych jest dobrowolne, ale niezbędne do przetworzenia zapytania.
-                                 <br/>
-                                 Zostałem poinformowany, że przysługuje mi prawo dostępu do swoich danych, możliwości ich poprawienia, żądania zaprzestania ich przetwarzania.
-                                 <br/>
-                                 Administratorem danych osobowych jest <b>Biuro rachunkowe Wiesław Harbuz, Polska 22-600 Tomaszów Lubelski ul. Rolicza 10</b>.
-                              </>
-                           : selectedLanguage === "EN" ?
-                              <>
-                                 I consent to the processing of personal data in accordance with the Law on Personal Data Protection in connection with sending an inquiry via the contact form.
-                                 <br/>
-                                 Provision of data is voluntary, but necessary to process the request.
-                                 <br/>
-                                 I have been informed that I have the right to access my data, the opportunity to correct them, to request the cessation of their processing.
-                                 <br/>
-                                 The administrator of the personal data is <b>Accounting office Wiesław Harbuz, Poland 22-600 Tomaszów Lubelski Rolicza 10 St</b>.
-                              </>
-                           : selectedLanguage === "DE" ?
-                              <>
-                                 Ich stimme der Verarbeitung meiner personenbezogenen Daten im Sinne des Datenschutzgesetzes im Zusammenhang mit dem Absenden einer Anfrage über das Kontaktformular zu.
-                                 <br/>
-                                 Die Angabe der Daten ist freiwillig, aber für die Bearbeitung der Anfrage erforderlich.
-                                 <br/>
-                                 Ich wurde darüber informiert, dass ich das Recht habe, auf meine Daten zuzugreifen, sie zu berichtigen und die Beendigung ihrer Verarbeitung zu verlangen.
-                                 <br/>
-                                 Der für die Verarbeitung der personenbezogenen Daten Verantwortliche ist <b>Rechnungsstelle Wiesław Harbuz, Polen 22-600 Tomaszów Lubelski Rolicza 10 Str</b>.
-                              </>
-                           ://UA
-                              <>
-                                 Я даю згоду на обробку персональних даних відповідно до Закону про захист персональних даних у зв'язку з відправленням запиту через контактну форму.
-                                 <br/>
-                                 Надання даних є добровільним, але необхідним для обробки запиту.
-                                 <br/>
-                                 Мене повідомили, що я маю право на доступ до своїх даних, можливість їх виправлення та вимагати припинення їх обробки.
-                                 <br/>
-                                 Розпорядником персональних даних є <b>бухгалтерія Wiesław Harbuz, Польща 22-600 Tomaszów Lubelski вул. Rolicza 10</b>.
-                              </>
+                           <>
+                              {pageContent.section_mail.consent_to_data_processing.desc1}
+                              <br/>
+                              {pageContent.section_mail.consent_to_data_processing.desc2}
+                              <br/>
+                              {pageContent.section_mail.consent_to_data_processing.desc3}
+                              <br/>
+                              {pageContent.section_mail.consent_to_data_processing.desc4_1}<b>{pageContent.section_mail.consent_to_data_processing.desc4_2}</b>{pageContent.section_mail.consent_to_data_processing.desc4_3}
+                           </>
                         }
                         isError={errorSectionMailForm.acceptedConditionsError}
                         handleOnChange={handleCheckboxOnChange}
@@ -346,16 +192,7 @@ const SectionMail: React.FC = () => {
                   <div className={styles.buttonWrapper}>
                      <Button
                         type={"submit"}
-                        title={
-                           selectedLanguage === "PL" ?
-                              "Wyślij"
-                           : selectedLanguage === "EN" ?
-                              "Send"
-                           : selectedLanguage === "DE" ?
-                              "Senden"
-                           ://UA
-                              "відправити"
-                        }
+                        title={pageContent.section_mail.send}
                         fontColor={"black"}
                         backgroundColor={"lemonGreen"}
                         disabled={isSubmitButtonDisabled}
@@ -370,32 +207,11 @@ const SectionMail: React.FC = () => {
                            <MessageBox
                               message={
                                  isSuccessSend ?
-                                    selectedLanguage === "PL" ?
-                                       "Poprawnie wysłano wiadomość. Skontaktujemy się z Tobą w jak najkrótszym czasie."
-                                    : selectedLanguage === "EN" ?
-                                       "The message has been sent correctly. We will contact you as soon as possible."
-                                    : selectedLanguage === "DE" ?
-                                       "Nachricht korrekt gesendet. Wir werden Sie so bald wie möglich kontaktieren."
-                                    ://UA
-                                       "Повідомлення надіслано правильно. Ми зв'яжемося з вами якомога швидше."
+                                    pageContent.section_mail.successfull_send_message
                                  : isErrorSend ?
-                                    selectedLanguage === "PL" ?
-                                       "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później albo wyślij wiadomość ze swojej poczty internetowej."
-                                    : selectedLanguage === "EN" ?
-                                       "An error occurred while sending the message. Try again later or send the message from your webmail."
-                                    : selectedLanguage === "DE" ?
-                                       "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal oder senden Sie die Nachricht über Ihr Webmail."
-                                    ://UA
-                                       "Під час надсилання повідомлення сталася помилка. Повторіть спробу пізніше або надішліть повідомлення зі своєї інтернет-пошти."
+                                    pageContent.section_mail.error_send_message
                                  ://isNotGivenPhoneOrEmail
-                                    selectedLanguage === "PL" ?
-                                       "Należy podać numer telefonu bądź adres email w celu dalszego kontaktu."
-                                    : selectedLanguage === "EN" ?
-                                       "Provide either a phone number or email address for further contact."
-                                    : selectedLanguage === "DE" ?
-                                       "Bitte geben Sie eine Telefonnummer oder eine E-Mail-Adresse für die weitere Kontaktaufnahme an."
-                                    ://UA
-                                       "Будь ласка, вкажіть номер телефону або електронну адресу для подальшого зв’язку."
+                                    pageContent.section_mail.needed_phone_number_or_email_message
                               }
                               isError={isErrorSend || isNotGivenPhoneOrEmail}
                               onCloseClick={
@@ -412,16 +228,7 @@ const SectionMail: React.FC = () => {
                {
                   isLoadingSend ?
                      <LoadingModal
-                        message={
-                           selectedLanguage === "PL" ?
-                              "Wysyłanie"
-                           : selectedLanguage === "EN" ?
-                              "Sending"
-                           : selectedLanguage === "DE" ?
-                              "Senden"
-                           ://UA
-                              "відправлення"
-                        }
+                        message={pageContent.section_mail.sending_message}
                      />
                   :
                      null

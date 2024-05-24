@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 
 // styles
 import styles from "./ua-help-info.module.scss";
@@ -7,21 +7,25 @@ import styles from "./ua-help-info.module.scss";
 import {ReactComponent as SVGUaHeartFlag} from "../../assets/other/heart-shaped-ukrainian-flag.svg";
 
 // context
-import {CurrentLanguageContext} from "../../providers/current-language/current-language-provider.component";
 import {WindowContext} from "../../providers/window-size/window-size-provider.component";
 
 // interfaces
+import { IMainPageContent } from "../../types/main-page-content.types";
+
 interface IUaHelpInfo {
   smallFont?: boolean;
+  pageContent: IMainPageContent;
 }
 
-const UaHelpInfo: React.FC<IUaHelpInfo> = ({smallFont}) => {
-  const {selectedLanguage} = useContext(CurrentLanguageContext);
-  const {windowWidth} = useContext(WindowContext);
+const UaHelpInfo: React.FC<IUaHelpInfo> = ({smallFont, pageContent}) => {
+  const determineIfIsShortText = (): boolean => windowWidth > 420;
 
-  const isShortText = () => {
-    return windowWidth > 420;
-  };
+  const {windowWidth} = useContext(WindowContext);
+  const [isShortText, setIsShortText] = useState<boolean>(determineIfIsShortText());
+
+  useEffect(() => {
+    setIsShortText(determineIfIsShortText());
+  }, [windowWidth]);
 
   return (
     <div className={`${styles.uaHelpInfo} ${smallFont ? styles.smallFont : ""}`}>
@@ -30,17 +34,10 @@ const UaHelpInfo: React.FC<IUaHelpInfo> = ({smallFont}) => {
       </div>
       <p>
         {
-          selectedLanguage === "PL" ?
-            isShortText() ?
-              "Zbiórka pieniędzy dla Ukrainy: "
-            :
-              "Zbiórka dla Ukrainy: "
-          : selectedLanguage === "EN" ?
-            "Fundraising for Ukraine: "
-          : selectedLanguage === "DE" ?
-            "Fundraising für die Ukraine"
-          ://UA
-            "Збір коштів для України"
+          isShortText ?
+            pageContent.section_ua_help.ua_help_info_short
+          :
+            pageContent.section_ua_help.ua_help_info_long
         }
       </p>
       <a

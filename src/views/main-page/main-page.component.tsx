@@ -6,20 +6,25 @@ import styles from "./main-page.module.scss";
 // templates
 import TemplateView from "../../templates/view/view.template";
 
+// hooks
+import usePageContent from "../../hooks/usePageContent.hook";
+
 // components
 import MainPageContent from "./content/main-page-content.component";
 
-// interfaces
-interface IViewMainPage {
-   appVersion: string;
-}
+import { IMainPageContent } from "../../types/main-page-content.types";
+import { AvailablePagesEnum } from "../../enums/available-pages.enums";
 
-const ViewMainPage: React.FC<IViewMainPage> = ({appVersion}) => {
+const ViewMainPage: React.FC = () => {
+   const {pageContent} = usePageContent<IMainPageContent>(AvailablePagesEnum.Main);
 
    return (
-      <TemplateView appVersion={appVersion} viewTitle="">
-         <MainPageContent/>
-      </TemplateView>
+      pageContent != null ?
+         <TemplateView appVersion={pageContent.app_version.title} viewTitle="">
+            <MainPageContent pageContent={pageContent}/>
+         </TemplateView>
+      :
+         null
    );
 };
 

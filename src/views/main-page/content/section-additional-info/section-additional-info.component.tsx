@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React from "react";
 
 // styles
 import styles from "./section-additional-info.module.scss";
@@ -10,31 +10,24 @@ import {dayOfWeeks} from "./section-additional-info.data";
 // templates
 import SectionTemplate from "../../../../templates/section/section.template";
 
-// contexts
-import {CurrentLanguageContext} from "../../../../providers/current-language/current-language-provider.component";
-
 // hooks
 import useAdditionalInfo from "./section-additional-info.hook";
 
-const SectionAdditionalInfo: React.FC = () => {
-   const {selectedLanguage} = useContext(CurrentLanguageContext);
+// interfaces
+import { IMainPageContent } from "../../../../types/main-page-content.types";
+
+interface ISectionAdditionalInfo {
+   pageContent: IMainPageContent;
+};
+
+const SectionAdditionalInfo: React.FC<ISectionAdditionalInfo> = ({pageContent}) => {
    const sectionInfo = availableSections.find(item => item.sectionId === "section-additional-info");
    const {todayDayNumber, checkIfIsOpened} = useAdditionalInfo();
 
    return (
       <SectionTemplate
          id={sectionInfo?.sectionId}
-         headerMess={
-            selectedLanguage === "PL" ?
-               sectionInfo?.PLName
-            : selectedLanguage === "EN" ?
-               sectionInfo?.ENName
-            : selectedLanguage === "DE" ?
-               sectionInfo?.DEName
-            ://UA
-               sectionInfo?.UAName
-
-         }
+         headerMess={pageContent.section_available_sections[sectionInfo?.file_field_name as keyof typeof pageContent.section_available_sections]}
          iconName={"icon-user"}
       >
          <div className={styles.wrapper}>
@@ -45,14 +38,7 @@ const SectionAdditionalInfo: React.FC = () => {
                <div className={styles.innerItem}>
                   <p className={`${styles.bold} ${styles.large} ${styles.underline}`}>
                   {
-                     selectedLanguage === "PL" ?
-                        "Email: "
-                     : selectedLanguage === "EN" ?
-                        "Email: "
-                     : selectedLanguage === "DE" ?
-                        "E-mail: "
-                     ://UA
-                        "Email: "
+                     pageContent.section_additional_info.email
                   }
                   </p>
                   <p>biuro.harbuz@wp.pl</p>
@@ -60,14 +46,7 @@ const SectionAdditionalInfo: React.FC = () => {
                <div className={styles.innerItem}>
                   <p className={`${styles.bold} ${styles.large} ${styles.underline}`}>
                   {
-                     selectedLanguage === "PL" ?
-                        "Telefon: "
-                     : selectedLanguage === "EN" ?
-                        "Phone: "
-                     : selectedLanguage === "DE" ?
-                        "Telefon: "
-                     ://UA
-                        "Телефон: "
+                     pageContent.section_additional_info.telephone
                   }
                   </p>
                   <p>503 414 100</p>
@@ -75,14 +54,7 @@ const SectionAdditionalInfo: React.FC = () => {
                <div className={styles.innerItem}>
                   <p className={`${styles.bold} ${styles.large} ${styles.underline}`}>
                   {
-                     selectedLanguage === "PL" ?
-                        "Adres: "
-                     : selectedLanguage === "EN" ?
-                        "Address: "
-                     : selectedLanguage === "DE" ?
-                        "Adresse: "
-                     :
-                        "Адреса: "
+                     pageContent.section_additional_info.address
                   }
                   </p>
                   <p>
@@ -98,14 +70,7 @@ const SectionAdditionalInfo: React.FC = () => {
             `}>
                <p className={styles.underline}>
                   {
-                     selectedLanguage === "PL" ?
-                        "Godziny otwarcia:"
-                     : selectedLanguage === "EN" ?
-                        "Opening hours:"
-                     : selectedLanguage === "DE" ?
-                        "Öffnungszeit:"
-                     ://UA
-                        "Години роботи:"
+                     pageContent.section_additional_info.open_hours
                   }
                </p>
                <ul>
@@ -125,28 +90,15 @@ const SectionAdditionalInfo: React.FC = () => {
                         >
                            <p>
                               {
-                                 selectedLanguage === "PL" ?
-                                    item.PLName
-                                 : selectedLanguage === "EN" ?
-                                    item.GBName
-                                 : selectedLanguage === "DE" ?
-                                    item.DEName
-                                 ://UA
-                                    item.UAName
+                                 pageContent.section_additional_info.day_of_week[item.file_day_name as keyof typeof pageContent.section_additional_info.day_of_week]
                               }
                            </p>
                            <p>
                               {
                                  item.isAWorkDay ?
                                     item.hourFrom+"-"+item.hourTo
-                                 : selectedLanguage === "PL" ?
-                                    "zamknięte"
-                                 : selectedLanguage === "EN" ?
-                                    "closed"
-                                 : selectedLanguage === "DE" ?
-                                    "getarnt"
-                                 ://UA
-                                    "ЗАЧИНЕНО"
+                                 :
+                                    pageContent.section_additional_info.closed
                               }
                            </p>
                         </li>

@@ -5,7 +5,6 @@ import {Link as ScrollLink} from "react-scroll";
 import styles from "./main-page-header.module.scss";
 
 // context
-import {CurrentLanguageContext} from "../../../../providers/current-language/current-language-provider.component";
 import {WindowContext} from "../../../../providers/window-size/window-size-provider.component";
 import {LayoutColorContext} from "../../../../providers/layout-color/layout-color-provider.component";
 
@@ -14,8 +13,14 @@ import LanguageSelector from "../../../../components/language-selector/language-
 import ThemeColorPicker from "../../../../components/theme-color-picker.component.tsx/theme-color-picker.component";
 import UaHelpInfo from "../../../../components/ua-help-info/ua-help-info.component";
 
-const MainPageHeader: React.FC = () => {
-   const {selectedLanguage} = useContext(CurrentLanguageContext);
+// interfaces
+import { IMainPageContent } from "../../../../types/main-page-content.types";
+
+interface IMainPageHeader {
+   pageContent: IMainPageContent;
+};
+
+const MainPageHeader: React.FC<IMainPageHeader> = ({pageContent}) => {
    const {windowWidth} = useContext(WindowContext);
    const {layoutColor} = useContext(LayoutColorContext);
 
@@ -30,19 +35,12 @@ const MainPageHeader: React.FC = () => {
           ${styles.uaHelpBar}
           ${!(layoutColor === "dark") ? styles.light : ""}
         `}>
-          <UaHelpInfo/>
+          <UaHelpInfo pageContent={pageContent}/>
         </div>
         <div className={styles.info}>
            <p className={`${styles.big} ${styles.paddingRight}`}>
               {
-                 selectedLanguage === "PL" ?
-                    "Biuro rachunkowe"
-                 : selectedLanguage === "EN" ?
-                    "Accounting office"
-                 : selectedLanguage === "DE" ?
-                    "Rechnungsstelle"
-                 ://UA
-                    "бухгалтерія"
+                 pageContent.section_main_page_header.title
               }
               {
                  windowWidth < 800 ?
@@ -57,52 +55,24 @@ const MainPageHeader: React.FC = () => {
            <div className={styles.divider}/>
            <p className={`${styles.medium} ${styles.spacingTop}`}>
               {
-                  selectedLanguage === "PL" ?
-                     "Polska"
-                  : selectedLanguage === "EN" ?
-                     "Poland"
-                  : selectedLanguage === "DE" ?
-                     "Polen"
-                  ://UA
-                     "Польща"
+                  pageContent.section_main_page_header.country
               }
            </p>
            <p className={`${styles.medium} ${styles.spacingTop}`}>
               Tomaszów Lubelski 22-600
               {
-                  selectedLanguage === "PL" ?
-                     " ul. Rolnicza 10"
-                  : selectedLanguage === "EN" ?
-                     " Rolnicza 10 St."
-                  : selectedLanguage === "DE" ?
-                     " Rolnicza 10 Str"
-                  ://UA
-                     " вул. Rolnicza 10"
+                  pageContent.section_main_page_header.street
               }
            </p>
            <p className={`${styles.medium} ${styles.spacingTop}`}>
               {
-                 selectedLanguage === "PL" ?
-                  "Email: "
-                 : selectedLanguage === "EN" ?
-                  "Email: "
-                 : selectedLanguage === "DE" ?
-                    "E-mail: "
-                 ://UA
-                     "Email: "
+                 pageContent.section_main_page_header.email
               }
               biuro.harbuz@wp.pl
            </p>
            <p className={`${styles.medium} ${styles.spacingTop}`}>
               {
-                 selectedLanguage === "PL" ?
-                     "Telefon: "
-                 : selectedLanguage === "EN" ?
-                     "Phone: "
-                 : selectedLanguage === "DE" ?
-                     "Telefon: "
-                 ://UA
-                     "Телефон: "
+                 pageContent.section_main_page_header.telephone
               }
               503 414 100
            </p>

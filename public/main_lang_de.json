@@ -1,0 +1,104 @@
+{
+    "app_version": {
+        "title": "Das Buchhaltungsbüro Wiesław Harbuz"
+    },
+    "section_available_sections": {
+        "about_company": "Über das Unternehmen",
+        "additional_info": "Informationen",
+        "location": "Lage",
+        "mail": "Kontakt aufnehmen",
+        "photo_gallery": "Fotogalerie"
+    },    
+    "section_ua_help": {        
+        "ua_help_info_long": "Fundraising für die Ukraine",
+        "ua_help_info_short": "Fundraising für die Ukraine"
+    },
+    "section_main_page_header": {
+        "title": "Rechnungsstelle",
+        "country": "Polen",
+        "street": " Rolnicza 10 Str",
+        "email": "E-mail: ",
+        "telephone": "Telefon: "
+    },
+    "section_about_company": {
+        "main": {
+            "desc1": "Das Buchhaltungsbüro Wiesław Harbuz ist bereits seit mehreren Jahren auf dem Markt.",
+            "desc2": "Dank unserer Erfahrung und der wettbewerbsfähigen Preise unserer Dienstleistungen haben wir viele zufriedene Stammkunden.",
+            "desc3": "Ich verfüge über Kenntnisse, die durch meine langjährige Berufserfahrung in einem Steuerbüro gestützt werden."
+        },
+        "services": {
+            "title": "Wir bieten die folgenden Dienstleistungen an:",
+            "desc1": "Einreichung von Steuererklärungen",
+            "desc2": "Steuerbuchhaltung",
+            "desc3": "Unterstützung bei der Erlangung von Steuererstattungen für Arbeit im Ausland (in den folgenden Ländern: Deutschland, Belgien, Österreich, USA, Niederlande, UK, Irland, Australien, Dänemark, Norwegen oder Schweden)",
+            "desc4": "Führung eines Einnahmen- und Ausgabenbuchs (KPIR)",
+            "desc5": "Führung von Pauschalaufzeichnungen",
+            "desc6": "Mehrwertsteuerabrechnung",
+            "desc7": "Jährliche PIT",
+            "desc8": "Personal- und Gehaltsabrechnungsdienste, Sozialversicherung",
+            "desc9": "Unterstützung bei administrativen und gerichtlichen Dokumenten",
+            "desc10": "Unterstützung bei der Gründung eines eigenen Unternehmens",
+            "desc11":"andere Buchhaltungs- und Rechtsdienstleistungen, die individuell mit dem Kunden besprochen werden können"
+        },
+        "ending": {
+            "title": "Im Gebiet von Tomaszów Lubelski ist es möglich, die Dienstleistungen in der Wohnung des Kunden zu erbringen.",
+            "desc1": "Nutzen Sie noch heute die Dienstleistungen des Buchhaltungsbüros Wiesław Harbuz!",
+            "desc2": "Wir helfen Ihnen zuverlässig, professionell und zu einem günstigen Preis."
+        }
+    },
+    "section_additional_info": {
+        "email": "E-mail: ",
+        "telephone": "Telefon: ",
+        "address": "Adresse: ",
+        "open_hours": "Öffnungszeit:",
+        "day_of_week": {
+            "monday": "Mo.",
+            "tuesday": "Di.",
+            "wednesday": "Mi.",
+            "thursday": "Do.",
+            "friday": "Fr.",
+            "saturday": "Sa.",
+            "sunday": "So."           
+        },
+        "closed": "getarnt"
+    },
+    "section_mail": {
+        "first_name": "Vorname",
+        "last_name": "Zuname",
+        "phone_number": "Rufnummer",
+        "email": "E-Mail Adresse",
+        "topic": "Thema",
+        "message": "Nachricht",
+        "select_files": "Dateien auswählen",
+        "consent_to_data_processing": {
+            "desc1": "Ich stimme der Verarbeitung meiner personenbezogenen Daten im Sinne des Datenschutzgesetzes im Zusammenhang mit dem Absenden einer Anfrage über das Kontaktformular zu.",
+            "desc2": "Die Angabe der Daten ist freiwillig, aber für die Bearbeitung der Anfrage erforderlich.",
+            "desc3": "Ich wurde darüber informiert, dass ich das Recht habe, auf meine Daten zuzugreifen, sie zu berichtigen und die Beendigung ihrer Verarbeitung zu verlangen.",
+            "desc4_1": "Der für die Verarbeitung der personenbezogenen Daten Verantwortliche ist ",
+            "desc4_2": "Rechnungsstelle Wiesław Harbuz, Polen 22-600 Tomaszów Lubelski Rolicza 10 Str",
+            "desc4_3": "."
+        },
+        "send": "Senden",
+        "sending_message": "Senden",
+        "successfull_send_message": "Nachricht korrekt gesendet. Wir werden Sie so bald wie möglich kontaktieren.",
+        "error_send_message": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal oder senden Sie die Nachricht über Ihr Webmail.",
+        "needed_phone_number_or_email_message": "Bitte geben Sie eine Telefonnummer oder eine E-Mail-Adresse für die weitere Kontaktaufnahme an."
+    },
+    "section_photo_gallery": {
+        "gallery1": "Büro1",
+        "gallery2": "Büro2",
+        "gallery3": "Büro3",
+        "gallery4": "Wiesław Harbuz",
+        "gallery5": "Zugang zum Platz vor dem Büro1",
+        "gallery6": "Zugang zum Platz vor dem Büro2",
+        "gallery7": "Eingang zum Bürogebäude",
+        "load_more_images": "Weitere Bilder laden"
+    },
+    "section_back_to_top_button": {
+        "title": "Geh hinauf"
+    },
+    "section_footer": {
+        "all_rights_reserved": "Alle Rechte vorbehalten",
+        "made_by": "Hergestellt von: "
+    }
+}
