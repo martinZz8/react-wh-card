@@ -26,7 +26,7 @@ const LayoutColorProvider: React.FC<ILayoutColorProvider> = ({children}) => {
     <LayoutColorContext.Provider
       value={{
         layoutColor: layoutColor,
-		setProperLayoutColor: setProperLayoutColor
+		    setProperLayoutColor: setProperLayoutColor
       }}
     >
       {children}

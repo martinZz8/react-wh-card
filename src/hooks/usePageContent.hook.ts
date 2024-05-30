@@ -13,7 +13,7 @@ const usePageContent = <T>(page_name: AvailablePagesEnum) => {
     // Load main page content every time language changes
     useEffect(() => {
         const laodMainContent = async () => {
-            const pathToJsonFile = `${page_name}_lang_${selectedLanguage.toLowerCase()}.json`;
+            const pathToJsonFile = `page_content/${page_name}/lang_${selectedLanguage.toLowerCase()}.json`;
             
             try {
                const response = await fetch(pathToJsonFile);
@@ -27,7 +27,7 @@ const usePageContent = <T>(page_name: AvailablePagesEnum) => {
                }
             }
             catch(error) {
-               console.log(`Error during loading main page data: ${error}`);
+               console.log(`Unexpected error occured during loading "${page_name}" page data:\n${error}`);
             }         
          };
    
