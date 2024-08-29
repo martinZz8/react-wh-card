@@ -82,7 +82,13 @@
         "sending_message": "Wysyłanie",
         "successfull_send_message": "Poprawnie wysłano wiadomość. Skontaktujemy się z Tobą w jak najkrótszym czasie.",
         "error_send_message": "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później albo wyślij wiadomość ze swojej poczty internetowej.",
-        "needed_phone_number_or_email_message": "Należy podać numer telefonu bądź adres email w celu dalszego kontaktu."
+        "needed_phone_number_or_email_message": "Należy podać numer telefonu bądź adres email w celu dalszego kontaktu.",
+        "delete_files": "Usuń pliki",
+        "empty_field": "Pole jest puste",
+        "too_long_message_field": "Wiadomość jest za długa",
+        "too_long_subject_field": "Temat jest za długi",
+        "wrong_email_address": "Zły format adresu email",
+        "wrong_phone_number": "Numer telefonu zawiera litery"
     },
     "section_photo_gallery": {
         "gallery1": "biuro1",

@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useContext} from "react";
 
 // interfaces
+import { IMainPageContent } from "../../../../types/main-page-content.types";
 import {ISectionMailForm, IErrorSectionMailForm} from "./section-mail.types";
 
 // data
@@ -9,7 +10,7 @@ import {initialSectionMailForm, initialErrorSectionMailForm} from "./section-mai
 // contexts
 import {CurrentLanguageContext} from "../../../../providers/current-language/current-language-provider.component";
 
-const useSectionMail = () => {
+const useSectionMail = (pageContent: IMainPageContent) => {
    const [sectionMailForm, setSectionMailForm] = useState<ISectionMailForm>(initialSectionMailForm);
    const [inputFilesKey, setInputFilesKey] = useState<string>(Date.now().toString());
    const [errorSectionMailForm, setErrorSectionMailForm] = useState<IErrorSectionMailForm>(initialErrorSectionMailForm);
@@ -20,7 +21,6 @@ const useSectionMail = () => {
    const [isSuccessSend, setIsSuccessSend] = useState<boolean>(false);
    const [isErrorSend, setIsErrorSend] = useState<boolean>(false);
    const [isNotGivenPhoneOrEmail, setIsNotGivenPhoneOrEmail] = useState<boolean>(false);
-
    const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState<boolean>(false);
 
    const {selectedLanguage} = useContext(CurrentLanguageContext);
@@ -58,17 +58,8 @@ const useSectionMail = () => {
    const getEmptyFieldMessage = (): string => {
       let messToRet = "";
 
-      if (selectedLanguage === "PL") {
-         messToRet = "Pole jest puste";
-      }
-      else if (selectedLanguage === "EN") {
-         messToRet = "Field is empty";
-      }
-      else if (selectedLanguage === "DE") {
-         messToRet = "Das Feld ist leer";
-      }
-      else {//UA
-         messToRet = "Поле порожнє";
+      if (pageContent !== null) {
+         messToRet = pageContent.section_mail.empty_field;
       }
 
       return messToRet;
@@ -77,17 +68,8 @@ const useSectionMail = () => {
    const getTooLongFieldMessage = (): string => {
       let messToRet = "";
 
-      if (selectedLanguage === "PL") {
-         messToRet = "Wiadomość jest za długa";
-      }
-      else if (selectedLanguage === "EN") {
-         messToRet = "The message is too long";
-      }
-      else if (selectedLanguage === "DE") {
-         messToRet = "Die Nachricht ist zu lang";
-      }
-      else {//UA
-         messToRet = "Повідомлення занадто довге";
+      if (pageContent !== null) {
+         messToRet = pageContent.section_mail.too_long_message_field;
       }
 
       return messToRet;
@@ -96,17 +78,8 @@ const useSectionMail = () => {
    const getTooLongFieldSubject = (): string => {
       let messToRet = "";
 
-      if (selectedLanguage === "PL") {
-         messToRet = "Temat jest za długi";
-      }
-      else if (selectedLanguage === "EN") {
-         messToRet = "The topic is too long";
-      }
-      else if (selectedLanguage === "DE") {
-         messToRet = "Das Thema ist zu lang";
-      }
-      else {//UA
-         messToRet = "Тема надто довга";
+      if (pageContent !== null) {
+         messToRet = pageContent.section_mail.too_long_subject_field;
       }
 
       return messToRet;
@@ -115,17 +88,8 @@ const useSectionMail = () => {
    const getWrongEmailAddress = () => {
       let messToRet = "";
 
-      if (selectedLanguage === "PL") {
-         messToRet = "Zły format adresu email";
-      }
-      else if (selectedLanguage === "EN") {
-         messToRet = "Wrong email address format";
-      }
-      else if (selectedLanguage === "DE") {
-         messToRet = "Falsches E-Mail-Adressformat";
-      }
-      else {//UA
-         messToRet = "Неправильний формат електронної адреси";
+      if (pageContent !== null) {
+         messToRet = pageContent.section_mail.wrong_email_address;
       }
 
       return messToRet;
@@ -134,17 +98,8 @@ const useSectionMail = () => {
    const getWrongPhoneNumber = () => {
       let messToRet = "";
 
-      if (selectedLanguage === "PL") {
-         messToRet = "Numer telefonu zawiera litery";
-      }
-      else if (selectedLanguage === "EN") {
-         messToRet = "The phone number contains the letters";
-      }
-      else if (selectedLanguage === "DE") {
-         messToRet = "Die Rufnummer enthält die Buchstaben";
-      }
-      else {//UA
-         messToRet = "Номер телефону містить букви";
+      if (pageContent !== null) {
+         messToRet = pageContent.section_mail.wrong_phone_number;
       }
 
       return messToRet;

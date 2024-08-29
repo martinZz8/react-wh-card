@@ -45,7 +45,7 @@ const SectionMail: React.FC<ISectionMail> = ({pageContent}) => {
       isNotGivenPhoneOrEmail,
       inputFilesKey,
       setInputFilesKey
-   } = useSectionMail();
+   } = useSectionMail(pageContent);
 
    return (
       <SectionTemplate

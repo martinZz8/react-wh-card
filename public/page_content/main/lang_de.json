@@ -82,7 +82,13 @@
         "sending_message": "Senden",
         "successfull_send_message": "Nachricht korrekt gesendet. Wir werden Sie so bald wie möglich kontaktieren.",
         "error_send_message": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal oder senden Sie die Nachricht über Ihr Webmail.",
-        "needed_phone_number_or_email_message": "Bitte geben Sie eine Telefonnummer oder eine E-Mail-Adresse für die weitere Kontaktaufnahme an."
+        "needed_phone_number_or_email_message": "Bitte geben Sie eine Telefonnummer oder eine E-Mail-Adresse für die weitere Kontaktaufnahme an.",
+        "delete_files": "Dateien löschen",
+        "empty_field": "Das Feld ist leer",
+        "too_long_message_field": "Die Nachricht ist zu lang",
+        "too_long_subject_field": "Das Thema ist zu lang",
+        "wrong_email_address": "Falsches E-Mail-Adressformat",
+        "wrong_phone_number": "Die Rufnummer enthält die Buchstaben"
     },
     "section_photo_gallery": {
         "gallery1": "Büro1",

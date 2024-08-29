@@ -7,34 +7,34 @@ import { CurrentLanguageContext } from "../providers/current-language/current-la
 import { AvailablePagesEnum } from "../enums/available-pages.enums";
 
 const usePageContent = <T>(page_name: AvailablePagesEnum) => {
-    const [pageContent, setPageContent] = useState<T | null>(null);
-    const {selectedLanguage} = useContext(CurrentLanguageContext);
+   const [pageContent, setPageContent] = useState<T | null>(null);
+   const {selectedLanguage} = useContext(CurrentLanguageContext);
 
-    // Load main page content every time language changes
-    useEffect(() => {
-        const laodMainContent = async () => {
-            const pathToJsonFile = `page_content/${page_name}/lang_${selectedLanguage.toLowerCase()}.json`;
-            
-            try {
-               const response = await fetch(pathToJsonFile);
-               
-               if (response.ok) {
-                  const loadedData = await response.json() as T;
-                  setPageContent(loadedData);
-               }
-               else {
-                  throw new Error();
-               }
-            }
-            catch(error) {
-               console.log(`Unexpected error occured during loading "${page_name}" page data:\n${error}`);
-            }         
-         };
-   
-         laodMainContent();
-    },[selectedLanguage, page_name]);
+   // Load main page content every time language changes
+   const laodMainContent = async () => {
+      const pathToJsonFile = `page_content/${page_name}/lang_${selectedLanguage.toLowerCase()}.json`;
 
-    return {pageContent};
+      try {
+        const response = await fetch(pathToJsonFile);
+
+        if (response.ok) {
+            const loadedData = await response.json() as T;
+            setPageContent(loadedData);
+        }
+        else {
+            throw new Error();
+        }
+      }
+      catch(error) {
+         console.log(`Unexpected error occured during loading "${page_name}" page data:\n${error}`);
+      }         
+   };
+
+   useEffect(() => {
+      laodMainContent();
+   },[selectedLanguage, page_name]);
+
+   return {pageContent};
 };
 
 export default usePageContent;

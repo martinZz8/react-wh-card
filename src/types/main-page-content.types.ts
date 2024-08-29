@@ -83,6 +83,12 @@ export interface IMainPageContent {
         successfull_send_message: string;
         error_send_message: string;
         needed_phone_number_or_email_message: string;
+        delete_files: string;
+        empty_field: string;
+        too_long_message_field: string;
+        too_long_subject_field: string;
+        wrong_email_address: string;
+        wrong_phone_number: string;
     };
     section_photo_gallery: {
         gallery1: string;
