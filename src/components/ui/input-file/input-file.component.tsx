@@ -59,12 +59,12 @@ const InputFile: React.FC<IInputFile> = ({
          <div className={styles.inputWrap}>
             <input
                className={`
-               ${styles.input}
-               ${!(layoutColor === "dark") ? styles.light : ""}
-               ${isError && !disabled ? styles.errorInput : ""}
-               ${disabled ? styles.disabled : ""}
-               ${disabled ? "noSelect" : ""}
-            `}
+                  ${styles.input}
+                  ${!(layoutColor === "dark") ? styles.light : ""}
+                  ${isError && !disabled ? styles.errorInput : ""}
+                  ${disabled ? styles.disabled : ""}
+                  ${disabled ? "noSelect" : ""}
+               `}
                key={keyVal}
                type="file"
                name={name}

@@ -33,8 +33,9 @@
    .inputWrap {
       width: 100%;
       display: flex;
-      justify-content: flex-start;
-      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;      
 
       .input {
          width: auto;
@@ -75,11 +76,12 @@
       }
 
       .deleteButton {
-         margin-left: 10px;
+         margin-top: 10px;
          width: 30px;
          height: 30px;
          background-color: var(--color-dark-gray);
          border-radius: 50%;
+         align-self: flex-end;
          display: flex;
          justify-content: center;
          align-items: center;
@@ -112,6 +114,22 @@
          font-size: 13px;
          font-weight: 600;
          font-style: normal;
+      }
+   }
+}
+
+@media all and (min-width: 400px) {
+   .inputFile {
+      .inputWrap {
+         flex-direction: row;
+         justify-content: flex-start;
+         align-items: center;
+
+         .deleteButton {
+            align-self: unset;
+            margin-top: 0px;
+            margin-left: 10px;
+         }
       }
    }
 }
