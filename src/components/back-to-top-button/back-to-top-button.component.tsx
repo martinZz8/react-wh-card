@@ -16,7 +16,6 @@ import { IMainPageContent } from "../../types/main-page-content.types";
 
 const BackToTopButton: React.FC = () => {
    const {pageContent} = usePageContent<IMainPageContent>(AvailablePagesEnum.Main);
-
    const {isShowed} = useBackToTopButton();
 
    return (
