@@ -17,7 +17,7 @@ interface IUserMenu {
 
 const UserMenu: React.FC<IUserMenu> = ({includesNormalMenu}) => {
    const {isMobileMenuOpen, setIsMobileMenuOpen, toggleIsMobileMenuOpen} = useUserMenu();
-   const {isVisible: isMenuIconVisible} = useElementVisibilityOnScroll(800);
+   const {isVisible: isMenuIconVisible} = useElementVisibilityOnScroll(650);
 
    return (
       <div className={styles.userMenuWrap}>
