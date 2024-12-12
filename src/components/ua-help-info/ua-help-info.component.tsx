@@ -4,7 +4,7 @@ import React, {useContext, useEffect, useState} from "react";
 import styles from "./ua-help-info.module.scss";
 
 // SVGs
-import {ReactComponent as SVGUaHeartFlag} from "../../assets/other/heart-shaped-ukrainian-flag.svg";
+import SVGUaHeartFlag from "../../assets/other/heart-shaped-ukrainian-flag.svg";
 
 // context
 import {WindowContext} from "../../providers/window-size/window-size-provider.component";
@@ -29,9 +29,10 @@ const UaHelpInfo: React.FC<IUaHelpInfo> = ({smallFont, pageContent}) => {
 
   return (
     <div className={`${styles.uaHelpInfo} ${smallFont ? styles.smallFont : ""}`}>
-      <div className={styles.svgWrap}>
-        <SVGUaHeartFlag/>
-      </div>
+      <img
+        src={SVGUaHeartFlag}
+        alt="SVGUaHeartFlag"
+      />
       <p>
         {
           isShortText ?
@@ -41,7 +42,7 @@ const UaHelpInfo: React.FC<IUaHelpInfo> = ({smallFont, pageContent}) => {
         }
       </p>
       <a
-        href={process.env.REACT_APP_UA_FUNDRAISE_LINK}
+        href={import.meta.env.VITE_UA_FUNDRAISE_LINK}
         target="_blank"
         rel="noopener noreferrer"
       >

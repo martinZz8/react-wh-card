@@ -29,17 +29,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: var(--color-dark-gray2);
+      background-color: var(--color-dark-gray2);      
 
-      .svgWrap {
-         width: 20px;
+      img {
          height: 20px;
+         width: 20px;
          border-radius: 50%;
-         overflow: hidden;
-
-         svg {
-            transform: scale(1.6);
-         }
+         object-fit: cover;
       }
    }
 

@@ -55,7 +55,7 @@ const SectionPhotoGallery: React.FC<ISectionPhotoGallery> = ({pageContent}) => {
                      >
                         <img
                            alt={pageContent.section_photo_gallery[item.file_photo_name as keyof typeof pageContent.section_photo_gallery]}
-                           src={`${process.env.PUBLIC_URL}/images/gallery${item.id}.jpg`}
+                           src={`/images/gallery${item.id}.jpg`}
                         />
                         <div className={styles.hoverFilter}>
                            <i className={"icon-resize-full-alt"}/>
@@ -122,7 +122,7 @@ const SectionPhotoGallery: React.FC<ISectionPhotoGallery> = ({pageContent}) => {
                <div className={styles.imageContent}>
                   <img
                      alt={pageContent.section_photo_gallery[availablePhotos[currentPhotoIdx].file_photo_name as keyof typeof pageContent.section_photo_gallery]}
-                     src={`${process.env.PUBLIC_URL}/images/gallery${availablePhotos[currentPhotoIdx].id}.jpg`}
+                     src={`/images/gallery${availablePhotos[currentPhotoIdx].id}.jpg`}
                   />
                </div>
                <div

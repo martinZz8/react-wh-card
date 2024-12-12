@@ -288,12 +288,12 @@ const useSectionMail = (pageContent: IMainPageContent) => {
 
          // Send email via dedicated API
          // to the local: "http://localhost:3001/send-email"
-         // to the deployed api: `${process.env.REACT_APP_SMTP_NODEMAILER_API_URL}/send-email`
+         // to the deployed api: `${import.meta.env.VITE_SMTP_NODEMAILER_API_URL}/send-email`
          // from: https://stackoverflow.com/questions/47630163/axios-post-request-to-send-form-data
          // Note: Let the browser set "Content-Type" header for itself, since request uses "FormData" class object in body.
          //       Here it sets the "multipart/form-data" with it's boundary, but can be also "application/x-www-form-urlencoded".
          //       If the form has files, better use "multipart/form-data" - then it's better transmission performance.
-         fetch(`${process.env.REACT_APP_SMTP_NODEMAILER_API_URL}/send-email`, {
+         fetch(`${import.meta.env.VITE_SMTP_NODEMAILER_API_URL}/send-email`, {
             method: "POST",
             mode: 'cors',
             body: fd
@@ -314,11 +314,11 @@ const useSectionMail = (pageContent: IMainPageContent) => {
               setIsLoadingSend(false);
          });
 
-         //console.log("to:", process.env.REACT_APP_SMTP_RECEIVER_EMAIL);
+         //console.log("to:", import.meta.env.VITE_SMTP_RECEIVER_EMAIL);
          // usage of smtp.js
          // SMTPService.send({
          //    SecureToken: "x",
-         //    To: process.env.SMTP_RECEIVER_EMAIL,
+         //    To: import.meta.env.VITE_SMTP_RECEIVER_EMAIL,
          //    From: sectionMailForm.emailAddress,
          //    Subject: sectionMailForm.subject,
          //    Body: `

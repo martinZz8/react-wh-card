@@ -4,10 +4,10 @@ import React from "react";
 import styles from "./language-selector-item.module.scss";
 
 // svgs
-import {ReactComponent as SVGFlagPL} from "../../../assets/flags/PL-Flag.svg";
-import {ReactComponent as SVGFlagGB} from "../../../assets/flags/EN-Flag.svg";
-import {ReactComponent as SVGFlagDE} from "../../../assets/flags/DE-Flag.svg";
-import {ReactComponent as SVGFlagUA} from "../../../assets/flags/UA-Flag.svg";
+import SVGFlagPL from "../../../assets/flags/PL-Flag.svg";
+import SVGFlagGB from "../../../assets/flags/EN-Flag.svg";
+import SVGFlagDE from "../../../assets/flags/DE-Flag.svg";
+import SVGFlagUA from "../../../assets/flags/UA-Flag.svg";
 
 // interfaces
 interface ILanguageSelectorItem {
@@ -36,18 +36,28 @@ const LanguageSelectorItem: React.FC<ILanguageSelectorItem> = ({
          onClick={() => handleOnClick && handleOnClick()}
       >
          <div className={styles.countryFlagWrap}>
-            <div className={styles.svgWrap}>
-               {
-                  countryId === "PL" ?
-                     <SVGFlagPL/>
-                  : countryId === "EN" ?
-                     <SVGFlagGB/>
-                  : countryId === "DE" ?
-                     <SVGFlagDE/>
-                  ://UA
-                     <SVGFlagUA/>
-               }
-            </div>
+            {
+               countryId === "PL" ?
+                  <img
+                     src={SVGFlagPL}
+                     alt="SVGFlagPL"
+                  />
+               : countryId === "EN" ?
+                  <img
+                     src={SVGFlagGB}
+                     alt="SVGFlagGB"
+                  />
+               : countryId === "DE" ?
+                  <img
+                     src={SVGFlagDE}
+                     alt="SVGFlagDE"
+                  />
+               ://UA
+                  <img
+                     src={SVGFlagUA}
+                     alt="SVGFlagUA"
+                  />
+            }
          </div>
          <div
             className={`
