@@ -296,7 +296,10 @@ const useSectionMail = (pageContent: IMainPageContent) => {
          fetch(`${import.meta.env.VITE_SMTP_NODEMAILER_API_URL}/send-email`, {
             method: "POST",
             mode: 'cors',
-            body: fd
+            body: fd,
+            headers: {
+               "Authorization": `Bearer ${import.meta.env.VITE_SMTP_NODEMAILER_TOKEN}`
+            }
          }).then(async response => {
             //const data = await response.json();
 
